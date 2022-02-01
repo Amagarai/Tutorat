@@ -1,0 +1,49 @@
+ion-content{
+    --background: linear-gradient(to bottom, #808080, #ffffff);
+    //background-size: cover;
+}
+
+img{
+    height: 100px;
+    margin-top: 120px;
+}
+form{
+    .formulaire{
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
+        ion-input{
+            padding-left: 10px !important;
+            font-family: 'Nunito, sans-serif';
+            background-color: #ffffff;
+            font-size: small;
+        }
+    }
+    .pass{
+        font-size: 12px;
+        margin-top: 5px;
+        display: block;
+        margin-right: 20px;
+        text-align: right;  
+    }
+}
+
+
+
+
+.submit ion-button{
+    background-color: #3374d6;
+    color:  white;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 12px;
+    border-radius: 15px;
+}
+
+.label{
+    font-size: 12px;
+    margin-bottom: 3px;
+    ion-checkbox{
+        size: 13px;
+    }
+}
