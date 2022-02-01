@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "tutorat",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
