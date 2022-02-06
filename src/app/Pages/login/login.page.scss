@@ -1,22 +1,38 @@
 ion-content{
-    --background: linear-gradient(to bottom, #808080, #ffffff);
-    //background-size: cover;
+    --background: #F5F5F3;
+    .float{
+        img{
+          height: 130px;
+          float:right;
+          margin-right: -60px;
+          margin-bottom: 0px;
+        }
+    }
+
+    .content{
+        img{
+            height: 100px;
+            margin-top: 130px;
+           margin-left: 65px;
+        }
+    }
 }
 
-img{
-    height: 100px;
-    margin-top: 120px;
-}
+
 form{
     .formulaire{
         margin-top: 25px;
         margin-left: 25px;
         margin-right: 25px;
-        ion-input{
-            padding-left: 10px !important;
+        ion-item{
+           margin-bottom: 5px;
             font-family: 'Nunito, sans-serif';
             background-color: #ffffff;
             font-size: small;
+            border-radius: 50px;
+            ion-input{
+                padding-left: 10px !important; 
+            }
         }
     }
     .pass{

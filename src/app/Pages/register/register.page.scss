@@ -1,4 +1,43 @@
-ion-radio{
+ion-content{
+  --background: #F5F5F3;
+  .content{
+    .float{
+      img{
+        height: 130px;
+        float:right;
+        margin-right: -60px;
+        margin-bottom: 0px;
+      }
+      
+    }
     
-    margin: 0%;
+  } 
+  .logo{
+    img{
+      height: 100px;
+     margin-left: 65px;
+    }
+    p{
+      font-size: 20px;
+      font-weight: 600;
+      margin-left: 15px; 
+    }
+  }
+
+  form{
+    .formulaire{
+      margin-left: 25px;
+      margin-right: 25px;
+      ion-item{
+        margin-bottom: 5px;
+        font-family: 'Nunito, sans-serif';
+        background-color: #ffffff;
+        font-size: small;
+        border-radius: 8px;
+        ion-input{
+          padding-left: 10px !important; 
+        }
+      }
+    }
+  }
 }

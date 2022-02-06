@@ -25,6 +25,14 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./Pages/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'acceuil',
+    loadChildren: () => import('./Pages/acceuil/acceuil.module').then( m => m.AcceuilPageModule)
+  },
+  {
+    path: 'list-initier',
+    loadChildren: () => import('./Pages/list-initier/list-initier.module').then( m => m.ListInitierPageModule)
+  },
 ];
 
 @NgModule({

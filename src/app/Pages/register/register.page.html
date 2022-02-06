@@ -1,39 +1,94 @@
 
 <ion-content>
   <div class="content">
-    <div class="logo ion-text-center">
-      <img src="assets/images/logo.png" alt="" srcset="">
-      
+    <div class="float">
+      <img src="assets/images/float.png" alt="" srcset="">
     </div>
+    
   </div>
-
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="" srcset="" class="img">
+    <p>Inscription</p>
+  </div>
   <form action="">
     <div class="formulaire">
-      <ion-input placeholder="Nom" ></ion-input><br>
-      <ion-input placeholder="Prenom" ></ion-input>
-      <ion-input placeholder="Adresse" ></ion-input>
-      <ion-input placeholder="Telephone" ></ion-input>
-      <ion-input placeholder="Login" ></ion-input>
-      <ion-input placeholder="Mot de passe" ></ion-input>
-      <ion-input placeholder="Confirmer mot de passe" ></ion-input>
-      <ion-radio-group>
-        <ion-list-header>
-          <ion-label>
-            Auto Manufacturers
-          </ion-label>
-        </ion-list-header>
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input placeholder="Prenom" ></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input placeholder="Nom" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Profile</ion-label>
+        <ion-select value="profile" interface="action-sheet" cancelText="Annuler" >
+          <ion-select-option value="tuteur">Tuteur</ion-select-option>
+          <ion-select-option value="eleve">Elève</ion-select-option>
+          <ion-select-option value="ecole">Ecole</ion-select-option>
+          <ion-select-option value="parent">Parent</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="tuteur" *ngIf="type==='tteur'">
         <ion-item>
-          <ion-label class="label">Cord</ion-label>
-          <ion-radio value="cord" slot="start"></ion-radio>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input type="email" placeholder="email" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-input placeholder="Numero de telephone" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-icon name="school-outline"></ion-icon>
+          <ion-input placeholder="Etablissement" ></ion-input>
         </ion-item>
 
-      </ion-radio-group>
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input type="email" placeholder="email" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-input placeholder="Numero de telephone" ></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Matière ou spécialité</ion-label>
+          <ion-select interface="popover" cancelText="Annuler">
+            <ion-select-option value="math">Mathématiques</ion-select-option>
+            <ion-select-option value="n64">Biologie</ion-select-option>
+            <ion-select-option value="ps">Physique</ion-select-option>
+            <ion-select-option value="genesis">Chimie</ion-select-option>
+            <ion-select-option value="saturn">Français</ion-select-option>
+            <ion-select-option value="snes">Philosophie</ion-select-option>
+          </ion-select>
+        </ion-item>
 
+        <ion-item>
+          <span>Ancienneté:</span>
+          <ion-input type="number" placeholder="exemple: 2"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="key-outline"></ion-icon>
+          <ion-input placeholder="Mot de passe" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="key-outline"></ion-icon>
+          <ion-input placeholder="Confirmer mot de passe" ></ion-input>
+        </ion-item>
+        <ion-input type="submit" value="S'inscrire" style="background-color: aqua; width: 100px; border-radius: 50px; float: right;"></ion-input>
+      </div>
     </div>
-    <div class="submit">
-      <ion-button class="btn" expand='full' fill="clear" style="text-transform: none;">
-        Connexion
-      </ion-button>
-    </div>
-  </form>
+  </form><br>
+  <div style=" margin-top: 30px;" class="ion-text-center">
+    <p>Vous avez un compte? <a href="login">connectez-vous</a></p>
+  </div>
 </ion-content>

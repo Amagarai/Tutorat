@@ -1,23 +1,32 @@
 
 
 <ion-content>
+  <div class="float">
+    <img src="assets/images/float.png" alt="" srcset="">
+  </div>
   <div class="content">
     <div class="logo ion-text-center">
-      <img src="assets/images/logo.png" alt="" srcset="">
-      
+      <img src="assets/images/logo.png" alt="" srcset="">     
     </div>
   </div>
 
   <form action="">
     <div class="formulaire">
-      <ion-input placeholder="Pseudo ou numero de tel " ></ion-input><br>
-      <ion-input placeholder="mot de passe " ></ion-input>
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input placeholder="Pseudo ou numero de tel " ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input placeholder="mot de passe" ></ion-input>
+      </ion-item>
     </div>
     <div class="lien">
       <a href="" class="pass">mot de passe oublie!</a>
     </div>
     <div class="submit">
-      <ion-button class="btn" expand='full' fill="clear" style="text-transform: none;">
+      <ion-button class="btn" expand='full' fill="clear" style="text-transform: none;" routerLink="/acceuil">
         Connexion
       </ion-button>
     </div>
@@ -33,7 +42,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <a href="register">S'inscrire</a>
+        <span><b>Pas de compte? </b></span><a href="register">Inscrivez-vous</a>
       </ion-col>
     </ion-row>
   </ion-grid>
