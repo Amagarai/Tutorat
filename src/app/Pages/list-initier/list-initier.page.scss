@@ -1,29 +1,30 @@
-ion-content{
+ion-content {
+    width: calc(100% + 15px);
     --background: #B5B9BF;
-    .head{
+    .head {
         display: flex;
         align-items: center;
-        margin-top: 4px;
-        span{
+        margin-top: 20px;
+        span {
             font-weight: 600;
             color: #fff;
+            justify-content: center;
         }
     }
-
-    .list{
+    .list {
         background-color: #fff;
-        height: 100%;
+        height: auto;
         padding-top: 20px;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-
-        .item{
+        .item {
             background-color: aquamarine;
-            height: 70px;
-            border: 1px solid;
+            height: auto;
+            border: 1px solid red;
+            border-radius: 1rem 1rem 1rem 1rem;
             margin-bottom: 20px;
-            .btn{
-                
+            .btn {
+                // width: 5Opx;
             }
         }
     }
