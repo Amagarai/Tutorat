@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,10 +7,24 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  type:any ="tuteur";
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  affichePassword: Boolean = true;
+  type: any ='tuteur';
+  form: FormGroup;
   constructor() { }
 
   ngOnInit() {
+  }
+  public toggleTextPassword(): void{
+    // eslint-disable-next-line eqeqeq
+    this.affichePassword = (this.affichePassword==true)?false:true;
+}
+public getType() {
+    return this.affichePassword ? 'password' : 'text';
+}
+
+  typeChange(){
+    this.type='tuteur';
   }
 
 }

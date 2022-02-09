@@ -1,58 +1,61 @@
 <ion-content>
-  <div class="header">
-    <div class="notification">
-      <ion-button  color="light">
-        <ion-icon color="primary" name="notifications"></ion-icon>
-      </ion-button>
+    <div class="header">
+
+        <div class="notification">
+            <a class="note" routerLink="/login">
+                <ion-badge color="danger" slot="end" class="badge">4</ion-badge>
+                <ion-icon color="primary" name="notifications" size="large"></ion-icon>
+            </a>
+        </div>
+
+        <ion-item class="avatar" lines="none">
+            <ion-avatar>
+                <img src="../../../assets/images/logo.png" alt="" srcset="">
+            </ion-avatar>
+            <label>King Ama</label>
+        </ion-item>
+
+        <div class="cards">
+            <ion-card>
+                <ion-card-header>
+                    <div class="content-card">
+                        <img src="https://www.educol.net/image-en-classe-dm30219.jpg">
+                        <!-- <img src="assets/images/afrique.jpg"> -->
+                    </div>
+                </ion-card-header>
+                <ion-card-content class="ion-text-left">
+                    <ion-card-title class="ion-margin-bottom" style="font-size: 10px; margin-bottom: 2px;">Mes élèves</ion-card-title>
+                    <ion-button fill="clear" style="font-size: 10px; background-color: blue; width: 67px; height: 15px; margin-bottom: 10px; color: white;">Voir plus</ion-button>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card style="width: 150px;">
+                <ion-card-header>
+                    <div class="content-card">
+                        <img src="https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-school-campus-university-campus-school-campus-png-image_478772.jpg" style="height: 90px; margin-bottom: 3px;">
+                    </div>
+                </ion-card-header>
+                <ion-card-content class="ion-text-left">
+                    <ion-card-title class="ion-margin-bottom" style="font-size: 10px; margin-bottom: 2px;">Mes élèves</ion-card-title>
+                    <ion-button fill="clear" style="font-size: 10px; background-color: blue; width: 67px; height: 15px; margin-bottom: 10px; color: white;">Voir plus</ion-button>
+                </ion-card-content>
+            </ion-card>
+        </div>
     </div>
-
-    <ion-item class="avatar" lines="none">
-      <ion-avatar>
-        <img src="../../../assets/images/logo.png" alt="" srcset=""> 
-      </ion-avatar>
-      <label>King Ama</label>
-    </ion-item>
-
-    <div class="cards" >
-      <ion-card>
-        <ion-card-header>
-          <div class="content-card">
-            <img src="https://www.educol.net/image-en-classe-dm30219.jpg">
-          </div>
-        </ion-card-header>
-        <ion-card-content class="ion-text-left">
-          <ion-card-title class="ion-margin-bottom" style="font-size: 10px; margin-bottom: 2px;">Mes élèves</ion-card-title>
-            <ion-button  fill="clear" style="font-size: 10px; background-color: blue; width: 67px; height: 15px; margin-bottom: 10px; color: white;">Voir plus</ion-button>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card style="width: 150px;">
-        <ion-card-header>
-          <div class="content-card">
-            <img src="https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-school-campus-university-campus-school-campus-png-image_478772.jpg" style="height: 90px; margin-bottom: 3px;">
-          </div>
-        </ion-card-header>
-        <ion-card-content class="ion-text-left">
-          <ion-card-title class="ion-margin-bottom" style="font-size: 10px; margin-bottom: 2px;">Mes élèves</ion-card-title>
-            <ion-button  fill="clear" style="font-size: 10px; background-color: blue; width: 67px; height: 15px; margin-bottom: 10px; color: white;">Voir plus</ion-button>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </div>
-  <div class="content ion-text-center">
-    <button style="width: 80%;" class="fonction" routerLink="/list-initier">
+    <div class="content ion-text-center">
+        <button style="width: 80%;" class="fonction" routerLink="/list-initier">
       <ion-label>Demande initier</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </button>
 
-    <button style="width: 80%;" class="fonction">
+        <button style="width: 80%;" class="fonction">
       <ion-label>Demande rejeter</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </button>
 
-    <button style="width: 80%;" class="fonction">
+        <button style="width: 80%;" class="fonction">
       <ion-label>Voir la liste des écoles</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </button>
-  </div>
+    </div>
 </ion-content>
