@@ -27,6 +27,7 @@
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/local-notifications": "^5.36.0",
     "@ionic/angular": "^6.0.0",
+    "cors": "^2.8.5",
     "intl-tel-input": "^17.0.15",
     "ionic-material": "^0.4.1",
     "ng2-tel-input": "^2.3.0",

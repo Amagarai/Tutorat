@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ServicesService } from 'src/app/api/services.service';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/ban-types
   affichePassword: Boolean = true;
+  login: any;
+  password: any;
 
-  constructor() { }
+  constructor(public service: ServicesService, public route: Router) { }
 
   ngOnInit() {
   }
@@ -20,4 +24,15 @@ export class LoginPage implements OnInit {
 public getType() {
     return this.affichePassword ? 'password' : 'text';
 }
+
+  // loginPass(data){
+  //   this.service.loginPassword(data.value.login, data.value.password).subscribe(donne =>{
+  //     this.login= donne;
+  //     if(this.login ===''){
+  //       return console.log('erreur');
+  //     }
+  //       this.route.navigate(['acceuil']);
+  //   });
+  // }
+
 }

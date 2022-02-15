@@ -1,3 +1,4 @@
+import { ServicesService } from './../../api/services.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcceuilPage implements OnInit {
 
-  constructor() { }
+  constructor(public service: ServicesService)
+  {
+    this.listerEl();
+   }
 
   ngOnInit() {
+  }
+
+  listerEl(){
+    return this.service.listeEleve().subscribe(
+     // eslint-disable-next-line @typescript-eslint/no-shadow
+     data=>{
+        console.log(data);
+
+      }
+    );
+  }
+  listerEc(){
+    return this.service.listeEcole().subscribe(res=>{console.log(res);
+    });
   }
 
 }

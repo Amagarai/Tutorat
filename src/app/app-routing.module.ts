@@ -18,7 +18,7 @@ const routes: Routes = [
   },
    {
     path: '',
-    redirectTo: 'splash',
+    redirectTo: 'accueil',
     pathMatch: 'full'
   },
   {

@@ -1,5 +1,8 @@
+import { ServicesService } from 'src/app/api/services.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormsModule } from '@angular/forms';
+import {FormBuilder, NgForm } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-register',
@@ -7,24 +10,37 @@ import { FormGroup, FormsModule } from '@angular/forms';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  affichePassword: Boolean = true;
-  type: any ='tuteur';
-  form: FormGroup;
-  constructor() { }
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  password_type = 'password';
+  // mode: 1;
+  ajouter: NgForm;
+  body: any;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    public service: ServicesService
+    )
+  { }
 
   ngOnInit() {
   }
-  public toggleTextPassword(): void{
-    // eslint-disable-next-line eqeqeq
-    this.affichePassword = (this.affichePassword==true)?false:true;
-}
-public getType() {
-    return this.affichePassword ? 'password' : 'text';
+
+regisForm(ajouter: any){
+
+  //JSON forme d'ajou
+  this.body = JSON.stringify(ajouter.value);
+  const  b= JSON.parse(this.body);
+  this.service.addEcole(b).subscribe(
+     res=>{
+      console.log(res);
+
+    }
+    );
 }
 
-  typeChange(){
-    this.type='tuteur';
-  }
-
+togglePasswordMode() {
+   this.password_type = this.password_type === 'text' ? 'password' : 'text';
 }
+}
+
+
