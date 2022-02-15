@@ -1,0 +1,92 @@
+
+<ion-content [fullscrean]="true">
+  <div class="back" style="margin-top: 12px; position: absolute;">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="accueil" color="light" routerLink="/acceuil"></ion-back-button>&nbsp;
+    </ion-buttons>
+  </div>
+  <div class="head">
+    <ion-item class="matiere">
+      <ion-label>Ville</ion-label>
+      <ion-select value="03" cancelText="Annuler">
+        <ion-select-option value="01">Bamako</ion-select-option>
+        <ion-select-option value="02">Kayes</ion-select-option>
+        <ion-select-option value="03">Koulikoro</ion-select-option>
+        <ion-select-option value="04">Sikasso</ion-select-option>
+        <ion-select-option value="05">Segou</ion-select-option>
+        <ion-select-option value="06">Mopti</ion-select-option>
+        <ion-select-option value="07">Tombouctou</ion-select-option>
+        <ion-select-option value="07">Goa</ion-select-option>
+        <ion-select-option value="07">Kidal</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="matiere">
+      <ion-label>Matière</ion-label>
+      <ion-select value="03" cancelText="Annuler">
+        <ion-select-option value="01">Mathématiques</ion-select-option>
+        <ion-select-option value="02">Biologie</ion-select-option>
+        <ion-select-option value="03">Physique</ion-select-option>
+        <ion-select-option value="04">Chimie</ion-select-option>
+        <ion-select-option value="05">Philosophie</ion-select-option>
+        <ion-select-option value="06">Histoire</ion-select-option>
+        <ion-select-option value="07">Economie</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-button class="btn">
+      Rechercher
+    </ion-button>
+  </div>
+
+  <div class="content">
+    <ion-list style="background-color: #F5F5F3;">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="../../../assets/images/person.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>Nom du demadeur</h2>
+          <div class="align"> 
+            <h3>Ville</h3>
+            <p>
+              <ion-button fill="clear">Demander</ion-button>
+            </p>
+          </div>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="../../../assets/images/person.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>Nom du demadeur</h2>
+          <div class="align"> 
+            <h3>Ville</h3>
+            <p>
+              <ion-button fill="clear">Deamnder</ion-button>
+            </p>
+          </div>  
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="../../../assets/images/person.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>Nom du demadeur</h2>
+          <div class="align"> 
+            <h3>Ville</h3>
+            <p>
+              <ion-button fill="clear">Demander</ion-button>
+            </p>
+          </div>  
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    
+  </div>
+</ion-content>

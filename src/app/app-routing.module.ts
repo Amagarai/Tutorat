@@ -6,12 +6,12 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  
+
   {
     path: 'splash',
     loadChildren: () => import('./Pages/splash/splash.module').then( m => m.SplashPageModule)
   },
- 
+
   {
     path: 'login',
     loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
@@ -32,7 +32,15 @@ const routes: Routes = [
   {
     path: 'list-initier',
     loadChildren: () => import('./Pages/list-initier/list-initier.module').then( m => m.ListInitierPageModule)
+  },  {
+    path: 'profil',
+    loadChildren: () => import('./Pages/profil/profil.module').then( m => m.ProfilPageModule)
   },
+  {
+    path: 'search',
+    loadChildren: () => import('./Pages/search/search.module').then( m => m.SearchPageModule)
+  },
+
 ];
 
 @NgModule({

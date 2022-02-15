@@ -1,0 +1,31 @@
+ion-content{
+  --background: #B5B9BF;
+
+  .head{
+    background-color: #fff;
+    padding-bottom: 80px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    .profil{
+      img{
+        margin-top: 50px;
+        height: 85px;
+      }
+
+    }
+  }
+
+  .content{
+    margin-top: 20px;
+    .fonction{
+      display: flex;
+      border-radius: 5px;
+      justify-content: space-between;
+      box-shadow: 0px 3px 6px rgb(216, 215, 215);
+      margin-top: 10px;
+      margin-left: 30px;
+      margin-right: 30px;
+      padding: 15px;
+    }
+  }
+}
