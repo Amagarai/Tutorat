@@ -1,3 +1,4 @@
+import { ServicesService } from './../../api/services.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcceuilPage implements OnInit {
 
-  constructor() { }
+  usersInfo: any;
+  data:  any[] = [];
 
-  ngOnInit() {
+  constructor(public service: ServicesService){}
+
+  ngOnInit() : void{
+    this.data= JSON.parse(localStorage["logInfo"]);
+    //this.usersInfo=JSON.parse(this.data)
+    console.log(this.data);  
   }
+
+
 
 }

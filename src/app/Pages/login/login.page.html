@@ -8,16 +8,16 @@
         </div>
     </div>
 
-    <form action="">
+    <form #data="ngForm" (ngSubmit)="loginPass(data)">
         <div class="formulaire">
             <ion-item>
                 <ion-icon name="person-outline"></ion-icon>
-                <ion-input placeholder="Pseudo ou numero de tel "></ion-input>
+                <ion-input type="email" placeholder="numero de tel " name="numero" ngModel></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-icon name="key-outline"></ion-icon>
-                <ion-input placeholder="mot de passe" [type]="getType()"></ion-input>
+                <ion-input type="password" placeholder="mot de passe" name="password" ngModel></ion-input>
                 <ion-icon name="eye" item-right (click)="toggleTextPassword()"></ion-icon>
             </ion-item>
         </div>
@@ -25,7 +25,7 @@
             <a href="" class="pass">mot de passe oublie!</a>
         </div>
         <div class="submit">
-            <ion-button class="btn" expand='full' fill="clear" style="text-transform: none;" routerLink="/acceuil">
+            <ion-button type="submit" class="btn" expand='full' fill="clear" style="text-transform: none;">
                 Connexion
             </ion-button>
         </div>

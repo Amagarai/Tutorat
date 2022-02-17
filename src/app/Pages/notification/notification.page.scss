@@ -1,0 +1,13 @@
+ion-content{
+    --background: #B5B9BF;
+    .head {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        span {
+            font-weight: 600;
+            color: #fff;
+            justify-content: center;
+        }
+    }
+}

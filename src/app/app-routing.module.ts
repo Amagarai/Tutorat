@@ -32,14 +32,16 @@ const routes: Routes = [
   {
     path: 'list-initier',
     loadChildren: () => import('./Pages/list-initier/list-initier.module').then( m => m.ListInitierPageModule)
-  },  {
-    path: 'profil',
-    loadChildren: () => import('./Pages/profil/profil.module').then( m => m.ProfilPageModule)
   },
   {
-    path: 'search',
-    loadChildren: () => import('./Pages/search/search.module').then( m => m.SearchPageModule)
+    path: 'notification',
+    loadChildren: () => import('./Pages/notification/notification.module').then( m => m.NotificationPageModule)
   },
+
+  {
+    path: 'search',
+    loadChildren: () => import('./Pages/search/search.module').then(m => m.SearchPageModule)
+  }
 
 ];
 
