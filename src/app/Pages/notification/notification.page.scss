@@ -10,4 +10,43 @@ ion-content{
             justify-content: center;
         }
     }
+
+    ion-list{
+        padding: 0%;
+        margin-bottom: 10vh;
+        ion-item{
+            margin: auto;
+            
+            .photo{
+                align-self: flex-start;
+                position: relative;
+                min-width: 2rem;
+                min-height: 2rem;
+                border-radius: 25px;
+                padding: 5px;
+                img{
+                    border-radius: 25px;
+                }
+            }
+            ion-label{
+                font-weight: bold;
+                font-size: 0.9rem;
+                p{
+                    ion-text{
+                        font-size: 0.75rem;
+                    }
+                    .time{
+                        color: lightgray;
+                    }
+                }
+            }
+            ion-button{
+               // height: 2rem;
+                border-radius: 10px;
+                margin-left: 10px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+            }
+        }
+    }
 }

@@ -7,18 +7,23 @@ import { ServicesService } from 'src/app/api/services.service';
   styleUrls: ['./notification.page.scss'],
 })
 export class NotificationPage implements OnInit {
-  data:  any[] = [];
-  constructor( private service: ServicesService) { }
+  data:  any;
+  list: any;
+  constructor( private service: ServicesService) { 
+    
+  }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
     console.log(this.data[0].id);
-    this.GetData();
+    this.GetData()
   }
 
   GetData(){
     this.service.getTuteurDemande(this.data[0].id).subscribe(res =>{
-      console.log(JSON.stringify(res))
+      //console.log(res)
+     this.list= res;
+     console.log(this.list)
     });
   }
 

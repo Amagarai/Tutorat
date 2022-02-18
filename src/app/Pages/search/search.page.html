@@ -9,7 +9,7 @@
     <form #data="ngForm" (ngSubmit)="search(data)">
       <ion-item class="matiere">
         <ion-label>Ville</ion-label>
-        <ion-select value="03" cancelText="Annuler" name="ville" ngModel>
+        <ion-select value="03" cancelText="Annuler" name="addresse" ngModel>
           <ion-select-option value="Bamako">Bamako</ion-select-option>
           <ion-select-option value="02">Kayes</ion-select-option>
           <ion-select-option value="03">Koulikoro</ion-select-option>
@@ -42,52 +42,25 @@
     
   </div>
 
-  <div class="content">
+  <div class="content" *ngIf="mode===2">
     <ion-list style="background-color: #F5F5F3;">
-      <ion-item>
+      <ion-item *ngFor="let item of list">
         <ion-avatar slot="start">
           <img src="../../../assets/images/person.png" />
         </ion-avatar>
         <ion-label>
-          <h2>Nom du demadeur</h2>
+          <h2>{{item.prenom}} {{item.nom}}</h2>
           <div class="align"> 
-            <h3>Ville</h3>
+            <h3>{{item.addresse}}</h3>
             <p>
-              <ion-button fill="clear">Demander</ion-button>
+              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" *ngIf="btn===1" slot="end">Demander</ion-button>
+              <ion-button fill="clear" (click)="RemoveDemande()" *ngIf="btn===2" slot="end" class="remove">Envoyer</ion-button>
             </p>
           </div>
         </ion-label>
       </ion-item>
 
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="../../../assets/images/person.png" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Nom du demadeur</h2>
-          <div class="align"> 
-            <h3>Ville</h3>
-            <p>
-              <ion-button fill="clear">Deamnder</ion-button>
-            </p>
-          </div>  
-        </ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="../../../assets/images/person.png" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Nom du demadeur</h2>
-          <div class="align"> 
-            <h3>Ville</h3>
-            <p>
-              <ion-button fill="clear">Demander</ion-button>
-            </p>
-          </div>  
-        </ion-label>
-      </ion-item>
+      
     </ion-list>
 
     

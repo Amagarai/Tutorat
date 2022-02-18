@@ -31,6 +31,12 @@ export class ServicesService {
   }
 
   getTuteurDemande(id: any){
-    return this.http.get(this.host+'demande//notif/'+id);
+    return this.http.get(this.host+'demande/notif/'+id);
+  }
+
+  //----------------------Envoyer une demande---------------
+
+  EnvoyerDemande(from: number, to: number, matiere: string, demande :any){
+    return this.http.post(this.host+'demande/send/'+from+'/'+to+'/'+matiere, demande);
   }
 }
