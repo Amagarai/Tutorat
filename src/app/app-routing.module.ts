@@ -25,10 +25,7 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./Pages/register/register.module').then( m => m.RegisterPageModule)
   },
-  {
-    path: 'acceuil',
-    loadChildren: () => import('./Pages/acceuil/acceuil.module').then( m => m.AcceuilPageModule)
-  },
+ 
   {
     path: 'list-initier',
     loadChildren: () => import('./Pages/list-initier/list-initier.module').then( m => m.ListInitierPageModule)
@@ -39,14 +36,28 @@ const routes: Routes = [
   },
 
   {
-    path: 'search',
-    loadChildren: () => import('./Pages/search/search.module').then(m => m.SearchPageModule)
-  },
-
-  {
     path: 'profil',
     loadChildren : () => import('./Pages/profil/profil.module').then(m => m.ProfilPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./Pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'forgot-pass',
+    loadChildren: () => import('./Pages/forgot-pass/forgot-pass.module').then( m => m.ForgotPassPageModule)
+  },
+  
+  {
+    path: 'tabs',
+    loadChildren: () => import('./Pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'detail-chat/:id',
+    loadChildren: () => import('./Pages/detail-chat/detail-chat.module').then( m => m.DetailChatPageModule)
   }
+
+
 
 ];
 

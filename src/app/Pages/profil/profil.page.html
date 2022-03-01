@@ -3,7 +3,7 @@
 
     <div class="head">
         <ion-buttons slot="start" >
-            <ion-back-button defaultHref="accueil" style="color: #B5B9BF; margin-top: 5px;" routerLink="/acceuil"></ion-back-button>
+            <ion-back-button defaultHref="accueil" style="color: #B5B9BF; margin-top: 5px;" routerLink="/tabs"></ion-back-button>
         </ion-buttons>
        <div class="profil ion-text-center">
            <div class="img">
@@ -15,12 +15,17 @@
        </div>
     </div>
     <div class="content">
-        <button style="width: 80%;" class="fonction">
+        <button style="width: 80%;" class="fonction" routerLink="/edit-profile">
             <ion-label>Editer mon profil</ion-label>
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
+ 
+        <ion-item >
+            <ion-label>Disponibilité</ion-label>
+            <ion-toggle slot="end" name="dispnobilite" checked (ionChange)="Etat($event)" (click)="Disponibilite()"></ion-toggle>
+        </ion-item>
 
-        <button style="width: 80%;" class="fonction">
+        <button style="width: 80%; color: red;" class="fonction" (click)="LogOut()">
             <ion-label>Deconnexion</ion-label>
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{Envoyeur?.prenom}} {{Envoyeur?.nom}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row  *ngFor="let item of Liste">
+      <ion-col size="9" *ngIf="item.envoyeur.id===Envoyeur.id" class="message other-message">
+        <span>{{item.contenu}}</span><br>
+        <div class="time" text-right>
+          {{item.heure }} 
+        </div>
+      </ion-col>
+
+      <ion-col offset="3" size="9" *ngIf="item.envoyeur.id!==Envoyeur.id"class="message my-message">
+        <span>{{item.contenu}}</span><br> 
+        <div class="time" text-right>
+          {{item.heure}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <form #data="ngForm" (ngSubmit)="addChat(data)">
+    <ion-toolbar color="light">
+        <textarea autoGrow="true" [(ngModel)]="contenu" class="sendMsg" name="contenu" ngModel></textarea>
+        <ion-buttons fill="clear" color="primary" class="send"  slot="end">
+          <ion-button type="submit" [disabled]="contenu ===''">Envoyer</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </form>
+</ion-footer>

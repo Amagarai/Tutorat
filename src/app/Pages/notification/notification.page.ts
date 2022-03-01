@@ -27,4 +27,12 @@ export class NotificationPage implements OnInit {
     });
   }
 
+  Initier(id: number, demande: any){
+    const b = JSON.stringify(demande);
+    const a= JSON.parse(b)
+    return this.service.InitierDemande(id, a).subscribe(donne =>{
+      console.log(donne) 
+    })
+  }
+
 }

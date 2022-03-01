@@ -1,13 +1,4 @@
 <ion-content>
-    <div class="content">
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="login"></ion-back-button>
-        </ion-buttons>
-        <div class="float">
-            <img src="assets/images/float.png" alt="" srcset="">
-        </div>
-
-    </div>
     <div class="logo">
         <img src="assets/images/logo.png" alt="" srcset="" class="img">
         <p>Inscription</p>
@@ -15,19 +6,10 @@
     <form id=formId (ngSubmit)="regisForm(ajouter)" #ajouter="ngForm">
 
         <div class="formulaire">
-            <ion-item>
-                <ion-icon name="person-outline"></ion-icon>
-                <ion-input placeholder="Prenom" name="prenom" ngModel required></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-icon name="person-outline"></ion-icon>
-                <ion-input placeholder="Nom" name="nom" ngModel required></ion-input>
-            </ion-item>
 
             <ion-item>
                 <ion-label>Profile</ion-label>
-                <ion-select value="profile" interface="action-sheet" cancelText="Annuler" name="profile" ngModel required>
+                <ion-select value="profile" interface="action-sheet" cancelText="Annuler" name="profile" ngModel [(ngModel)]="Profile" required>
                     <ion-select-option value="TUTEUR">Tuteur</ion-select-option>
                     <ion-select-option value="ELEVE">Elève</ion-select-option>
                     <ion-select-option value="ECOLE">Ecole</ion-select-option>
@@ -35,64 +17,96 @@
                 </ion-select>
             </ion-item>
 
+            <ion-item  *ngIf="Profile ==='TUTEUR' || Profile ==='ELEVE' || Profile ==='PARENT' ">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-input placeholder="Prenom" name="prenom" ngModel required></ion-input>
+            </ion-item>
+ 
+            <ion-item *ngIf="Profile">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-input placeholder="Nom" name="nom" ngModel required></ion-input>
+            </ion-item>
+
             <div class="tuteur">
-                <ion-item>
+                <ion-item *ngIf="Profile==='ECOLE'">
                     <ion-icon name="mail-outline"></ion-icon>
                     <ion-input type="email" placeholder="email" ngModel name="email" required></ion-input>
                 </ion-item>
 
-                <ion-item>
+                <ion-item *ngIf="Profile==='ECOLE'">
                     <ion-icon name="globe-outline"></ion-icon>
                     <ion-input placeholder="Site" name="site" ngModel required></ion-input>
                 </ion-item>
-                <!--
-                <ion-item>
+                
+                <ion-item *ngIf="Profile==='TUTEUR'">
                     <ion-icon name="school-outline"></ion-icon>
-                    <ion-input placeholder="Etablissement"></ion-input>
+                    <ion-input type="text" placeholder="Etablissement" name="etablissement" ngModel required></ion-input>
                 </ion-item>
 
-                <ion-item>
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <ion-input type="email" placeholder="email"></ion-input>
-                </ion-item>
-
-                <ion-item>
+                <ion-item *ngIf="Profile">
                     <ion-icon name="call-outline"></ion-icon>
-                    <ion-input placeholder="Numero de telephone"></ion-input>
+                    <ion-input placeholder="Numero de telephone" name="numero" ngModel required></ion-input>
                 </ion-item>
 
-                <ion-item>
-                    <ion-label>Matière ou spécialité</ion-label>
-                    <ion-select interface="popover" cancelText="Annuler">
-                        <ion-select-option value="math">Mathématiques</ion-select-option>
-                        <ion-select-option value="n64">Biologie</ion-select-option>
-                        <ion-select-option value="ps">Physique</ion-select-option>
-                        <ion-select-option value="genesis">Chimie</ion-select-option>
-                        <ion-select-option value="saturn">Français</ion-select-option>
-                        <ion-select-option value="snes">Philosophie</ion-select-option>
+                <ion-item *ngIf="Profile">       
+                    <ion-label>Ville</ion-label>
+                    <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" ngModel required>
+                        <ion-select-option value="Bamako">Bamako</ion-select-option>
+                        <ion-select-option value="Kayes">Kayes</ion-select-option>
+                        <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+                        <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+                        <ion-select-option value="Segou">Segou</ion-select-option>
+                        <ion-select-option value="Mopti">Mopti</ion-select-option>
+                        <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+                        <ion-select-option value="Goa">Goa</ion-select-option>
+                        <ion-select-option value="Kidal">Kidal</ion-select-option>
                     </ion-select>
                 </ion-item>
 
-                <ion-item>
-                    <span>Ancienneté:</span>
-                    <ion-input type="number" placeholder="exemple: 2"></ion-input>
-                </ion-item> -->
+                <ion-item *ngIf="Profile">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <ion-input placeholder="Quartier" name="quartier" ngModel required></ion-input>
+                </ion-item>
 
-                <ion-item>
+                <ion-item *ngIf="Profile==='TUTEUR'">
+                    <ion-label>Matière ou spécialité</ion-label>
+                    <ion-select interface="action-sheet" cancelText="Annuler" name="specialite" ngModel required>
+                        <ion-select-option value="Mathématiques">Mathématiques</ion-select-option>
+                        <ion-select-option value="Biologie">Biologie</ion-select-option>
+                        <ion-select-option value="Physique">Physique</ion-select-option>
+                        <ion-select-option value="Chimie">Chimie</ion-select-option>
+                        <ion-select-option value="Français">Français</ion-select-option>
+                        <ion-select-option value="Philosophie">Philosophie</ion-select-option>
+                        <ion-select-option value="Histoire et Geographie">Histoire & Geographie</ion-select-option>
+                        <ion-select-option value="ECM">ECM</ion-select-option>
+                        <ion-select-option value="Comptabilité">Comptabilité</ion-select-option>
+                        <ion-select-option value="Economie">Economie</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item *ngIf="Profile==='TUTEUR'">
+                    <span>Ancienneté:</span>
+                    <ion-input type="number" placeholder="exemple: 2" name="anciennete" ngModel required></ion-input>
+                </ion-item>
+
+                <ion-item *ngIf="Profile"> 
                     <ion-icon name="key-outline"></ion-icon>
                     <ion-input type="password" placeholder="Mot de passe" name="password" ngModel required></ion-input>
                     <ion-icon name="eye" item-right (click)="togglePasswordMode()"></ion-icon>
                 </ion-item>
-                <!--
-                <ion-item>
+                
+                <ion-item *ngIf="Profile">
                     <ion-icon name="key-outline"></ion-icon>
-                    <ion-input placeholder="Confirmer mot de passe"></ion-input>
-                </ion-item> -->
-                <ion-input type="submit" value="S'inscrire" class="btnInscrit"></ion-input>
+                    <ion-input placeholder="Confirmer mot de passe" [(ngModel)]="confirmer" required></ion-input>
+                    <ion-icon name="eye" item-right (click)="togglePasswordMode()"></ion-icon>
+                </ion-item>
+                <ion-input type="submit" value="S'inscrire" class="btnInscrit" *ngIf="Profile"></ion-input>
+                
+                <ion-text color="gray" size="small" *ngIf="!Profile">Veuilez commencez par choisir un profile</ion-text>
             </div>
         </div>
     </form><br>
-    <div style=" margin-top: 30px;" class="ion-text-center">
-        <p>Vous avez un compte? <a href="login">connectez-vous</a></p>
+    <div style=" margin-top: 30px;" >
+        <p style="font-size: small;">Vous avez un compte? <a routerLink="/login">connectez-vous</a></p>
     </div>
 </ion-content>

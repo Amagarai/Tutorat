@@ -3,8 +3,8 @@
 
         <div class="notification">
             <a class="note">
-                <ion-icon color="primary" name="notifications" size="large" routerLink='/notification'></ion-icon>
-                <ion-badge color="danger" slot="end" class="badge">4</ion-badge>
+                <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
+                <ion-badge color="danger" slot="end" class="badge" *ngIf="badge">{{badge}}</ion-badge>
             </a>
         </div>
 
@@ -20,7 +20,6 @@
                 <ion-card-header>
                     <div class="content-card">
                         <img src="https://www.educol.net/image-en-classe-dm30219.jpg">
-                        <!-- <img src="assets/images/afrique.jpg"> -->
                     </div>
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
@@ -44,18 +43,13 @@
     </div>
     <div class="content ion-text-center">
         <button style="width: 80%;" class="fonction" routerLink="/list-initier">
-      <ion-label>Demande initier</ion-label>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </button>
+            <ion-label>Demande initier</ion-label>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
 
-        <button style="width: 80%;" class="fonction">
-      <ion-label>Demande rejeter</ion-label>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </button>
-
-        <button style="width: 80%;" class="fonction" routerLink="/search">
-      <ion-label >Rechercher</ion-label>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </button>
+        <button style="width: 80%;" class="fonction" routerLink="/tabs">
+            <ion-label>Demande rejeter</ion-label>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
     </div>
 </ion-content>

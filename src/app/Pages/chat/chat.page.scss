@@ -1,0 +1,26 @@
+ion-content{
+    ion-avatar {
+        height: 45px;
+        width: 45px;
+    }
+    .flex_box{
+        display: flex;
+        justify-content: space-between;
+        h3 {
+        font-weight: 700;
+        font-size: 15px;
+        }
+        ion-note {
+            font-size: 13px;
+        }
+    }
+    p{
+        color: gray;
+        .text-icon {
+        font-size: 20px;
+        margin-bottom: -6px;
+        }
+    }
+    
+    
+}

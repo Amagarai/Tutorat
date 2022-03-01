@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Discussion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item detail *ngFor="let item of Liste" routerLink="/detail-chat/{{item.envoyeur.id}}">
+    <ion-avatar slot="start" >
+      <img src="../../../assets/images/person.png">
+    </ion-avatar>
+    <ion-label>
+      <div class="flex_box">
+        <h3>{{item.envoyeur.prenom}} {{item.envoyeur.nom}}</h3>
+        <ion-note slot="end">12:54</ion-note>
+      </div>
+      <p><ion-icon class="text-icon" name="checkmark-done-outline" color="primary"></ion-icon> j'y arrive pas...</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

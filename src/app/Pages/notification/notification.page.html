@@ -3,7 +3,7 @@
 <ion-content>
   <div class="head">
     <ion-buttons slot="start" color="light">
-      <ion-back-button defaultHref="accueil" color="light" routerLink="/acceuil"></ion-back-button>&nbsp;
+      <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
     </ion-buttons>
     <span> Notification</span>
   </div>
@@ -31,7 +31,7 @@
       </p>
     </ion-label>
 
-    <ion-button mode="ios" slot="end" color="primary">
+    <ion-button mode="ios" slot="end" color="primary" (click)="Initier(item.id, item)">
       Inititier
     </ion-button>
   </ion-item>

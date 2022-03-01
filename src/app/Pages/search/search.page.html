@@ -1,38 +1,36 @@
 
-<ion-content [fullscrean]="true">
-  <div class="back" style="margin-top: 12px; position: absolute;">
-    <ion-buttons slot="start" color="light">
-      <ion-back-button defaultHref="accueil" color="light" routerLink="/acceuil"></ion-back-button>&nbsp;
-    </ion-buttons>
-  </div>
+<ion-content [fullscrean]="true">  
   <div class="head">
     <form #data="ngForm" (ngSubmit)="search(data)">
       <ion-item class="matiere">
         <ion-label>Ville</ion-label>
-        <ion-select value="03" cancelText="Annuler" name="addresse" ngModel>
+        <ion-select  cancelText="Annuler" name="addresse" ngModel required>
           <ion-select-option value="Bamako">Bamako</ion-select-option>
-          <ion-select-option value="02">Kayes</ion-select-option>
-          <ion-select-option value="03">Koulikoro</ion-select-option>
-          <ion-select-option value="04">Sikasso</ion-select-option>
-          <ion-select-option value="05">Segou</ion-select-option>
-          <ion-select-option value="06">Mopti</ion-select-option>
-          <ion-select-option value="07">Tombouctou</ion-select-option>
-          <ion-select-option value="07">Goa</ion-select-option>
-          <ion-select-option value="07">Kidal</ion-select-option>
-        </ion-select>
+          <ion-select-option value="Kayes">Kayes</ion-select-option>
+          <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+          <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+          <ion-select-option value="Segou">Segou</ion-select-option>
+          <ion-select-option value="Mopti">Mopti</ion-select-option>
+          <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+          <ion-select-option value="Goa">Goa</ion-select-option>
+          <ion-select-option value="Kidal">Kidal</ion-select-option>
+      </ion-select>
       </ion-item>
   
       <ion-item class="matiere">
         <ion-label>Matière</ion-label>
-        <ion-select value="03" cancelText="Annuler" name="specialite" ngModel>
-          <ion-select-option value="math">math</ion-select-option>
-          <ion-select-option value="02">Biologie</ion-select-option>
-          <ion-select-option value="03">Physique</ion-select-option>
-          <ion-select-option value="04">Chimie</ion-select-option>
-          <ion-select-option value="05">Philosophie</ion-select-option>
-          <ion-select-option value="06">Histoire</ion-select-option>
-          <ion-select-option value="07">Economie</ion-select-option>
-        </ion-select>
+        <ion-select cancelText="Annuler" name="specialite" ngModel required>
+          <ion-select-option value="Mathématiques">Mathématiques</ion-select-option>
+          <ion-select-option value="Biologie">Biologie</ion-select-option>
+          <ion-select-option value="Physique">Physique</ion-select-option>
+          <ion-select-option value="Chimie">Chimie</ion-select-option>
+          <ion-select-option value="Français">Français</ion-select-option>
+          <ion-select-option value="Philosophie">Philosophie</ion-select-option>
+          <ion-select-option value="Histoire et Geographie">Histoire & Geographie</ion-select-option>
+          <ion-select-option value="ECM">ECM</ion-select-option>
+          <ion-select-option value="Comptabilité">Comptabilité</ion-select-option>
+          <ion-select-option value="Economie">Economie</ion-select-option>
+      </ion-select>
       </ion-item>
       
       <ion-button class="btn" type="submit">

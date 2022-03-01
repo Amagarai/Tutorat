@@ -1,19 +1,9 @@
 ion-content {
     width: calc(100% + 15px);
     --background: #F5F5F3;
-    .content {
-        .float {
-            img {
-                height: 130px;
-                float: right;
-                margin-right: -60px;
-                margin-bottom: 0px;
-            }
-        }
-    }
     .logo {
         img {
-            margin-top: 30px;
+            margin-top: 40px;
             height: 100px;
             margin-left: 65px;
         }

@@ -33,7 +33,7 @@ public getType() {
         return console.log('erreur');
       }else{
         localStorage.setItem('logInfo',JSON.stringify(this.login))
-        this.route.navigate(['acceuil']);
+        this.route.navigate(['tabs']);
       }
       
     });
