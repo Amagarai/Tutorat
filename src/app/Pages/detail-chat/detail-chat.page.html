@@ -1,20 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{Envoyeur?.prenom}} {{Envoyeur?.nom}}</ion-title>
+    <ion-title>{{Envoyeur?.envoyeur?.prenom}} {{Envoyeur?.envoyeur?.nom}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
     <ion-row  *ngFor="let item of Liste">
-      <ion-col size="9" *ngIf="item.envoyeur.id===Envoyeur.id" class="message other-message">
+      <ion-col size="9" *ngIf="item.envoyeur.id===Envoyeur?.envoyeur?.id" class="message other-message">
         <span>{{item.contenu}}</span><br>
         <div class="time" text-right>
           {{item.heure }} 
         </div>
       </ion-col>
 
-      <ion-col offset="3" size="9" *ngIf="item.envoyeur.id!==Envoyeur.id"class="message my-message">
+      <ion-col offset="3" size="9" *ngIf="item.envoyeur.id!==Envoyeur?.envoyeur?.id"class="message my-message">
         <span>{{item.contenu}}</span><br> 
         <div class="time" text-right>
           {{item.heure}}

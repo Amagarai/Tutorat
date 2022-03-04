@@ -24,8 +24,11 @@ export class DetailChatPage implements OnInit {
     //console.log('data : '+this.data[0].id);
     this.id= this.route.snapshot.params['id'];
     console.log(this.id);
-    this.service.DetailUsers(this.id).subscribe(donne =>{
-      this.Envoyeur= donne;  
+    
+    this.service.DemandeById(this.id).subscribe(donne =>{
+      this.Envoyeur= donne; 
+      console.log("---------------------------------"+this.Envoyeur.id);
+       
     })
 
 
@@ -33,18 +36,14 @@ export class DetailChatPage implements OnInit {
   }
 
   RecupChatList(){
-    return this.service.RecupChat(this.data[0].id, this.id).subscribe(donne =>{
+    return this.service.RecupChat(this.id).subscribe(donne =>{
       this.Liste = donne;
-      this.service.RecupChat(this.id, this.data[0].id).subscribe(res =>{
-        this.saListe= res;
-        console.log(this.saListe);
-      })
       console.log(donne)
     })
   }
 
   addChat(chat: any){
-    return this.service.AddChat(chat.value, this.data[0].id, this.id).subscribe(donne =>{
+    return this.service.AddChat(chat.value, this.data[0].id, this.Envoyeur.envoyeur.id, this.Envoyeur.id).subscribe(donne =>{
       this.RecupChatList();
       this.contenu='';
       console.log(donne)

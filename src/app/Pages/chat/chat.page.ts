@@ -18,15 +18,13 @@ export class ChatPage implements OnInit {
     this.data= JSON.parse(localStorage["logInfo"]);
     console.log(this.data[0].id);
     this.GetInitList();
-    this.id= this.route.snapshot.params['id'];
-    console.log(this.id);
     
   }
   GetInitList(){
     return this.service.ListInitier(this.data[0].id).subscribe(donne =>{
       this.Liste = donne;
       console.log(this.Liste);
-      
+       
     })
   }
 

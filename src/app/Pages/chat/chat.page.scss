@@ -8,11 +8,9 @@ ion-content{
         justify-content: space-between;
         h3 {
         font-weight: 700;
-        font-size: 15px;
+        font-size: 13px;
         }
-        ion-note {
-            font-size: 13px;
-        }
+        
     }
     p{
         color: gray;
@@ -20,6 +18,11 @@ ion-content{
         font-size: 20px;
         margin-bottom: -6px;
         }
+    }
+    ion-note {
+        font-size: 13px;
+        display: block;
+        float: right;
     }
     
     

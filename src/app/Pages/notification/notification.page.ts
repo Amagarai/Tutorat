@@ -9,6 +9,7 @@ import { ServicesService } from 'src/app/api/services.service';
 export class NotificationPage implements OnInit {
   data:  any;
   list: any;
+  mode : number = 1;
   constructor( private service: ServicesService) { 
     
   }
@@ -32,6 +33,7 @@ export class NotificationPage implements OnInit {
     const a= JSON.parse(b)
     return this.service.InitierDemande(id, a).subscribe(donne =>{
       console.log(donne) 
+      this.GetData();
     })
   }
 

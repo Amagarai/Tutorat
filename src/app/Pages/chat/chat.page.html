@@ -6,16 +6,16 @@
 
 <ion-content>
 
-  <ion-item detail *ngFor="let item of Liste" routerLink="/detail-chat/{{item.envoyeur.id}}">
+  <ion-item detail *ngFor="let item of Liste" routerLink="/detail-chat/{{item.id}}">
     <ion-avatar slot="start" >
       <img src="../../../assets/images/person.png">
     </ion-avatar>
     <ion-label>
       <div class="flex_box">
         <h3>{{item.envoyeur.prenom}} {{item.envoyeur.nom}}</h3>
-        <ion-note slot="end">12:54</ion-note>
       </div>
-      <p><ion-icon class="text-icon" name="checkmark-done-outline" color="primary"></ion-icon> j'y arrive pas...</p>
+      <p class="ion-text-wrap"><ion-icon class="text-icon" name="checkmark-done-outline" color="primary"></ion-icon> Demande en {{item.matiere}}</p>
+      <ion-note slot="end">{{item.date | date: short}}</ion-note>
     </ion-label>
   </ion-item>
 </ion-content>

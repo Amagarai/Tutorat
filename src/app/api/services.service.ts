@@ -60,6 +60,15 @@ export class ServicesService {
     return this.http.post(this.host+'demande/send/'+from+'/'+to+'/'+matiere, demande);
   }
 
+  DemandeById(id : number){
+    return this.http.get(this.host+'demande/'+id)
+  }
+
+  //permet de savoir si la demande existe
+  DemandeExist(from: number, to: number, matiere: string){
+    return this.http.get(this.host+'demande/ifexist/'+from+'/'+to+'/'+matiere);
+  }
+
   InitierDemande(id: number, demande: any){
     return this.http.put(this.host+'demande/accepter/'+id, demande);
   }
@@ -77,7 +86,7 @@ export class ServicesService {
   }
 
 
-  //----------------------Le nombre totale de notification-------------------------
+  //---------------------------------Le nombre totale de notification-------------------------
 
   ReinitilaiserNbreDemande(id: number, user: any){
     return this.http.put(this.host+'notif/total/'+id, user);
@@ -87,6 +96,7 @@ export class ServicesService {
   //---------------------------------Deconnexion et disponibiliter-------------------------------------------------
   Logout(){
     localStorage.removeItem('logInfo');
+    localStorage.clear();
     this.route.navigate(['login']);
   }
   Disponiblite(id: any, user : any){
@@ -95,12 +105,12 @@ export class ServicesService {
 
 
   //---------------------------------recuperation des chats-------------------------------------------
-  RecupChat(from: number, to: number){
-    return this.http.get(this.host+'chat/liste/'+from+'/'+to);
+  RecupChat(id: number){
+    return this.http.get(this.host+'chat/liste/'+id);
   }
 
-  AddChat(chat: any, from: number, to: number){
-    return this.http.post(this.host+'chat/add/'+from+'/'+to, chat);
+  AddChat(chat: any, from: number, to: number, demande : number){
+    return this.http.post(this.host+'chat/add/'+from+'/'+to+'/'+demande, chat);
   }
   
 }

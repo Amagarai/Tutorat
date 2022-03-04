@@ -33,17 +33,20 @@ export class RegisterPage implements OnInit {
     console.log(b.profile);
     if(b.profile=='ECOLE'){
       return this.service.addEcole(b).subscribe(data =>{
+        ajouter.value.reset();
         console.log(data)
       })
     }
     if(b.profile=='TUTEUR'){
       return this.service.addTuteur(b).subscribe(data =>{
+        ajouter.value.reset();
         console.log(data);
       })
     }
 
     if(b.profile=='ELEVE'){
       return this.service.addEleve(b).subscribe(data =>{
+        ajouter.value.reset();
         console.log(data);
         
       })
@@ -51,11 +54,11 @@ export class RegisterPage implements OnInit {
 
     if(b.profile=='PARENT'){
       return this.service.addParent(b).subscribe(data =>{
+        ajouter.value.reset();
         console.log(data);
         
       })  
     }
-    ajouter.value.reset();
   }
  
   togglePasswordMode() {

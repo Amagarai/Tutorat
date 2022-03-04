@@ -31,8 +31,11 @@
       </p>
     </ion-label>
 
-    <ion-button mode="ios" slot="end" color="primary" (click)="Initier(item.id, item)">
+    <ion-button mode="ios" slot="end" color="primary" (click)="Initier(item.id, item)" *ngIf="item.initier===false">
       Inititier
+    </ion-button>
+    <ion-button mode="ios" slot="end" fill="clear" style="background-color: rgb(218, 218, 218); color:white;"  (click)="Initier(item.id, item)" *ngIf="item.initier===true" >
+      Desinititier
     </ion-button>
   </ion-item>
     

@@ -40,7 +40,7 @@
     
   </div>
 
-  <div class="content" *ngIf="mode===2">
+  <div class="content" *ngIf="list">
     <ion-list style="background-color: #F5F5F3;">
       <ion-item *ngFor="let item of list">
         <ion-avatar slot="start">
@@ -51,8 +51,8 @@
           <div class="align"> 
             <h3>{{item.addresse}}</h3>
             <p>
-              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" *ngIf="btn===1" slot="end">Demander</ion-button>
-              <ion-button fill="clear" (click)="RemoveDemande()" *ngIf="btn===2" slot="end" class="remove">Envoyer</ion-button>
+              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" *ngIf="!ifDemandeExist" slot="end">Demander</ion-button>
+              <ion-button fill="clear" (click)="RemoveDemande()" *ngIf="ifDemandeExist" slot="end" class="remove">Envoyer</ion-button>
             </p>
           </div>
         </ion-label>

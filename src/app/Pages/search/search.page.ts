@@ -9,10 +9,10 @@ import { ServicesService } from 'src/app/api/services.service';
 export class SearchPage implements OnInit {
 
   list: any;
-  mode: number = 1;
   data: any;
   demande: any;
   btn: number ;
+  ifDemandeExist: any;
 
   constructor(private service: ServicesService) { }
 
@@ -26,7 +26,6 @@ export class SearchPage implements OnInit {
     
     return this.service.searchTuteur(data.value.addresse, data.value.specialite).subscribe(resulat =>{
       this.list= resulat;
-      this.mode = 2;
       this.btn = 1;
       this.demande=JSON.stringify(data.value);
       console.log(resulat);
@@ -36,8 +35,14 @@ export class SearchPage implements OnInit {
   Send(id: number, matiere: string){
     this.btn = 2; 
     return this.service.EnvoyerDemande(this.data[0].id,id,matiere,this.demande).subscribe(donne =>{
-      
-      console.log(donne);
+      //this.DemandeExist(id, matiere)
+      console.log(donne);  
+    })
+  }
+
+  DemandeExist(id: number, matiere: string){
+    return this.service.DemandeExist(this.data[0].id,id,matiere).subscribe(demande =>{
+      this.ifDemandeExist= demande;
     })
   }
 
