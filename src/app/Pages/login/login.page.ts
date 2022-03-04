@@ -32,7 +32,8 @@ public getType() {
       if(this.login ==''){
         return console.log('erreur');
       }else{
-        localStorage.setItem('logInfo',JSON.stringify(this.login))
+        localStorage.setItem('logInfo',JSON.stringify(this.login));
+        data.reset();
         this.route.navigate(['tabs']);
       }
       

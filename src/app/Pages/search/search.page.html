@@ -49,7 +49,7 @@
         <ion-label>
           <h2>{{item.prenom}} {{item.nom}}</h2>
           <div class="align"> 
-            <h3>{{item.addresse}}</h3>
+            <h3>{{item.quartier}}</h3>
             <p>
               <ion-button fill="clear" (click)="Send(item.id, item.specialite)" *ngIf="!ifDemandeExist" slot="end">Demander</ion-button>
               <ion-button fill="clear" (click)="RemoveDemande()" *ngIf="ifDemandeExist" slot="end" class="remove">Envoyer</ion-button>

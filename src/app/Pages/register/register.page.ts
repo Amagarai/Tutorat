@@ -1,6 +1,7 @@
 import { ServicesService } from 'src/app/api/services.service';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,8 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public service: ServicesService
+    public service: ServicesService,
+    public route: Router
     )
   { }
 
@@ -33,20 +35,23 @@ export class RegisterPage implements OnInit {
     console.log(b.profile);
     if(b.profile=='ECOLE'){
       return this.service.addEcole(b).subscribe(data =>{
-        ajouter.value.reset();
+        ajouter.reset();
+        this.route.navigate(['login'])
         console.log(data)
       })
     }
     if(b.profile=='TUTEUR'){
       return this.service.addTuteur(b).subscribe(data =>{
-        ajouter.value.reset();
+        ajouter.reset();
+        this.route.navigate(['login'])
         console.log(data);
       })
     }
 
     if(b.profile=='ELEVE'){
       return this.service.addEleve(b).subscribe(data =>{
-        ajouter.value.reset();
+        ajouter.reset();
+        this.route.navigate(['login'])
         console.log(data);
         
       })
@@ -54,7 +59,8 @@ export class RegisterPage implements OnInit {
 
     if(b.profile=='PARENT'){
       return this.service.addParent(b).subscribe(data =>{
-        ajouter.value.reset();
+        ajouter.reset();
+        this.route.navigate(['login'])
         console.log(data);
         
       })  
