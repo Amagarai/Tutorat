@@ -10,13 +10,14 @@ export class NotificationPage implements OnInit {
   data:  any;
   list: any;
   mode : number = 1;
+  segment :  string = "reçu";
   constructor( private service: ServicesService) { 
     
   }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
-    console.log(this.data[0].id);
+    console.log("------------------"+this.data[0].profile);
     this.GetData()
   }
 
@@ -35,6 +36,12 @@ export class NotificationPage implements OnInit {
       console.log(donne) 
       this.GetData();
     })
+  }
+
+  Evenement(event: CustomEvent){
+    this.segment= event.detail.value
+    console.log(this.segment);
+    
   }
 
 }

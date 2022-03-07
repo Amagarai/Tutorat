@@ -5,26 +5,6 @@ ion-content{
         padding-bottom: 30px;
         border-bottom-left-radius: 40px;
         border-bottom-right-radius: 40px;
-        .notification{
-            height: 20px;
-            border-radius: 30px;
-            a{
-                float: right;
-                margin-top: 30px; 
-                margin-right: 15px;
-                border-radius: 50px;
-            }
-        }
-
-        .avatar{
-            background-color: #ffffff;
-            margin-top: 60px;
-            margin-left: 15px;
-            ion-avatar{
-                --border-radius: 40%;
-                margin-right: 2px;
-            }
-        }
 
         .cards{
             display: flex; 
@@ -45,6 +25,27 @@ ion-content{
        
     }
 
+    .notification{
+        height: 20px;
+        border-radius: 30px;
+        a{
+            float: right;
+            margin-top: 30px; 
+            margin-right: 15px;
+            border-radius: 50px;
+        }
+    }
+
+    .avatar{
+        background-color: #ffffff;
+        margin-top: 60px;
+        margin-left: 15px;
+        ion-avatar{
+            --border-radius: 40%;
+            margin-right: 2px;
+        }
+    }
+
     .content{
         margin-top: 20px;
         .fonction{
@@ -57,5 +58,9 @@ ion-content{
             margin-right: 30px;
             padding: 15px;
         }
+
+
+        
+        
     }
 }

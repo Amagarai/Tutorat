@@ -11,14 +11,16 @@ export class ChatPage implements OnInit {
 
   data: any;
   Liste: any;
+  Liste2 : any;
   id : number;
+  Tuteur : number;
   constructor(public service: ServicesService, public route : ActivatedRoute) { }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
     console.log(this.data[0].id);
     this.GetInitList();
-    
+    this.GetInitList2(); 
   }
   GetInitList(){
     return this.service.ListInitier(this.data[0].id).subscribe(donne =>{
@@ -28,4 +30,12 @@ export class ChatPage implements OnInit {
     })
   }
 
+  GetInitList2(){
+    return this.service.ListInitier2(this.data[0].id).subscribe(donne =>{
+      this.Liste2 = donne;
+      this.Tuteur = this.Liste2[0].envoyeur.id;
+      console.log(this.Liste2);
+       
+    })
+  }
 }

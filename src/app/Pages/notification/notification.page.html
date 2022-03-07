@@ -7,14 +7,23 @@
     </ion-buttons>
     <span> Notification</span>
   </div>
-  <ion-list>
+  <ion-segment [value]="segment" (ionChange)="Evenement($event)"  *ngIf="data[0].profile==='TUTEUR'">
+    <ion-segment-button value="reçu">
+      <ion-label style="font-size: 10px;">Demande reçu</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="envoyer">
+      <ion-label style="font-size: 10px;">Demande envoyer</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="segment==='reçu' && data[0].profile==='TUTEUR'">
    <ion-list-header>
      <ion-label>
        <strong>Nouveau (5)</strong> 
      </ion-label>
    </ion-list-header>
 
-   <ion-item *ngFor="let item of list">
+   <ion-item  *ngFor="let item of list">
     <ion-thumbnail slot="start" class="photo">
      <img src="../../../assets/images/afrique.jpg" alt="">
     </ion-thumbnail>
@@ -40,4 +49,6 @@
   </ion-item>
     
   </ion-list>
+
+    <p *ngIf="segment==='envoyer' || data[0].profile!=='TUTEUR'">envoyer</p>
 </ion-content>

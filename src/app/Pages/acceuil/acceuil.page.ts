@@ -14,6 +14,13 @@ export class AcceuilPage implements OnInit {
   badge: number;
   event= Event;
 
+  slideOpts = {
+    slidesPerView: 2.2,
+  };
+  slideOpts1 = {
+    slidesPerView: 2,
+  }
+
   constructor(public service: ServicesService, private route :Router){}
 
   ngOnInit() : void{

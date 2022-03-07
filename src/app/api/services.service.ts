@@ -46,8 +46,8 @@ export class ServicesService {
     return this.http.post(this.host+'add/parent', parent);
   }
 
-  searchTuteur(ville : any, spe: any){
-    return this.http.get(this.host+'search/'+ville+'/'+spe)
+  searchTuteur(ville : any, spe: any, niveau: any){
+    return this.http.get(this.host+'search/'+ville+'/'+spe+'/'+niveau)
   }
 
   getTuteurDemande(id: any){
@@ -72,10 +72,15 @@ export class ServicesService {
   InitierDemande(id: number, demande: any){
     return this.http.put(this.host+'demande/accepter/'+id, demande);
   }
-
+//------------------les deux listes initier serve a retourner la liste de chat
   ListInitier(id : number){
     return this.http.get(this.host+'demande/initier/'+id);
   }
+
+  ListInitier2(id : number){
+    return this.http.get(this.host+'demande/initier/to/'+id);
+  }
+//-------------------fin
 
   Accepter(id: any, demande: any){
     return this.http.put(this.host+'demande/aprouve/'+id, demande);

@@ -14,20 +14,22 @@ export class DetailChatPage implements OnInit {
   data: any;
   Envoyeur: any;
   Liste: any;
-  saListe: any;
+  ID: any;
   globaleChat: any;
+
 
   constructor(public route : ActivatedRoute, public service: ServicesService) { }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
-    //console.log('data : '+this.data[0].id);
+    this.ID = this.data[0].id;
+    console.log('----------------data : '+this.ID);
     this.id= this.route.snapshot.params['id'];
     console.log(this.id);
     
     this.service.DemandeById(this.id).subscribe(donne =>{
       this.Envoyeur= donne; 
-      console.log("---------------------------------"+this.Envoyeur.id);
+      console.log(this.Envoyeur);
        
     })
 

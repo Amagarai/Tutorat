@@ -14,7 +14,7 @@ export class RegisterPage implements OnInit {
   // mode: 1;
   ajouter: NgForm;
   body: any;
-  Profile: any;
+  profile: any;
   confirmer: any;
 
   constructor(

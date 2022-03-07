@@ -33,8 +33,8 @@ public getType() {
         return console.log('erreur');
       }else{
         localStorage.setItem('logInfo',JSON.stringify(this.login));
-        data.reset();
         this.route.navigate(['tabs']);
+        data.reset();
       }
       
     });

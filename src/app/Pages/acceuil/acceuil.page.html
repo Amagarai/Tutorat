@@ -1,5 +1,5 @@
 <ion-content>
-    <div class="header">
+    <div class="header" *ngIf="data[0].profile==='TUTEUR'">
 
         <div class="notification">
             <a class="note">
@@ -41,7 +41,7 @@
             </ion-card>
         </div>
     </div>
-    <div class="content ion-text-center">
+    <div class="content ion-text-center" *ngIf="data[0].profile==='TUTEUR'">
         <button style="width: 80%;" class="fonction" routerLink="/list-initier">
             <ion-label>Demande initier</ion-label>
             <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -51,5 +51,118 @@
             <ion-label>Demande rejeter</ion-label>
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
+    </div>
+
+    <!--------------------------------------------------Eleve design------------------------------------------------------------------ -->
+
+
+    <div class="eleve" *ngIf="data[0].profile==='ELEVE'">
+        <div class="notification">
+            <a class="note">
+                <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
+                <ion-badge color="danger" slot="end" class="badge" *ngIf="badge">{{badge}}</ion-badge>
+            </a>
+        </div>
+
+        <ion-item class="avatar" lines="none">
+            <ion-avatar routerLink="/profil">
+                <img src="../../../assets/images/logo.png" alt="" srcset="">
+            </ion-avatar>
+            <label> {{data[0]?.nom}}</label>
+        </ion-item>
+
+
+        <ion-grid class="ion-margin-top">
+            <ion-item lines="none" color="light">
+              <ion-label class="title">Tuteur de mathématique</ion-label>
+              <ion-button size="small" shape="round" color="primary">Voir plus</ion-button>
+            </ion-item>
+            <ion-row>
+              <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }" >
+                <ion-slide >
+                  <ion-card style="width: 160px; height: 150px;">
+                    <ion-card-header class="ion-no-padding">
+                        <img src="../../../assets/images/afrique.jpg"/> 
+                    </ion-card-header>
+                    <ion-card-content style="padding: 0%;">
+                        
+                        <ion-label style="margin-left: 1px;">
+                        Nom
+                        </ion-label>
+                        
+                        <p><ion-text color="tertiary"><ion-icon name="location"></ion-icon>Quartier</ion-text></p>
+                        <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
+                          
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
+
+                <ion-slide >
+                    <ion-card style="width: 160px; height: 150px;">
+                      <ion-card-header class="ion-no-padding">
+                          <img src="../../../assets/images/afrique.jpg"/> 
+                      </ion-card-header>
+                      <ion-card-content style="padding: 0%;">
+                          
+                          <ion-label style="margin-left: 1px;">
+                          Nom
+                          </ion-label>
+                          
+                          <p><ion-text color="tertiary"><ion-icon name="location"></ion-icon>Quartier</ion-text></p>
+                          <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
+                            
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-slide>
+              </ion-slides>
+
+            </ion-row>
+          </ion-grid>
+        
+          <ion-grid class="ion-margin-top">
+            <ion-item lines="none" color="light">
+                <ion-label class="title">Tuteur de Biologie</ion-label>
+                <ion-button size="small" shape="round" color="primary">Voir plus</ion-button>
+            </ion-item>
+            <ion-row>
+                <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }" >
+                    <ion-slide >
+                      <ion-card style="width: 160px; height: 150px;">
+                        <ion-card-header class="ion-no-padding">
+                            <img src="../../../assets/images/afrique.jpg"/> 
+                        </ion-card-header>
+                        <ion-card-content style="padding: 0%;">
+                            
+                            <ion-label style="margin-left: 1px;">
+                            Nom
+                            </ion-label>
+                            
+                            <p><ion-text color="tertiary"><ion-icon name="location"></ion-icon>Quartier</ion-text></p>
+                            <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
+                              
+                        </ion-card-content>
+                      </ion-card>
+                    </ion-slide>
+    
+                    <ion-slide >
+                        <ion-card style="width: 160px; height: 150px;">
+                          <ion-card-header class="ion-no-padding">
+                              <img src="../../../assets/images/afrique.jpg"/> 
+                          </ion-card-header>
+                          <ion-card-content style="padding: 0%;">
+                              
+                              <ion-label style="margin-left: 1px;">
+                              Nom
+                              </ion-label>
+                              
+                              <p><ion-text color="tertiary"><ion-icon name="location"></ion-icon>Quartier</ion-text></p>
+                              <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
+                                
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+                  </ion-slides>
+            </ion-row>
+          </ion-grid>
     </div>
 </ion-content>

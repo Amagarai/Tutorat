@@ -24,7 +24,7 @@ export class SearchPage implements OnInit {
   search(data: any){
     console.log('value'+ JSON.stringify(data.value) );
     
-    return this.service.searchTuteur(data.value.addresse, data.value.specialite).subscribe(resulat =>{
+    return this.service.searchTuteur(data.value.addresse, data.value.specialite, data.value.niveau).subscribe(resulat =>{
       this.list= resulat;
       this.btn = 1;
       this.demande=JSON.stringify(data.value);
