@@ -18,7 +18,7 @@ export class SearchPage implements OnInit {
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
-    console.log(this.data[0])
+    console.log(this.data[0]);
   }
 
   search(data: any){
@@ -35,7 +35,7 @@ export class SearchPage implements OnInit {
   Send(id: number, matiere: string){
     this.btn = 2; 
     return this.service.EnvoyerDemande(this.data[0].id,id,matiere,this.demande).subscribe(donne =>{
-      //this.DemandeExist(id, matiere)
+      // this.DemandeExist(id, matiere)
       console.log(donne);  
     })
   }
@@ -43,6 +43,8 @@ export class SearchPage implements OnInit {
   DemandeExist(id: number, matiere: string){
     return this.service.DemandeExist(this.data[0].id,id,matiere).subscribe(demande =>{
       this.ifDemandeExist= demande;
+      console.log(this.ifDemandeExist);
+      
     })
   }
 

@@ -46,6 +46,8 @@ export class ServicesService {
     return this.http.post(this.host+'add/parent', parent);
   }
 
+//-------------------------------search tuteur-------------------------------------------------------------- 
+
   searchTuteur(ville : any, spe: any, niveau: any){
     return this.http.get(this.host+'search/'+ville+'/'+spe+'/'+niveau)
   }
@@ -72,7 +74,7 @@ export class ServicesService {
   InitierDemande(id: number, demande: any){
     return this.http.put(this.host+'demande/accepter/'+id, demande);
   }
-//------------------les deux listes initier serve a retourner la liste de chat
+//------------------les deux listes initier serve a retourner la liste de chat------------------------------------
   ListInitier(id : number){
     return this.http.get(this.host+'demande/initier/'+id);
   }

@@ -20,6 +20,10 @@ const routes: Routes = [
         path: 'chat',
         loadChildren : () => import('../chat/chat.module').then(m => m.ChatPageModule)
       },
+      {
+        path: 'ecole',
+        loadChildren : () => import('../list-ecole/list-ecole.module').then(m => m.ListEcolePageModule)
+      },
       
       {
         path: '',

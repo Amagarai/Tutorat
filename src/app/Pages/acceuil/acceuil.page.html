@@ -1,6 +1,5 @@
 <ion-content>
     <div class="header" *ngIf="data[0].profile==='TUTEUR'">
-
         <div class="notification">
             <a class="note">
                 <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
@@ -14,6 +13,8 @@
             </ion-avatar>
             <label> {{data[0]?.nom}}</label>
         </ion-item>
+
+
 
         <div class="cards">
             <ion-card>
@@ -56,24 +57,27 @@
     <!--------------------------------------------------Eleve design------------------------------------------------------------------ -->
 
 
-    <div class="eleve" *ngIf="data[0].profile==='ELEVE'">
-        <div class="notification">
-            <a class="note">
-                <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
-                <ion-badge color="danger" slot="end" class="badge" *ngIf="badge">{{badge}}</ion-badge>
-            </a>
-        </div>
+    <div class="eleve" *ngIf="data[0].profile!=='TUTEUR'">
+        <div class="autre">
+            <div class="notification">
+                <a class="note">
+                    <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
+                    <ion-badge color="danger" slot="end" class="badge" *ngIf="badge">{{badge}}</ion-badge>
+                </a>
+            </div>
 
-        <ion-item class="avatar" lines="none">
-            <ion-avatar routerLink="/profil">
-                <img src="../../../assets/images/logo.png" alt="" srcset="">
-            </ion-avatar>
-            <label> {{data[0]?.nom}}</label>
-        </ion-item>
+            <ion-item class="avatar" lines="none">
+                <ion-avatar routerLink="/profil">
+                    <img src="../../../assets/images/logo.png" alt="" srcset="">
+                </ion-avatar>
+                <label> {{data[0]?.nom}}</label>
+            </ion-item>
+        </div>
+        
 
 
         <ion-grid class="ion-margin-top">
-            <ion-item lines="none" color="light">
+            <ion-item lines="none" color="light" class="test">
               <ion-label class="title">Tuteur de mathématique</ion-label>
               <ion-button size="small" shape="round" color="primary">Voir plus</ion-button>
             </ion-item>
@@ -120,7 +124,7 @@
           </ion-grid>
         
           <ion-grid class="ion-margin-top">
-            <ion-item lines="none" color="light">
+            <ion-item lines="none" color="light" class="test">
                 <ion-label class="title">Tuteur de Biologie</ion-label>
                 <ion-button size="small" shape="round" color="primary">Voir plus</ion-button>
             </ion-item>

@@ -9,7 +9,7 @@ import { ServicesService } from 'src/app/api/services.service';
 export class ListInitierPage implements OnInit {
 
   data : any;
-  liste: any;
+  Liste: any;
   constructor(public service : ServicesService) { }
 
   ngOnInit() {
@@ -19,22 +19,22 @@ export class ListInitierPage implements OnInit {
 
   ListeInitier(){
     return this.service.ListInitier(this.data[0].id).subscribe(donne =>{
-      this.liste=donne;
-      console.log(this.liste);
+      this.Liste=donne;
+      console.log(this.Liste);
       
     })
   }
 
   Accepter(id: number, demande: any){
-    return this.service.Accepter(this.data[0].id, demande).subscribe(donnee =>{
-      console.log(donnee);
+    console.log(id)
+    return this.service.Accepter(id, demande).subscribe(donnee =>{
+      this.ListeInitier();
     })
   }
 
   Decliner(id: number, demande: any){
-    return this.service.Decliner(this.data[0].id, demande).subscribe(donne =>{
-      console.log(donne);
-      
+    return this.service.Decliner(id, demande).subscribe(donne =>{
+      this.ListeInitier(); 
     })
   }
 

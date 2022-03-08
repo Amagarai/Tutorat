@@ -7,18 +7,19 @@
     </div>
 
   <ion-list>
-    <ion-item *ngFor="let item of liste">
-      <ion-label>
-        <h2>{{item.envoyeur.prenom}}  {{item.envoyeur.nom}}</h2>
-        <h3>{{item.matiere}}</h3>
-        <p>
-          <ion-button color="danger" (click)="Decliner(item.id, item)">Decliner</ion-button>
-          <ion-button color="primary" (click)="Accepter(item.id, item)">Accepter</ion-button>
-        </p>
-      </ion-label>
-    </ion-item>
+    <div *ngFor="let item of Liste">
+      <ion-item *ngIf="item.etat !=='DECLINER' && item.etat !=='ACCEPTER'">
+        <ion-label>
+          <h2>{{item.envoyeur.prenom}}  {{item.envoyeur.nom}}</h2>
+          <h3>{{item.matiere}}</h3>
+          <p>
+            <ion-button color="danger" (click)="Decliner(item.id, item)">Decliner</ion-button>
+            <ion-button color="primary" (click)="Accepter(item.id, item)">Accepter</ion-button>
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
   </ion-list>
-
   
 
 </ion-content>
