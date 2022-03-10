@@ -1,0 +1,39 @@
+ion-content{
+    --background: #B5B9BF;
+    width: calc(100% + 15px);
+    .card{
+        display: flex;
+        justify-content: space-between;
+
+        ion-card {
+            width: 120px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px 2px rgba(214, 214, 214, 0.16);
+            margin-top: 30px;
+        
+            ion-card-header {
+              img {
+                width: 100%;
+              }
+            }
+        
+            ion-card-content {
+                padding: 0%;
+              .name {
+                color: #364F6B;
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 5px;
+              }
+        
+              .location {
+                color: var(--ion-color-primary);
+                font-size: 12px;
+                margin-bottom: 3px;
+              }
+            }
+          }
+
+    }
+}
+

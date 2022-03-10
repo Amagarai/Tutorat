@@ -79,7 +79,7 @@
         <ion-grid class="ion-margin-top">
             <ion-item lines="none" color="light" class="test">
               <ion-label class="title">Tuteur de mathématique</ion-label>
-              <ion-button size="small" shape="round" color="primary">Voir plus</ion-button>
+              <ion-button size="small" shape="round" color="primary" routerLink="/voir-plus/{{data[0]?.addresse}}">Voir plus</ion-button>
             </ion-item>
             <ion-row>
               <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }" >

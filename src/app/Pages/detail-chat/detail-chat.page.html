@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title *ngIf="Envoyeur?.envoyeur?.id === ID">{{Envoyeur?.receveur?.prenom}} {{Envoyeur?.receveur?.nom}}</ion-title>
+    <ion-title *ngIf="Envoyeur?.receveur?.id === ID">{{Envoyeur?.receveur?.prenom}} {{Envoyeur?.receveur?.nom}}</ion-title>
     <ion-title *ngIf="Envoyeur?.envoyeur?.id !== ID">{{Envoyeur?.envoyeur?.prenom}} {{Envoyeur?.envoyeur?.nom}}</ion-title>
   </ion-toolbar>
 </ion-header>

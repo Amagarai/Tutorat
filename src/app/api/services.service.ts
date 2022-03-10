@@ -111,13 +111,20 @@ export class ServicesService {
   }
 
 
-  //---------------------------------recuperation des chats-------------------------------------------
+  //---------------------------------recuperation des chats-------------------------------------------------------------
   RecupChat(id: number){
     return this.http.get(this.host+'chat/liste/'+id);
   }
 
   AddChat(chat: any, from: number, to: number, demande : number){
     return this.http.post(this.host+'chat/add/'+from+'/'+to+'/'+demande, chat);
+  }
+
+
+  //-----------------------------------Recupertion des tuteurs en fonction de la personne connecter----------------------------------------------
+
+  RecupTuteurByVille(ville: string){
+    return this.http.get(this.host+'tuteur/'+ville);
   }
   
 }

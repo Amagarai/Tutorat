@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ServicesService } from 'src/app/api/services.service';
+
 
 @Component({
   selector: 'app-list-ecole',
@@ -8,7 +9,12 @@ import { ServicesService } from 'src/app/api/services.service';
 })
 export class ListEcolePage implements OnInit {
 
+ 
   Liste : any
+  columns = [{ name: 'nom' }, { name: 'addresse' }];
+  tableStyle = "bootstrap"
+  search: any;
+
   constructor(public service : ServicesService) { }
 
   ngOnInit() {
@@ -21,4 +27,5 @@ export class ListEcolePage implements OnInit {
       console.log(this.Liste); 
     })
   }
+
 }
