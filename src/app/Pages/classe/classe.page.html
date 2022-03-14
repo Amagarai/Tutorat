@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Classe</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="accueil" color="dark" routerLink="/tabs"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color: rgb(255, 255, 255); position: fixed; z-index: 1; width: 100%;">
+    <ion-segment [value]="segment" (ionChange)="Evenement($event)">
+    <ion-segment-button value="mesClasse">
+      <ion-label style="font-size: 10px;">Mes classes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="addClasse">
+      <ion-label style="font-size: 10px;">Creer une classe</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  </div>
+
+  <div class="mesClasse" style="margin-top: 60px;" *ngIf="segment==='mesClasse'">
+  
+    <ion-card class="ion-margin-bottom" *ngFor="let item of Liste">
+      <ion-card-header>
+        <ion-card-subtitle>{{item.nom}}</ion-card-subtitle>
+        <ion-card-title>{{item.matiere}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>{{item.heure}}H par semaine</p>
+        <p>Nombre d'eleve : ..</p>
+        <p>Créer le : {{item.createDate | date : short}}</p>
+        <div class="ion-text-center">
+        <ion-button size="small">Ajouter un eleve</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    
+    
+
+  </div>
+
+  <!-- --------------------------------------****Partie ajouter Classe*****---------------------------------------------------------------------- -->
+
+  <div class="addClasse" style="margin-top: 60px;" *ngIf="segment==='addClasse'">
+    <p class="ion-text-center"><strong>Nouvelle Classe</strong> </p>
+  
+    <form class="ion-text-center" #data="ngForm" (ngSubmit)="addClasse(data)">
+      <ion-input type="text" placeholder="Nom de la clase" name="nom" ngModel></ion-input>
+      <ion-input type="number" placeholder="Nombre d'heure par semaine" name="heure" ngModel></ion-input>
+      <ion-item class="matiere">
+        <ion-label>Matière</ion-label>
+        <ion-select cancelText="Annuler" name="matiere" ngModel required>
+          <ion-select-option value="Mathématiques">Mathématiques</ion-select-option>
+          <ion-select-option value="Biologie">Biologie</ion-select-option>
+          <ion-select-option value="Physique">Physique</ion-select-option>
+          <ion-select-option value="Chimie">Chimie</ion-select-option>
+          <ion-select-option value="Français">Français</ion-select-option>
+          <ion-select-option value="Philosophie">Philosophie</ion-select-option>
+          <ion-select-option value="Histoire et Geographie">Histoire & Geographie</ion-select-option>
+          <ion-select-option value="ECM">ECM</ion-select-option>
+          <ion-select-option value="Comptabilité">Comptabilité</ion-select-option>
+          <ion-select-option value="Economie">Economie</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button type="submit">Creer</ion-button>
+    </form>
+  </div>
+  
+</ion-content>

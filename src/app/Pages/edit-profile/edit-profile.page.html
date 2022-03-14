@@ -1,21 +1,21 @@
-<!-- <form style="height: 100%;"> -->
-  <ion-header>
-    <ion-toolbar>
-      <a routerLink="/profil" style="text-decoration: none; font-weight: 600; margin-left: 10px;">Annuler</a>
-      <a routerLink="/profil" style="text-decoration: none; font-weight: 600; display: block; float: right; margin-right: 10px;">Terminer</a>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+  <ion-toolbar>
+    <a routerLink="/profil" style="text-decoration: none; font-weight: 600; margin-left: 10px;">Annuler</a>
+    <a routerLink="/profil" style="text-decoration: none; font-weight: 600; display: block; float: right; margin-right: 10px;">Terminer</a>
+  </ion-toolbar>
+</ion-header>
   
   <ion-content>
+    <form action="">
       <div class="profile ion-text-center">
         <img src="../../../assets/images/afrique.jpg" alt="">
       </div>
       <p style="font-size: small; color: blue;" class="ion-text-center" >Modifier la photo de profile</p>
     
       <ion-grid>
-        <!-- ----------------------------------------Nom---------------  -->
+        <!-- ----------------------------------------Nom---H------------  -->
         <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
+          <ion-col size="3" class="io><>n-text-wrap">
             <label for="">Nom</label>
           </ion-col>
           <ion-col size="5">
@@ -134,9 +134,11 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+    </form>
+      
     
 
-    <button style="width: 80%;" class="fonction">
+    <button style="width: 80%;" class="fonction" routerLink="/update-pass">
       <ion-label>Modifier le mo de passe</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </button>

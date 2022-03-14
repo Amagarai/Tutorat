@@ -60,9 +60,8 @@
           <div class="align"> 
             <h3>{{item.quartier}}</h3>
             <p>
-              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" *ngIf="!ifDemandeExist" slot="end">Demander</ion-button>
-              <ion-button fill="clear" (click)="RemoveDemande()" *ngIf="ifDemandeExist" slot="end" class="remove">Envoyer</ion-button>
-              <ion-button fill="clear"  slot="end" class="remove">Envoyer</ion-button>
+              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end">Demander</ion-button>
+              <!-- <ion-button fill="clear" (click)="handleButtonClick()" slot="end" class="remove">Envoyer</ion-button> -->
             </p>
           </div>
         </ion-label>

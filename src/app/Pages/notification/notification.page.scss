@@ -11,8 +11,14 @@ ion-content{
         }
     }
 
+    ion-segment{
+        position: fixed;
+        z-index: 1;
+    }
+
     ion-list{
         padding: 0%;
+        margin-top: 48px;
         margin-bottom: 10vh;
         ion-item{
             margin: auto;

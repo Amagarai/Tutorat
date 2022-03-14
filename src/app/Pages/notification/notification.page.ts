@@ -41,7 +41,6 @@ export class NotificationPage implements OnInit {
   Evenement(event: CustomEvent){
     this.segment= event.detail.value
     console.log(this.segment);
-    
   }
 
 }

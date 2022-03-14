@@ -41,6 +41,7 @@
                 <ion-item *ngIf="profile==='TUTEUR'">
                     <ion-icon name="school-outline"></ion-icon>
                     <ion-input type="text" placeholder="Etablissement" name="etablissement" ngModel required></ion-input>
+                    
                 </ion-item>
 
                 <ion-item *ngIf="profile">
@@ -49,7 +50,7 @@
                 </ion-item>
 
                 <ion-item *ngIf="profile">       
-                    <ion-label>Ville</ion-label>
+                    <ion-label>Region</ion-label>
                     <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" ngModel required>
                         <ion-select-option value="Bamako">Bamako</ion-select-option>
                         <ion-select-option value="Kayes">Kayes</ion-select-option>
@@ -64,7 +65,7 @@
                 </ion-item>
 
                 <ion-item *ngIf="profile">
-                    <ion-icon name="call-outline"></ion-icon>
+                    <ion-icon name="home-outline"></ion-icon>
                     <ion-input placeholder="Quartier" name="quartier" ngModel required></ion-input>
                 </ion-item>
 

@@ -74,6 +74,18 @@ export class ServicesService {
   InitierDemande(id: number, demande: any){
     return this.http.put(this.host+'demande/accepter/'+id, demande);
   }
+
+  ListeDemandeRejeter(id: number){
+    return this.http.get(this.host+'demande/list/decliner/'+id)
+  }
+
+  ListDemandeAccepter(id : number){
+    return this.http.get(this.host+'demande/list/accepter/'+id);
+  }
+
+
+  
+
 //------------------les deux listes initier serve a retourner la liste de chat------------------------------------
   ListInitier(id : number){
     return this.http.get(this.host+'demande/initier/'+id);

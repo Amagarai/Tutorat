@@ -3,27 +3,27 @@
         <ion-buttons slot="start" color="light">
             <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
         </ion-buttons>
-        <span> Demandes initier</span>
+        <span> Demandes rejeter</span>
     </div>
 
-  <ion-list >
+  <ion-list *ngIf="!Liste">
     <div *ngFor="let item of Liste">
-      <ion-item *ngIf="item.etat !=='DECLINER' && item.etat !=='ACCEPTER'">
+      <ion-item>
         <ion-label>
           <h2>{{item.envoyeur.prenom}}  {{item.envoyeur.nom}}</h2>
           <h3>{{item.matiere}}</h3>
           <p>
-            <ion-button color="danger" (click)="Decliner(item.id, item)">Decliner</ion-button>
-            <ion-button color="primary" (click)="Accepter(item.id, item)">Accepter</ion-button>
+            <ion-button fill="clear" (click)="Accepter(item.id, item)" >Recontacter</ion-button>
           </p>
         </ion-label>
       </ion-item>
     </div>
   </ion-list>
-  
-  <div class="vide" *ngIf="Liste === ''" style="color: white;">
-    <img src="../../../assets/images/vide.png" alt="">
-    <p class="ion-text-center">Pas de demande Initier</p>
+
+  <div class="vide" *ngIf="Liste !== ''">
+   <img src="../../../assets/images/vide.png" alt="">
+   <p class="ion-text-center">Pas de demande rejeter</p>
   </div>
+  
 
 </ion-content>

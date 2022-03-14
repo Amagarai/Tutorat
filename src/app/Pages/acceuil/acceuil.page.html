@@ -17,27 +17,25 @@
 
 
         <div class="cards">
-            <ion-card>
+            <ion-card routerLink="/list-eleve">
                 <ion-card-header>
                     <div class="content-card">
-                        <img src="https://www.educol.net/image-en-classe-dm30219.jpg">
+                        <img src="../../../assets/images/eleve.png">
                     </div>
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
-                    <ion-card-title class="ion-margin-bottom" style="font-size: 10px; margin-bottom: 2px;">Mes élèves</ion-card-title>
-                    <ion-button fill="clear" style="font-size: 10px; background-color: blue; width: 67px; height: 15px; margin-bottom: 10px; color: white;" (click)="listerEl()">Voir plus</ion-button>
+                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px;">Mes demandes accepter</ion-card-title>                    
                 </ion-card-content>
             </ion-card>
 
-            <ion-card style="width: 150px;">
+            <ion-card style="width: 150px;" routerLink="/classe">
                 <ion-card-header>
                     <div class="content-card">
-                        <img src="https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-school-campus-university-campus-school-campus-png-image_478772.jpg" style="height: 90px; margin-bottom: 3px;">
+                        <img src="../../../assets/images/classe.jpg" style="height: 90px; margin-bottom: 3px;">
                     </div>
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
-                    <ion-card-title class="ion-margin-bottom" style="font-size: 10px; margin-bottom: 2px;">Mes écoles</ion-card-title>
-                    <ion-button fill="clear" style="font-size: 10px; background-color: blue; width: 67px; height: 15px; margin-bottom: 10px; color: white;" (click)="listerEc()">Voir plus</ion-button>
+                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px;">Mes classes</ion-card-title>
                 </ion-card-content>
             </ion-card>
         </div>
@@ -48,7 +46,7 @@
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
 
-        <button style="width: 80%;" class="fonction" routerLink="/tabs">
+        <button style="width: 80%;" class="fonction" routerLink="/list-rejeter">
             <ion-label>Demande rejeter</ion-label>
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>

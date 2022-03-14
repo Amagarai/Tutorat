@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/api/services.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginPage implements OnInit {
   login: any ={};
   password: any;
 
-  constructor(public service: ServicesService, public route: Router) { }
+  constructor(public service: ServicesService, public route: Router, public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -30,7 +31,7 @@ public getType() {
       this.login= donne;
      
       if(this.login ==''){
-        return console.log('erreur');
+        return this.presentAlert();
       }else{
         localStorage.setItem('logInfo',JSON.stringify(this.login));
         this.route.navigate(['tabs']);
@@ -38,6 +39,19 @@ public getType() {
       }
       
     });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Erreur',
+      // subHeader: 'Subtitle',
+      mode: 'ios',
+      cssClass: 'my-custom-class',
+      message: '<b>Votre login ou mot de pass incorrect !</b>',
+      buttons: ['OK']
+    });
+  
+    await alert.present();
   }
 
 }

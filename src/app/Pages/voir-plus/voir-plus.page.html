@@ -4,15 +4,26 @@
     <ion-buttons slot="start" >
         <ion-back-button defaultHref="accueil" style="color: #ffffff; margin-top: 5px;" routerLink="/tabs"></ion-back-button>
     </ion-buttons>
-    <ion-item line="none">
-      <h5>Les tuteurs de math de </h5>
-    </ion-item>
-    
   </div>
+
+  <ion-item>       
+    <ion-label>Ville</ion-label>
+    <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" value="Bamako" ngModel required>
+      <ion-select-option value="Bamako">Bamako</ion-select-option>
+      <ion-select-option value="Kayes">Kayes</ion-select-option>
+      <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+      <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+      <ion-select-option value="Segou">Segou</ion-select-option>
+      <ion-select-option value="Mopti">Mopti</ion-select-option>
+      <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+      <ion-select-option value="Goa">Goa</ion-select-option>
+      <ion-select-option value="Kidal">Kidal</ion-select-option>
+    </ion-select>
+  </ion-item>
   <div class="card" *ngFor="let item of Liste">
     <ion-card>
       <ion-card-header class="ion-no-padding">
-        <img src="../../../assets/images/banner.png" />
+        <img src="../../../assets/images/banner.png"/>
       </ion-card-header>
 
       <ion-card-content>

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ForgotPassPageRoutingModule } from './forgot-pass-routing.module';
+import { ListRejeterPageRoutingModule } from './list-rejeter-routing.module';
 
-import { ForgotPassPage } from './forgot-pass.page';
+import { ListRejeterPage } from './list-rejeter.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ForgotPassPageRoutingModule
+    ListRejeterPageRoutingModule
   ],
-  declarations: [ForgotPassPage]
+  declarations: [ListRejeterPage]
 })
-export class ForgotPassPageModule {}
+export class ListRejeterPageModule {}

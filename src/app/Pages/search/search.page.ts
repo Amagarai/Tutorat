@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { async } from '@angular/core/testing';
+import { alertController } from '@ionic/core';
 import { ServicesService } from 'src/app/api/services.service';
 
 @Component({
@@ -13,6 +15,10 @@ export class SearchPage implements OnInit {
   demande: any;
   btn: number ;
   ifDemandeExist: any;
+  donne : any;
+  matiereDeLaPersonneChoisi : any;
+  idDeLaPersonneChoisi : any;
+  searchValue: any;
 
   constructor(private service: ServicesService) { }
 
@@ -23,21 +29,30 @@ export class SearchPage implements OnInit {
 
   search(data: any){
     console.log('value'+ JSON.stringify(data.value) );
-    
     return this.service.searchTuteur(data.value.addresse, data.value.specialite, data.value.niveau).subscribe(resulat =>{
       this.list= resulat;
+      this.searchValue = data;
       this.btn = 1;
       this.demande=JSON.stringify(data.value);
-      console.log(resulat);
+      console.log(this.searchValue.value);
     })
   }
 
   Send(id: number, matiere: string){
-    this.btn = 2; 
-    return this.service.EnvoyerDemande(this.data[0].id,id,matiere,this.demande).subscribe(donne =>{
-      // this.DemandeExist(id, matiere)
-      console.log(donne);  
-    })
+    this.matiereDeLaPersonneChoisi = matiere;
+    this.idDeLaPersonneChoisi = id;
+    this.DemandeExist(id, matiere);
+    if(this.ifDemandeExist || this.ifDemandeExist !== ''){
+      return this.service.EnvoyerDemande(this.data[0].id,id,matiere,this.demande).subscribe(donne =>{
+        this.donne = donne;
+        this.ifDemandeExist = '';
+        this.search(this.searchValue);
+        console.log(donne);  
+      });
+    }else{
+      return this.handleButtonClick();
+    }
+    
   }
 
   DemandeExist(id: number, matiere: string){
@@ -46,6 +61,33 @@ export class SearchPage implements OnInit {
       console.log(this.ifDemandeExist);
       
     })
+  }
+
+  async handleButtonClick() {
+    const alert = await alertController.create({
+      message: 'Vous déja contacter ce tutueur par le passé voulez vous le recontacter?',
+      buttons: [
+        {
+          text: 'OUI',
+          cssClass: 'secondary',
+          handler: () => {
+            this.service.EnvoyerDemande(this.data[0].id,this.idDeLaPersonneChoisi,this.matiereDeLaPersonneChoisi,this.demande).subscribe(donne =>{
+              this.donne = donne,
+              this.ifDemandeExist = '';
+              this.search(this.searchValue); 
+              console.log(donne);  
+            })  
+          }
+        },
+
+        {
+          text: 'Non',
+          role: 'cancel',
+        }
+      ],
+    });
+
+    await alert.present();
   }
 
 }

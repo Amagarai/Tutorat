@@ -13,7 +13,7 @@ export class EditProfilePage implements OnInit {
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
-    console.log(this.data);
+    console.log(this.data[0]);
   }
 
 }

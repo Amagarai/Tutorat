@@ -20,10 +20,15 @@
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
  
-        <ion-item >
+        <ion-item *ngIf="data[0].profile==='TUTEUR'">
             <ion-label>Disponibilité</ion-label>
             <ion-toggle slot="end" name="dispnobilite" checked (ionChange)="Etat($event)" (click)="Disponibilite()"></ion-toggle>
         </ion-item>
+
+        <button style="width: 80%;" class="fonction" routerLink="/devenir-tuteur" *ngIf="data[0].profile !=='TUTEUR'">
+            <ion-label>devenir Tuteur</ion-label>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
 
         <button style="width: 80%; color: red;" class="fonction" (click)="LogOut()">
             <ion-label>Deconnexion</ion-label>
