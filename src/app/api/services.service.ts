@@ -138,5 +138,12 @@ export class ServicesService {
   RecupTuteurByVille(ville: string){
     return this.http.get(this.host+'tuteur/'+ville);
   }
+
+
+  //--------------------------------------------Notificaion des utilisateurs simples--------------------------------------------------------------------------------------
+
+  RecupNotif(id : number){
+    return this.http.get(this.host+'notification/liste/'+id);
+  }
   
 }

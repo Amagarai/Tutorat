@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>motDePass-oublier</ion-title>
+      <ion-back-button slot="start"></ion-back-button>
+      <ion-title>Service Tutorat</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <img src="../../../assets/images/page.png" alt="" style="display: flex; align-items: center; justify-content: center; margin-top: 60px;">
+<ion-content>
+  <ion-grid>
+      <ion-row>
+          <ion-card>
+              <div *ngIf="mode===1">
+                  <h2>Mot de pass oublié !!</h2><br>
+                  <ion-item lines="none">
+                      <ion-input type="text" placeholder="Entre votre login"></ion-input>
+                  </ion-item><br>
+                  <ion-button expand="block" shape="round" (click)="envoyer()">Envoyer</ion-button>
+              </div>
+              <div *ngIf="mode===2">
+                  <h3>Veuillez remplir les champs</h3>
+                  <ion-item lines="none">
+                      <ion-input type="text" placeholder="Nouveau password" required="ttst"></ion-input>
+                  </ion-item>
+                  <ion-item lines="none">
+                      <ion-input type="text" placeholder="Confirmer"></ion-input>
+                  </ion-item>
+                  <ion-button expand="block" shape="round" (click)="valider()">Valider</ion-button>
+              </div>
+              <div *ngIf="mode===3" class="test">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <p>Merci de vérifier votre compte</p>
+                  <ion-button (click)="btnOK()">Ok</ion-button>
+              </div>
+          </ion-card>
+      </ion-row>
+  </ion-grid>
+  <div class="card"></div>
 </ion-content>

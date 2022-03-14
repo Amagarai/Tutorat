@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mot-de-pass-oublier',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MotDePassOublierPage implements OnInit {
 
-  constructor() { }
+  mode=1;
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
 
+  envoyer(){
+    this.mode=2;
+  }
+  valider(){
+   this.mode=3;
+ }
+ btnOK(){
+   this.route.navigate(['login']);
+ }
+
 }
+

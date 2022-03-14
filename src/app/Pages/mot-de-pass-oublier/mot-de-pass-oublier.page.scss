@@ -1,0 +1,42 @@
+ion-content {
+    --background: #F5F5F3;
+    width: calc(100% + 15px);
+}
+
+ion-header ion-toolbar {
+    --background: #F5F5F3;
+}
+
+ion-card {
+    border-radius: 5%;
+    height: 250px;
+    width: 100%;
+    padding: 5px;
+    ion-item {
+        --background: rgb(231, 231, 231);
+        border-radius: 65px;
+        border: none;
+        padding: 0.8px;
+    }
+    h2 {
+        justify-content: center;
+        text-align: center;
+        color: red;
+    }
+    ion-icon {
+        color: green;
+        font-size: 10rem;
+        transition: 0.8s;
+    }
+    .test {
+        text-align: center;
+    }
+}
+
+.card {
+    height: 235px;
+    // background: rgb(226, 141, 4);
+    background-image: url("/assets/images/afrique.jpg");
+    background-size: cover;
+    border-radius: 2rem 2rem 0 0;
+}
