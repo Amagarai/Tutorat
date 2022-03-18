@@ -1,40 +1,36 @@
-ion-content{
+ion-content {
     //--background: #F5F5F3;
-    
-    .head{
+    .head {
         padding-top: 50px;
         padding-bottom: 60px;
-        background-color: #F5F5F3;
+        background-color: #4ba8e7;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
-        
-        .matiere{
+        .matiere {
             margin-top: 10px;
             margin-left: 10px;
             margin-right: 10px;
         }
-        .btn{
+        .btn {
             float: right;
             margin-right: 10px;
+            --background: orange;
+            --border-radius: 2rem;
         }
     }
-
-    .content{
+    .content {
         margin-top: 15px;
-
-        .align{
+        .align {
             display: flex;
             justify-content: space-between;
-
-            ion-button{
-                background: #3175e9;
+            ion-button {
+                background: #A0332C;
                 color: #fff;
                 border-radius: 15px;
             }
-            .remove{
+            .remove {
                 background-color: rgb(230, 230, 230);
             }
         }
     }
-    
 }

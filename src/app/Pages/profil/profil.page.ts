@@ -17,20 +17,21 @@ export class ProfilPage implements OnInit {
     console.log(" test "+this.data[0].disponibilite);
     this.json_convert = JSON.stringify(this.data[0]);
     console.log(JSON.parse(this.json_convert));
-    
+
   }
 
   Etat(event){
     console.log(event.detail.checked);
-    this.Disponibilite(); 
+    this.Disponibilite();
   }
 
   Disponibilite(){
      this.sercice.Disponiblite(this.data[0].id, this.json_convert.value).subscribe();
   }
-  
+
 
   LogOut(){
+    localStorage.removeItem('logInfo');
     this.sercice.Logout();
   }
 }

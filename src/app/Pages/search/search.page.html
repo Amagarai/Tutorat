@@ -1,75 +1,74 @@
+<ion-content>
+    <div class="head">
+        <form #data="ngForm" (ngSubmit)="search(data)">
+            <ion-item class="matiere">
+                <ion-label>Ville</ion-label>
+                <ion-select cancelText="Annuler" name="addresse" ngModel required>
+                    <ion-select-option value="Bamako">Bamako</ion-select-option>
+                    <ion-select-option value="Kayes">Kayes</ion-select-option>
+                    <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+                    <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+                    <ion-select-option value="Segou">Segou</ion-select-option>
+                    <ion-select-option value="Mopti">Mopti</ion-select-option>
+                    <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+                    <ion-select-option value="Goa">Goa</ion-select-option>
+                    <ion-select-option value="Kidal">Kidal</ion-select-option>
+                </ion-select>
+            </ion-item>
 
-<ion-content [fullscrean]="true">  
-  <div class="head">
-    <form #data="ngForm" (ngSubmit)="search(data)">
-      <ion-item class="matiere">
-        <ion-label>Ville</ion-label>
-        <ion-select  cancelText="Annuler" name="addresse" ngModel required>
-          <ion-select-option value="Bamako">Bamako</ion-select-option>
-          <ion-select-option value="Kayes">Kayes</ion-select-option>
-          <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
-          <ion-select-option value="Sikasso">Sikasso</ion-select-option>
-          <ion-select-option value="Segou">Segou</ion-select-option>
-          <ion-select-option value="Mopti">Mopti</ion-select-option>
-          <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
-          <ion-select-option value="Goa">Goa</ion-select-option>
-          <ion-select-option value="Kidal">Kidal</ion-select-option>
-      </ion-select>
-      </ion-item>
-  
-      <ion-item class="matiere">
-        <ion-label>Matière</ion-label>
-        <ion-select cancelText="Annuler" name="specialite" ngModel required>
-          <ion-select-option value="Mathématiques">Mathématiques</ion-select-option>
-          <ion-select-option value="Biologie">Biologie</ion-select-option>
-          <ion-select-option value="Physique">Physique</ion-select-option>
-          <ion-select-option value="Chimie">Chimie</ion-select-option>
-          <ion-select-option value="Français">Français</ion-select-option>
-          <ion-select-option value="Philosophie">Philosophie</ion-select-option>
-          <ion-select-option value="Histoire et Geographie">Histoire & Geographie</ion-select-option>
-          <ion-select-option value="ECM">ECM</ion-select-option>
-          <ion-select-option value="Comptabilité">Comptabilité</ion-select-option>
-          <ion-select-option value="Economie">Economie</ion-select-option>
-      </ion-select>
-      </ion-item>
+            <ion-item class="matiere">
+                <ion-label>Matière</ion-label>
+                <ion-select cancelText="Annuler" name="specialite" ngModel required>
+                    <ion-select-option value="Mathématiques">Mathématiques</ion-select-option>
+                    <ion-select-option value="Biologie">Biologie</ion-select-option>
+                    <ion-select-option value="Physique">Physique</ion-select-option>
+                    <ion-select-option value="Chimie">Chimie</ion-select-option>
+                    <ion-select-option value="Français">Français</ion-select-option>
+                    <ion-select-option value="Philosophie">Philosophie</ion-select-option>
+                    <ion-select-option value="Histoire et Geographie">Histoire & Geographie</ion-select-option>
+                    <ion-select-option value="ECM">ECM</ion-select-option>
+                    <ion-select-option value="Comptabilité">Comptabilité</ion-select-option>
+                    <ion-select-option value="Economie">Economie</ion-select-option>
+                </ion-select>
+            </ion-item>
 
-      <ion-item class="matiere">
-        <ion-label>Niveau</ion-label>
-        <ion-select interface="action-sheet" cancelText="Annuler" name="niveau" ngModel required>
-            <ion-select-option value="1er cycle">1er cycle</ion-select-option>
-            <ion-select-option value="2e cycle">2e cycle</ion-select-option>
-            <ion-select-option value="Lycée">Lycée</ion-select-option>
-        </ion-select>
-      </ion-item>
-      
-      <ion-button class="btn" type="submit">
-        Rechercher
-      </ion-button>
-    </form>
-    
-  </div>
+            <ion-item class="matiere">
+                <ion-label>Niveau</ion-label>
+                <ion-select interface="action-sheet" cancelText="Annuler" name="niveau" ngModel required>
+                    <ion-select-option value="1er cycle">1er cycle</ion-select-option>
+                    <ion-select-option value="2e cycle">2e cycle</ion-select-option>
+                    <ion-select-option value="Lycée">Lycée</ion-select-option>
+                </ion-select>
+            </ion-item>
 
-  <div class="content" *ngIf="list">
-    <ion-list style="background-color: #F5F5F3;">
-      <ion-item *ngFor="let item of list">
-        <ion-avatar slot="start">
-          <img src="../../../assets/images/person.png" />
-        </ion-avatar>
-        <ion-label>
-          <h2>{{item.prenom}} {{item.nom}}</h2>
-          <div class="align"> 
-            <h3>{{item.quartier}}</h3>
-            <p>
-              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end">Demander</ion-button>
-              <!-- <ion-button fill="clear" (click)="handleButtonClick()" slot="end" class="remove">Envoyer</ion-button> -->
-            </p>
-          </div>
-        </ion-label>
-      </ion-item>
+            <ion-button class="btn" type="submit">
+                Rechercher
+            </ion-button>
+        </form>
 
-      
-    </ion-list>
+    </div>
 
-    
-  </div>
+    <div class="content" *ngIf="list">
+        <ion-list style="background-color: #F5F5F3;">
+            <ion-item *ngFor="let item of list">
+                <ion-avatar slot="start">
+                    <img src="../../../assets/images/person.png" />
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{item.prenom}} {{item.nom}}</h2>
+                    <div class="align">
+                        <h3>{{item.quartier}}</h3>
+                        <p>
+                            <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end">Demander</ion-button>
+                            <!-- <ion-button fill="clear" (click)="handleButtonClick()" slot="end" class="remove">Envoyer</ion-button> -->
+                        </p>
+                    </div>
+                </ion-label>
+            </ion-item>
+
+
+        </ion-list>
+
+
+    </div>
 </ion-content>

@@ -10,34 +10,36 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/ban-types
-  affichePassword: Boolean = true;
-  login: any ={};
-  password: any;
+  showPassword= false;
+  passwordToggleIcon= 'eye';
+  login: any ='';
+  password: any= '';
+  contenu: '';
+  delta: any='';
 
   constructor(public service: ServicesService, public route: Router, public alertController: AlertController) { }
 
   ngOnInit() {
   }
-  public toggleTextPassword(): void{
-    // eslint-disable-next-line eqeqeq
-    this.affichePassword = (this.affichePassword==true)?false:true;
+toggleTextPassword(): void{
+this.showPassword=!this.showPassword;
+if(this.passwordToggleIcon=='eye'){
+  this.passwordToggleIcon='eye-off';
+}else{
+  this.passwordToggleIcon='eye';
 }
-public getType() {
-    return this.affichePassword ? 'password' : 'text';
 }
-
   loginPass(data){
     this.service.loginPassword(data.value.numero, data.value.password).subscribe(donne =>{
-      this.login= donne;
-     
-      if(this.login ==''){
+      this.delta= donne;
+
+      if(this.delta ==''){
         return this.presentAlert();
       }else{
-        localStorage.setItem('logInfo',JSON.stringify(this.login));
+        localStorage.setItem('logInfo',JSON.stringify(this.delta));
         this.route.navigate(['tabs']);
-        data.reset();
       }
-      
+       data.reset();
     });
   }
 
@@ -47,10 +49,10 @@ public getType() {
       // subHeader: 'Subtitle',
       mode: 'ios',
       cssClass: 'my-custom-class',
-      message: '<b>Votre login ou mot de pass incorrect !</b>',
+      message: '<b style="color:#FF0000">Votre login ou mot de pass incorrect !</b>',
       buttons: ['OK']
     });
-  
+
     await alert.present();
   }
 

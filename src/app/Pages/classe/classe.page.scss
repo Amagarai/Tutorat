@@ -1,7 +1,22 @@
-
-ion-input {
-    background: #fff;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
-    padding: 14px 18px;
-    margin: 13px 8px;
+ion-content {
+    ion-input {
+        background: rgb(207, 236, 243);
+        box-shadow: 0 6px 3px 0 rgba(0, 0, 0, .1);
+        border-radius: 50px;
+        padding: 5px;
+        margin-right: 8px 8px;
+    }
+    .head {
+        background-color: orange;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        ion-label {
+            font-size: 0.6rem;
+            color: white;
+        }
+    }
+    ion-button {
+        --background: #0f8eb4;
+    }
 }

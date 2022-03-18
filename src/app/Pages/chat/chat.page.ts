@@ -10,6 +10,7 @@ import { ServicesService } from 'src/app/api/services.service';
 export class ChatPage implements OnInit {
 
   data: any;
+  short: any;
   Liste: any;
   Liste2 : any;
   id : number;
@@ -20,13 +21,13 @@ export class ChatPage implements OnInit {
     this.data= JSON.parse(localStorage["logInfo"]);
     console.log(this.data[0].id);
     this.GetInitList();
-    this.GetInitList2(); 
+    this.GetInitList2();
   }
   GetInitList(){
     return this.service.ListInitier(this.data[0].id).subscribe(donne =>{
       this.Liste = donne;
       console.log(this.Liste);
-       
+
     })
   }
 
@@ -35,7 +36,7 @@ export class ChatPage implements OnInit {
       this.Liste2 = donne;
       this.Tuteur = this.Liste2[0].envoyeur.id;
       console.log(this.Liste2);
-       
+
     })
   }
 }

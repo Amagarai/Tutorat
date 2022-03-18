@@ -1,6 +1,6 @@
 ion-content {
-    --background: #F5F5F3;
-    width: calc(100% + 15px);
+    --background: #0f8eb4;
+    // width: calc(100% + 15px);
 }
 
 ion-header ion-toolbar {
@@ -12,6 +12,10 @@ ion-card {
     height: 250px;
     width: 100%;
     padding: 5px;
+    h2 {
+        color: red;
+        padding-top: 4px;
+    }
     ion-item {
         --background: rgb(231, 231, 231);
         border-radius: 65px;
@@ -21,15 +25,7 @@ ion-card {
     h2 {
         justify-content: center;
         text-align: center;
-        color: red;
-    }
-    ion-icon {
-        color: green;
-        font-size: 10rem;
-        transition: 0.8s;
-    }
-    .test {
-        text-align: center;
+        color: orangered;
     }
 }
 

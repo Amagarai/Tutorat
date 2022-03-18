@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  password_type = 'password';
-  // mode: 1;
+  showPassword= false;
+  passwordToggleIcon= 'eye';
   ajouter: NgForm;
   body: any;
   profile: any;
@@ -28,7 +28,7 @@ export class RegisterPage implements OnInit {
   }
 
   regisForm(ajouter: any){
-    
+
     //JSON forme d'ajou
     this.body = JSON.stringify(ajouter.value);
     const  b= JSON.parse(this.body);
@@ -53,7 +53,7 @@ export class RegisterPage implements OnInit {
         ajouter.reset();
         this.route.navigate(['login'])
         console.log(data);
-        
+
       })
     }
 
@@ -62,14 +62,18 @@ export class RegisterPage implements OnInit {
         ajouter.reset();
         this.route.navigate(['login'])
         console.log(data);
-        
-      })  
+
+      })
     }
   }
- 
-  togglePasswordMode() {
-    this.password_type = this.password_type === 'text' ? 'password' : 'text';
-  }
+  toggleTextPassword(): void{
+    this.showPassword=!this.showPassword;
+    if(this.passwordToggleIcon=='eye'){
+      this.passwordToggleIcon='eye-off';
+    }else{
+      this.passwordToggleIcon='eye';
+    }
+    }
 }
 
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { id } from '@swimlane/ngx-datatable';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -46,7 +47,7 @@ export class ServicesService {
     return this.http.post(this.host+'add/parent', parent);
   }
 
-//-------------------------------search tuteur-------------------------------------------------------------- 
+//-------------------------------search tuteur--------------------------------------------------------------
 
   searchTuteur(ville : any, spe: any, niveau: any){
     return this.http.get(this.host+'search/'+ville+'/'+spe+'/'+niveau)
@@ -84,7 +85,7 @@ export class ServicesService {
   }
 
 
-  
+
 
 //------------------les deux listes initier serve a retourner la liste de chat------------------------------------
   ListInitier(id : number){
@@ -138,12 +139,8 @@ export class ServicesService {
   RecupTuteurByVille(ville: string){
     return this.http.get(this.host+'tuteur/'+ville);
   }
-
-
-  //--------------------------------------------Notificaion des utilisateurs simples--------------------------------------------------------------------------------------
-
-  RecupNotif(id : number){
-    return this.http.get(this.host+'notification/liste/'+id);
-  }
-  
+   // Modifier les utilisateurs
+   updateParent(id: number, delta: any){
+     return this.http.put(this.host+'modify/tuteur/'+id, delta, {responseType:'text'});
+   }
 }

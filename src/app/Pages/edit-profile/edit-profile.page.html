@@ -1,149 +1,151 @@
 <ion-header>
-  <ion-toolbar>
-    <a routerLink="/profil" style="text-decoration: none; font-weight: 600; margin-left: 10px;">Annuler</a>
-    <a routerLink="/profil" style="text-decoration: none; font-weight: 600; display: block; float: right; margin-right: 10px;">Terminer</a>
-  </ion-toolbar>
+    <ion-toolbar>
+        <a routerLink="/profil" style="text-decoration: none; font-weight: 600; margin-left: 10px;">Annuler</a>
+        <a routerLink="/profil" style="text-decoration: none; font-weight: 600; display: block; float: right; margin-right: 10px;">Terminer</a>
+    </ion-toolbar>
 </ion-header>
-  
-  <ion-content>
-    <form action="">
-      <div class="profile ion-text-center">
-        <img src="../../../assets/images/afrique.jpg" alt="">
-      </div>
-      <p style="font-size: small; color: blue;" class="ion-text-center" >Modifier la photo de profile</p>
-    
-      <ion-grid>
-        <!-- ----------------------------------------Nom---H------------  -->
-        <ion-row>
-          <ion-col size="3" class="io><>n-text-wrap">
-            <label for="">Nom</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text"  name="nom" ngModel> {{data[0].nom}} </ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-        <!-- ----------------------------------------Prenom---------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Prenom</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="prenom" ngModel>{{data[0].prenom}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-        <!-- ----------------------------------------Profile------------------------------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Profile</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input  name="profile" ngModel>{{data[0].profile}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-    
-        <!-- ----------------------------------------Numero de telephone---------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="" >Numero</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="numero" ngModel>{{data[0].numero}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-         <!-- ----------------------------------------Site web-------------------------  -->
-         <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Site web</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="site" ngModel>{{data[0].site}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-        <!-- ----------------------------------------Etablissement-------------------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Etablissement</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="etablissement" ngModel>{{data[0].etablissement}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-        <!-- ----------------------------------------Ville-------------------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Ville</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="ville" ngModel>{{data[0].adresse}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-        <!-- ----------------------------------------Quartier-------------------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Quartier</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="quartier" ngModel> {{data[0].quartier}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-    
-        <!-- ----------------------------------------Specialite-------------------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Specialité</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="text" name="specialite" ngModel>{{data[0].specialite}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        
-        <!-- ----------------------------------------Ancienneté---------------------------  -->
-        <ion-row>
-          <ion-col size="3" class="ion-text-wrap">
-            <label for="">Ancienneté</label>
-          </ion-col>
-          <ion-col size="5">
-            <ion-item>
-              <ion-input type="number" name="nom" ngModel>{{data[0].anciennete}}</ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+
+<ion-content>
+    <form #delta="ngForm" (ngSubmit)="onSubmit(delta)">
+        <div class="profile ion-text-center">
+            <img src="../../../assets/images/web2.png" alt="">
+        </div>
+        <p style="font-size: small; color: blue;" class="ion-text-center">Modifier la photo de profile</p>
+
+        <ion-grid>
+            <!-- ----------------------------------------Nom---H------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Nom</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="nom" [(ngModel)]="data[0].nom"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Prenom---------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Prenom</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="prenom" [(ngModel)]="data[0].prenom"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Profile------------------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Profile</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="profile" [(ngModel)]="data[0].profile"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+
+            <!-- ----------------------------------------Numero de telephone---------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Numero</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="numero" [(ngModel)]="data[0].numero"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Site web-------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Site web</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="site" [(ngModel)]="data[0].site"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Etablissement-------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Etablissement</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="etablissement" [(ngModel)]="data[0].etablissement"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Ville-------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Ville</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="addresse" [(ngModel)]="data[0].addresse"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Quartier-------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Quartier</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="quartier" [(ngModel)]="data[0].quartier"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Specialite-------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Specialité</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="text" name="specialite" [(ngModel)]="data[0].specialite"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <!-- ----------------------------------------Ancienneté---------------------------  -->
+            <ion-row>
+                <ion-col size="3" class="ion-text-wrap">
+                    <label for="">Ancienneté</label>
+                </ion-col>
+                <ion-col size="5">
+                    <ion-item lines="none">
+                        <ion-input type="number" name="anciennete" [(ngModel)]="data[0].anciennete"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-button type="submit" color="secondary">Valider</ion-button>
+        </ion-grid>
+
     </form>
-      
-    
+
+
 
     <button style="width: 80%;" class="fonction" routerLink="/update-pass">
       <ion-label>Modifier le mo de passe</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </button>
-    
-  </ion-content>
+
+</ion-content>
 
 
 <!-- </form> -->

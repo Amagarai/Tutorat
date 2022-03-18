@@ -7,22 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./mot-de-pass-oublier.page.scss'],
 })
 export class MotDePassOublierPage implements OnInit {
-
-  mode=1;
+mode=1;
+contenu: '';
   constructor(private route: Router) { }
 
   ngOnInit() {
   }
-
   envoyer(){
     this.mode=2;
   }
   valider(){
-   this.mode=3;
+    this.route.navigate(['login']);
  }
- btnOK(){
-   this.route.navigate(['login']);
- }
-
 }
-

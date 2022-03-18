@@ -1,35 +1,35 @@
-
 <ion-content>
-  <div class="head">
-    <ion-buttons slot="start" >
-        <ion-back-button defaultHref="accueil" style="color: #ffffff; margin-top: 5px;" routerLink="/tabs"></ion-back-button>
-    </ion-buttons>
-  </div>
+    <div class="head">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="accueil" style="color: #ffffff; margin-top: 5px;" routerLink="/tabs"></ion-back-button>
+        </ion-buttons>
+    </div>
 
-  <ion-item>       
-    <ion-label>Ville</ion-label>
-    <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" value="Bamako" ngModel required>
-      <ion-select-option value="Bamako">Bamako</ion-select-option>
-      <ion-select-option value="Kayes">Kayes</ion-select-option>
-      <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
-      <ion-select-option value="Sikasso">Sikasso</ion-select-option>
-      <ion-select-option value="Segou">Segou</ion-select-option>
-      <ion-select-option value="Mopti">Mopti</ion-select-option>
-      <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
-      <ion-select-option value="Goa">Goa</ion-select-option>
-      <ion-select-option value="Kidal">Kidal</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <div class="card" *ngFor="let item of Liste">
-    <ion-card>
-      <ion-card-header class="ion-no-padding">
-        <img src="../../../assets/images/banner.png"/>
-      </ion-card-header>
+    <ion-item>
+        <ion-label>Ville</ion-label>
+        <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" value="Bamako" ngModel required>
+            <ion-select-option value="Bamako">Bamako</ion-select-option>
+            <ion-select-option value="Kayes">Kayes</ion-select-option>
+            <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+            <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+            <ion-select-option value="Segou">Segou</ion-select-option>
+            <ion-select-option value="Mopti">Mopti</ion-select-option>
+            <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+            <ion-select-option value="Goa">Goa</ion-select-option>
+            <ion-select-option value="Kidal">Kidal</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <div class="card" *ngFor="let item of Liste">
+        <ion-card>
+            <ion-card-header class="ion-no-padding">
+                <img src="../../../assets/images/web3.png" />
+            </ion-card-header>
 
-      <ion-card-content>
-        <h2 class="name ion-text-center">{{item.prenom}} {{item.nom}}</h2>
-        <p class="location ion-text-center" ><ion-icon name="location"></ion-icon>{{item.quartier}}</p>
-      </ion-card-content>
-    </ion-card>
-  </div>
+            <ion-card-content>
+                <h2 class="name ion-text-center">{{item.prenom}} {{item.nom}}</h2>
+                <p class="location ion-text-center">
+                    <ion-icon name="location"></ion-icon>{{item.quartier}}</p>
+            </ion-card-content>
+        </ion-card>
+    </div>
 </ion-content>

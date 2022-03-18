@@ -1,6 +1,6 @@
 ion-content {
     width: calc(100% + 15px);
-    --background: #B5B9BF;
+    --background: #0f8eb4;
     .head {
         display: flex;
         align-items: center;
@@ -11,19 +11,16 @@ ion-content {
             justify-content: center;
         }
     }
-
     p {
-        ion-button{
-           font-size: 10px; 
-           background-color: #B5B9BF;
-           color: #fff;
-           display: block;
-           float: right;
+        ion-button {
+            font-size: 10px;
+            background-color: #B5B9BF;
+            color: #fff;
+            display: block;
+            float: right;
         }
-        
     }
-
-    .vide{
+    .vide {
         margin-top: 30px;
         color: rgb(241, 240, 240);
     }

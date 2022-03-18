@@ -21,7 +21,7 @@ export class ListRejeterPage implements OnInit {
     return this.service.ListeDemandeRejeter(this.data[0].id).subscribe(donne =>{
       this.Liste = donne;
       console.log(this.Liste);
-      
+
     })
   }
 }

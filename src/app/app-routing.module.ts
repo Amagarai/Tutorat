@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./Pages/register/register.module').then( m => m.RegisterPageModule)
   },
- 
+
   {
     path: 'list-initier',
     loadChildren: () => import('./Pages/list-initier/list-initier.module').then( m => m.ListInitierPageModule)
@@ -43,7 +43,7 @@ const routes: Routes = [
     path: 'edit-profile',
     loadChildren: () => import('./Pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
-  
+
   {
     path: 'tabs',
     loadChildren: () => import('./Pages/tabs/tabs.module').then( m => m.TabsPageModule)
@@ -67,7 +67,8 @@ const routes: Routes = [
   {
     path: 'list-rejeter',
     loadChildren: () => import('./Pages/list-rejeter/list-rejeter.module').then( m => m.ListRejeterPageModule)
-  },  {
+  },
+  {
     path: 'mot-de-pass-oublier',
     loadChildren: () => import('./Pages/mot-de-pass-oublier/mot-de-pass-oublier.module').then( m => m.MotDePassOublierPageModule)
   },
@@ -82,10 +83,6 @@ const routes: Routes = [
   {
     path: 'update-pass',
     loadChildren: () => import('./Pages/update-pass/update-pass.module').then( m => m.UpdatePassPageModule)
-  },
-  {
-    path: 'detail-classe',
-    loadChildren: () => import('./Pages/detail-classe/detail-classe.module').then( m => m.DetailClassePageModule)
   }
 
 

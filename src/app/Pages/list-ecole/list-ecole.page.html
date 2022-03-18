@@ -1,32 +1,23 @@
-
 <ion-content>
-  <div class="banner">
-    <img src="../../../assets/images/banner.png" />
+    <div class="banner">
+        <img src="../../../assets/images/droits.jpg" />
 
-    <div class="caption ion-padding">
-      La liste <br>
-      &nbsp; &bigstar; des ecoles  &bigstar;
-    </div>
+        <div class="caption ion-padding">
+            La liste <br> &nbsp; &bigstar; des ecoles &bigstar;
+        </div>
 
-    <div class="search">
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Chercher" [(ngModel)]="search"></ion-input>
-        <ion-button slot='end'>
-          <img src="../../../assets/filter.svg" />
-        </ion-button>
-      </ion-item>
+        <div class="search">
+            <ion-item lines="none" class="ion-no-padding">
+                <ion-icon slot="start" name="search-outline"></ion-icon>
+                <ion-input placeholder="Chercher" [(ngModel)]="search"></ion-input>
+                <ion-button slot='end'>
+                    <img src="../../../assets/filter.svg" />
+                </ion-button>
+            </ion-item>
+        </div>
     </div>
-  </div>
-  <div>
-    <ngx-datatable 
-      [rows]="Liste | filterBy: search" 
-      [columns]="columns" 
-      [columnMode]="force"
-      [rowHeight] ="'auto'"
-      [headerHeight] ="50"
-      [ngClass]="tableStyle"
-      style="margin-top: 30px;">
-    </ngx-datatable>
-  </div>
+    <div>
+        <ngx-datatable [rows]="Liste | filterBy: search" [columns]="columns" [columnMode]="force" [rowHeight]="'auto'" [headerHeight]="50" [ngClass]="tableStyle" style="margin-top: 30px;">
+        </ngx-datatable>
+    </div>
 </ion-content>

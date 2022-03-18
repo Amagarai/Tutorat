@@ -1,25 +1,24 @@
-
 <ion-content>
 
     <div class="head">
-        <ion-buttons slot="start" >
+        <ion-buttons slot="start">
             <ion-back-button defaultHref="accueil" style="color: #B5B9BF; margin-top: 5px;" routerLink="/tabs"></ion-back-button>
         </ion-buttons>
-       <div class="profil ion-text-center">
-           <div class="img">
-            <img src="../../../assets/images/logo.png" alt="">
-           </div>
-           <div class="Login">
-               <span> <b>{{data[0].prenom}} {{data[0].nom}}</b> </span>
-           </div>
-       </div>
+        <div class="profil ion-text-center">
+            <div class="img">
+                <img src="../../../assets/images/web2.png" alt="">
+            </div>
+            <div class="Login">
+                <span> <b>{{data[0].prenom}} {{data[0].nom}}</b> </span>
+            </div>
+        </div>
     </div>
     <div class="content">
         <button style="width: 80%;" class="fonction" routerLink="/edit-profile">
             <ion-label>Editer mon profil</ion-label>
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
- 
+
         <ion-item *ngIf="data[0].profile==='TUTEUR'">
             <ion-label>Disponibilité</ion-label>
             <ion-toggle slot="end" name="dispnobilite" checked (ionChange)="Etat($event)" (click)="Disponibilite()"></ion-toggle>

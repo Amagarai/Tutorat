@@ -10,7 +10,7 @@ export class ClassePage implements OnInit {
 
   data: any;
   Liste: any;
-  segment :  string = "mesClasse";
+  segment:  string = "mesClasse";
   constructor(public service: ClasseServicesService) { }
 
   ngOnInit() {
@@ -19,23 +19,23 @@ export class ClassePage implements OnInit {
   }
 
   Evenement(event: CustomEvent){
-    this.segment= event.detail.value
+    this.segment= event.detail.value;
     console.log(this.segment);
   }
 
-  addClasse(data : any){
+  addClasse(data: any){
     console.log(data.value);
     return this.service.addClasse(this.data[0].id, data.value).subscribe(donne =>{
       console.log(donne);
       this.mesClasse();
       this.segment = "mesClasse";
-    })
+    });
   }
 
   mesClasse(){
     return this.service.MesClasses(this.data[0].id).subscribe(donne =>{
-      this.Liste = donne
-    })
+      this.Liste = donne;
+    });
   }
 
 }

@@ -24,7 +24,6 @@ const routes: Routes = [
         path: 'ecole',
         loadChildren : () => import('../list-ecole/list-ecole.module').then(m => m.ListEcolePageModule)
       },
-      
       {
         path: '',
         redirectTo: 'accueil',
@@ -32,7 +31,6 @@ const routes: Routes = [
       }
     ]
   }
-  
 ];
 
 @NgModule({
