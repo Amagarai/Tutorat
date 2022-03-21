@@ -1,9 +1,11 @@
 ion-content{
-    --background: #B5B9BF;
+    // --background: #B5B9BF;
     .head {
         display: flex;
         align-items: center;
-        margin-top: 20px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        background-color: #0F8EB4;
         span {
             font-weight: 600;
             color: #fff;
@@ -12,13 +14,13 @@ ion-content{
     }
 
     ion-segment{
-        position: fixed;
-        z-index: 1;
+        // position: fixed;
+        // z-index: 1;
     }
 
     ion-list{
         padding: 0%;
-        margin-top: 48px;
+        // margin-top: 48px;
         margin-bottom: 10vh;
         ion-item{
             margin: auto;

@@ -6,7 +6,7 @@
         <span> Demandes rejeter</span>
     </div>
 
-  <ion-list *ngIf="!Liste">
+  <ion-list >
     <div *ngFor="let item of Liste">
       <ion-item>
         <ion-label>
@@ -20,10 +20,10 @@
     </div>
   </ion-list>
 
-  <div class="vide" *ngIf="Liste !== ''">
+  <!-- <div class="vide" *ngIf="Liste !== ''">
    <img src="../../../assets/images/vide.png" alt="">
    <p class="ion-text-center">Pas de demande rejeter</p>
-  </div>
+  </div> -->
   
 
 </ion-content>

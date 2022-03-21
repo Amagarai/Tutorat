@@ -11,7 +11,7 @@
             <ion-avatar routerLink="/profil">
                 <img src="../../../assets/images/logo.png" alt="" srcset="">
             </ion-avatar>
-            <label> {{data[0]?.nom}}</label>
+            <label>{{data[0]?.prenom}} {{data[0]?.nom}}</label>
         </ion-item>
 
 
@@ -19,23 +19,21 @@
         <div class="cards">
             <ion-card routerLink="/list-eleve">
                 <ion-card-header>
-                    <div class="content-card">
+                    
                         <img src="../../../assets/images/eleve.png">
-                    </div>
+                    
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
-                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px;">Mes demandes accepter</ion-card-title>                    
+                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px; font-weight: bold;">Mes demandes accepter</ion-card-title>                    
                 </ion-card-content>
             </ion-card>
 
-            <ion-card style="width: 150px;" routerLink="/classe">
+            <ion-card  routerLink="/classe">
                 <ion-card-header>
-                    <div class="content-card">
-                        <img src="../../../assets/images/classe.jpg" style="height: 90px; margin-bottom: 3px;">
-                    </div>
+                    <img src="../../../assets/images/classe.jpg">  
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
-                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px;">Mes classes</ion-card-title>
+                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px; font-weight: bold;">Mes classes</ion-card-title>
                 </ion-card-content>
             </ion-card>
         </div>

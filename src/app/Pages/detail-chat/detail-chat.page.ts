@@ -30,7 +30,7 @@ export class DetailChatPage implements OnInit {
     this.service.DemandeById(this.id).subscribe(donne =>{
       this.Envoyeur= donne; 
       console.log(this.Envoyeur);
-       
+    
     })
 
 

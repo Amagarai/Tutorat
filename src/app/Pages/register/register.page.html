@@ -1,6 +1,6 @@
 <ion-content>
     <div class="logo">
-        <img src="assets/images/logo.png" alt="" srcset="" class="img">
+        <img src="assets/images/web2.png" alt="" srcset="">
         <p>Inscription</p>
     </div>
     <form id=formId (ngSubmit)="regisForm(ajouter)" #ajouter="ngForm">
@@ -17,11 +17,11 @@
                 </ion-select>
             </ion-item>
 
-            <ion-item  *ngIf="profile ==='TUTEUR' || profile ==='ELEVE' || profile ==='PARENT' ">
+            <ion-item *ngIf="profile ==='TUTEUR' || profile ==='ELEVE' || profile ==='PARENT' ">
                 <ion-icon name="person-outline"></ion-icon>
                 <ion-input placeholder="Prenom" name="prenom" ngModel required></ion-input>
             </ion-item>
- 
+
             <ion-item *ngIf="profile">
                 <ion-icon name="person-outline"></ion-icon>
                 <ion-input placeholder="Nom" name="nom" ngModel required></ion-input>
@@ -37,11 +37,11 @@
                     <ion-icon name="globe-outline"></ion-icon>
                     <ion-input placeholder="Site" name="site" ngModel required></ion-input>
                 </ion-item>
-                
+
                 <ion-item *ngIf="profile==='TUTEUR'">
                     <ion-icon name="school-outline"></ion-icon>
                     <ion-input type="text" placeholder="Etablissement" name="etablissement" ngModel required></ion-input>
-                    
+
                 </ion-item>
 
                 <ion-item *ngIf="profile">
@@ -49,7 +49,7 @@
                     <ion-input placeholder="Numero de telephone" name="numero" ngModel required></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile">       
+                <ion-item *ngIf="profile">
                     <ion-label>Region</ion-label>
                     <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" ngModel required>
                         <ion-select-option value="Bamako">Bamako</ion-select-option>
@@ -99,24 +99,24 @@
                     <ion-input type="number" placeholder="exemple: 2" name="anciennete" ngModel required></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile"> 
+                <ion-item *ngIf="profile">
                     <ion-icon name="key-outline"></ion-icon>
                     <ion-input type="password" placeholder="Mot de passe" name="password" ngModel required></ion-input>
                     <ion-icon name="eye" item-right (click)="togglePasswordMode()"></ion-icon>
                 </ion-item>
-                
+
                 <ion-item *ngIf="profile">
                     <ion-icon name="key-outline"></ion-icon>
                     <ion-input placeholder="Confirmer mot de passe" [(ngModel)]="confirmer" required></ion-input>
                     <ion-icon name="eye" item-right (click)="togglePasswordMode()"></ion-icon>
                 </ion-item>
                 <ion-input type="submit" value="S'inscrire" class="btnInscrit" *ngIf="profile"></ion-input>
-                
+
                 <ion-text color="gray" size="small" *ngIf="!profile">Veuilez commencez par choisir un profile</ion-text>
             </div>
         </div>
     </form><br>
-    <div style=" margin-top: 30px;" >
+    <div style=" margin-top: 30px;">
         <p style="font-size: small;">Vous avez un compte? <a routerLink="/login">connectez-vous</a></p>
     </div>
 </ion-content>

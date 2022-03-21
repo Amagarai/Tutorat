@@ -11,8 +11,8 @@ import { AlertController } from '@ionic/angular';
 export class LoginPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/ban-types
   affichePassword: Boolean = true;
-  login: any ={};
-  password: any;
+  login: string;
+  password: string;
 
   constructor(public service: ServicesService, public route: Router, public alertController: AlertController) { }
 
@@ -28,12 +28,12 @@ public getType() {
 
   loginPass(data){
     this.service.loginPassword(data.value.numero, data.value.password).subscribe(donne =>{
-      this.login= donne;
+      
      
-      if(this.login ==''){
+      if(donne ==''){
         return this.presentAlert();
       }else{
-        localStorage.setItem('logInfo',JSON.stringify(this.login));
+        localStorage.setItem('logInfo',JSON.stringify(donne));
         this.route.navigate(['tabs']);
         data.reset();
       }

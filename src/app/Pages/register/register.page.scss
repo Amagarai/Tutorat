@@ -4,7 +4,7 @@ ion-content {
     .logo {
         img {
             margin-top: 40px;
-            height: 100px;
+            height: 120px;
             margin-left: 65px;
         }
         p {
@@ -29,11 +29,16 @@ ion-content {
             }
         }
         .btnInscrit {
-            background-color: aqua;
+            background-color: #004d91;
+            color: #fff;
             width: 100px;
             border-radius: 50px;
             float: right;
             text-align: center;
+            // &:hover {
+            //     background-color: #004d91;
+            //     color: #fff;
+            // }
         }
     }
 }

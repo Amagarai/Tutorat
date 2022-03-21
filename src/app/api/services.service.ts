@@ -145,5 +145,12 @@ export class ServicesService {
   RecupNotif(id : number){
     return this.http.get(this.host+'notification/liste/'+id);
   }
+
+
+  //------------------------------------------------Update users----------------------------------------------------------
+
+  updatePass(id : number, users : any){
+    return this.http.put(this.host+'user/modifypass/'+id, users);
+  }
   
 }

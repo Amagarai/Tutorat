@@ -6,12 +6,12 @@
   </ion-buttons>
 
   <p class="ion-text-center"><strong>Modification de votre mot de passe</strong></p>
-  <form >
-    <ion-input type="password" placeholder="Ancien mot de passe"></ion-input>
-    <ion-input type="password" placeholder="Nouveau mot de passe"></ion-input>
-    <ion-input type="password" placeholder="Confirmer nouveau mot de passe"></ion-input>
+  <form #data="ngForm" (ngSubmit)="updatePass(data)">
+    <ion-input type="password" placeholder="Ancien mot de passe" name="pass" ngModel></ion-input>
+    <ion-input type="password" placeholder="Nouveau mot de passe" name="newpass" ngModel></ion-input>
+    <ion-input type="password" placeholder="Confirmer nouveau mot de passe" name="passconf" ngModel></ion-input>
     <div class="ion-text-center">
-      <ion-button >Valider</ion-button>
+      <ion-button type="submit">Valider</ion-button>
     </div>
     
   </form>

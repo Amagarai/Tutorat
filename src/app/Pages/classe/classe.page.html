@@ -1,25 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title >Classe</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="accueil" color="dark" routerLink="/tabs"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
-  <div style="background-color: rgb(255, 255, 255); position: fixed; z-index: 1; width: 100%;">
-    <ion-segment [value]="segment" (ionChange)="Evenement($event)">
-    <ion-segment-button value="mesClasse">
-      <ion-label style="font-size: 10px;">Mes classes</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="addClasse">
-      <ion-label style="font-size: 10px;">Creer une classe</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+  <div class="fixed" style="position: fixed; width: 100%; z-index: 1;">
+    <div class="head">
+      <ion-buttons slot="start" color="light">
+          <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
+      </ion-buttons>
+      <span> Classe</span>
+    </div>
+    <div style="padding: 20px; padding-bottom: 0%; background-color: #fff; margin-top: -30px; border-top-left-radius: 40px; border-top-right-radius: 40px;">
+      <ion-segment [value]="segment" (ionChange)="Evenement($event)">
+        <ion-segment-button value="mesClasse">
+          <ion-label style="font-size: 10px;">Mes classes</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="addClasse">
+          <ion-label style="font-size: 10px;">Creer une classe</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
   </div>
 
-  <div class="mesClasse" style="margin-top: 60px;" *ngIf="segment==='mesClasse'">
+  <div class="mesClasse" *ngIf="segment==='mesClasse'" style="margin-top: 145px;">
   
     <ion-card class="ion-margin-bottom" *ngFor="let item of Liste">
       <ion-card-header>
@@ -36,15 +37,11 @@
         </div>
       </ion-card-content>
     </ion-card>
-
-    
-    
-
   </div>
 
   <!-- --------------------------------------****Partie ajouter Classe*****---------------------------------------------------------------------- -->
 
-  <div class="addClasse" style="margin-top: 60px;" *ngIf="segment==='addClasse'">
+  <div class="addClasse" style="margin-top: 145px;" *ngIf="segment==='addClasse'">
     <p class="ion-text-center"><strong>Nouvelle Classe</strong> </p>
   
     <form class="ion-text-center" #data="ngForm" (ngSubmit)="addClasse(data)">

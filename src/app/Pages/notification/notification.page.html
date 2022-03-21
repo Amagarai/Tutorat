@@ -1,54 +1,84 @@
 
 
 <ion-content>
-  <div class="head">
-    <ion-buttons slot="start" color="light">
-      <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
-    </ion-buttons>
-    <span> Notification</span>
+  <div class="fixed" class="fixed" style="position: fixed; width: 100%; z-index: 1;">
+    <div class="head">
+      <ion-buttons slot="start" color="light">
+        <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
+      </ion-buttons>
+      <span> Notification</span>
+    </div>
+  <div style="padding: 20px; background-color: #fff;  border-top-left-radius: 40px; border-top-right-radius: 40px; margin-top: -30px;">
+    <ion-segment [value]="segment" (ionChange)="Evenement($event)"  *ngIf="data[0].profile==='TUTEUR'">
+      <ion-segment-button value="reçu">
+        <ion-label style="font-size: 10px;">Demande reçu</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="envoyer">
+        <ion-label style="font-size: 10px;">Demande envoyer</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </div>
-  <ion-segment [value]="segment" (ionChange)="Evenement($event)"  *ngIf="data[0].profile==='TUTEUR'">
-    <ion-segment-button value="reçu">
-      <ion-label style="font-size: 10px;">Demande reçu</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="envoyer">
-      <ion-label style="font-size: 10px;">Demande envoyer</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <ion-list *ngIf="segment==='reçu' && data[0].profile==='TUTEUR'">
-   <ion-list-header>
-     <ion-label>
-       <strong>Nouveau (5)</strong> 
-     </ion-label>
-   </ion-list-header>
-
-   <ion-item  *ngFor="let item of list">
-    <ion-thumbnail slot="start" class="photo">
-     <img src="../../../assets/images/afrique.jpg" alt="">
-    </ion-thumbnail>
-
-    <ion-label>
-      {{item.envoyeur.nom}} {{item.envoyeur.prenom}}
-      <p class="ion-text-wrap">
-        <ion-text>
-          {{item.contenu}}
-        </ion-text>
-        <ion-text class="time">
-          {{item.date}}
-        </ion-text>
-      </p>
-    </ion-label>
-
-    <ion-button mode="ios" slot="end" color="primary" (click)="Initier(item.id, item)" *ngIf="item.initier===false">
-      Inititier
-    </ion-button>
-    <ion-button mode="ios" slot="end" fill="clear" style="background-color: rgb(218, 218, 218); color:white;"  (click)="Initier(item.id, item)" *ngIf="item.initier===true" >
-      Desinititier
-    </ion-button>
-  </ion-item>
-    
-  </ion-list>
-
-    <p *ngIf="segment==='envoyer' || data[0].profile!=='TUTEUR'">envoyer</p>
+  </div>
+  
+  <div style="margin-top: 100px;">
+    <ion-list *ngIf="segment==='reçu' && data[0].profile==='TUTEUR'">
+      <ion-list-header>
+        <ion-label>
+          <strong>Nouveau (5)</strong> 
+        </ion-label>
+      </ion-list-header>
+   
+      <ion-item  *ngFor="let item of list">
+       <ion-thumbnail slot="start" class="photo">
+        <img src="../../../assets/images/afrique.jpg" alt="">
+       </ion-thumbnail>
+   
+       <ion-label class="ion-text-wrap" style="color: #0F8EB4;">
+         {{item.envoyeur.nom}} {{item.envoyeur.prenom}}
+         <p class="ion-text-wrap">
+           <ion-text>
+             {{item.contenu}}
+           </ion-text>
+           <ion-text class="time">
+             {{item.date}}
+           </ion-text>
+         </p>
+       </ion-label>
+   
+       <ion-button mode="ios" slot="end" color="primary" (click)="Initier(item.id, item)" *ngIf="item.initier===false">
+         Inititier
+       </ion-button>
+       <ion-button mode="ios" slot="end" fill="clear" style="background-color: rgb(218, 218, 218); color:white;"  (click)="Initier(item.id, item)" *ngIf="item.initier===true" >
+         Desinititier
+       </ion-button>
+     </ion-item>
+       
+     </ion-list>
+   
+     <!-- --------******************************--------------Partie des notification recus -----------------***************************************-->
+     
+     <div *ngIf="segment==='envoyer' || data[0].profile!=='TUTEUR'">
+       <ion-list style="margin-top: 140px;">
+         <ion-item *ngFor="let item of Notification">
+           <ion-thumbnail slot="start" class="photo">
+           <img src="../../../assets/images/afrique.jpg" alt="">
+           </ion-thumbnail>
+       
+           <ion-label>
+             
+             <p class="ion-text-wrap">
+               <ion-text>
+                 {{item.contenu}}
+               </ion-text>
+               <ion-text class="time">
+                 {{item.date}}
+               </ion-text>
+             </p>
+           </ion-label>
+         </ion-item>
+           
+         </ion-list>
+     </div>
+  </div>
+  
 </ion-content>

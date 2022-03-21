@@ -1,23 +1,27 @@
 <ion-content>
-    <div class="float">
-        <img src="assets/images/float.png" alt="" srcset="">
-    </div>
-    <div class="content">
-        <div class="logo ion-text-center">
-            <img src="assets/images/logo.png" alt="" srcset="">
+    <div class="cool">
+        <div class="test">
+            <div class="float">
+                <!-- <img src="assets/images/float.png" alt="" srcset=""> -->
+            </div>
+            <div class="content">
+                <div class="logo ion-text-center">
+                    <img src="assets/images/web4.png" alt="" srcset="">
+                    <!-- <b>Tutorat</b> -->
+                </div>
+            </div>
         </div>
     </div>
-
     <form #data="ngForm" (ngSubmit)="loginPass(data)">
         <div class="formulaire">
-            <ion-item>
+            <ion-item lines="none">
                 <ion-icon name="person-outline"></ion-icon>
-                <ion-input type="email" placeholder="numero de tel " name="numero" ngModel></ion-input>
+                <ion-input type="email" [(ngModel)]="login" placeholder="numero de tel " name="numero" ngModel></ion-input>
             </ion-item>
 
-            <ion-item>
+            <ion-item lines="none">
                 <ion-icon name="key-outline"></ion-icon>
-                <ion-input type="password" placeholder="mot de passe" name="password" ngModel></ion-input>
+                <ion-input type="password" [(ngModel)]="password" placeholder="mot de passe" name="password" ngModel></ion-input>
                 <ion-icon name="eye" item-right (click)="toggleTextPassword()"></ion-icon>
             </ion-item>
         </div>
@@ -25,23 +29,23 @@
             <a routerLink="/mot-de-pass-oublier" class="pass">mot de passe oublie!</a>
         </div>
         <div class="submit">
-            <ion-button type="submit" class="btn" expand='full' fill="clear" style="text-transform: none;">
-                Connexion
+            <ion-button type="submit" [disabled]="login==='' && password===''" class="btn" expand='full' fill="clear" style="text-transform: none;">
+                <b>Connexion</b>
             </ion-button>
         </div>
     </form>
     <ion-grid>
-        <ion-row>
+        <!-- <ion-row>
             <ion-col size="1">
                 <ion-checkbox checked></ion-checkbox>
             </ion-col>
             <ion-col size="6">
                 <ion-label class="label">Garder ma session</ion-label>
             </ion-col>
-        </ion-row>
+        </ion-row> -->
         <ion-row>
             <ion-col>
-                <span><b>Pas de compte? </b></span><a routerLink="/register">Inscrivez-vous</a>
+                <span><b>Pas de compte? </b></span><a routerLink="/register" style="color: white;">Inscrivez-vous</a>
             </ion-col>
         </ion-row>
     </ion-grid>

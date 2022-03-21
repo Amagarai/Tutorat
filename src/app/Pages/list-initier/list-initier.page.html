@@ -1,20 +1,24 @@
 <ion-content>
+  <div class="fixed" style="position: fixed; width: 100%; z-index: 1;">
     <div class="head">
-        <ion-buttons slot="start" color="light">
-            <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
-        </ion-buttons>
-        <span> Demandes initier</span>
+      <ion-buttons slot="start" color="light">
+          <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
+      </ion-buttons>
+      <span> Demandes initier</span>
     </div>
+    <div style="padding: 20px; background-color: #fff; margin-top: -30px; border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
+  </div>
+    
 
-  <ion-list >
+  <ion-list class="list">
     <div *ngFor="let item of Liste">
-      <ion-item *ngIf="item.etat !=='DECLINER' && item.etat !=='ACCEPTER'">
+      <ion-item class="ion-text-center" *ngIf="item.etat !=='DECLINER' && item.etat !=='ACCEPTER'">
         <ion-label>
-          <h2>{{item.envoyeur.prenom}}  {{item.envoyeur.nom}}</h2>
+          <h2 style="color: #0F8EB4; font-weight: 600;">{{item.envoyeur.prenom}}  {{item.envoyeur.nom}}</h2>
           <h3>{{item.matiere}}</h3>
           <p>
             <ion-button color="danger" (click)="Decliner(item.id, item)">Decliner</ion-button>
-            <ion-button color="primary" (click)="Accepter(item.id, item)">Accepter</ion-button>
+            <ion-button fill="clear" style="background-color: orange; border-radius: 5px; color: white;" (click)="Accepter(item.id, item)">Accepter</ion-button>
           </p>
         </ion-label>
       </ion-item>

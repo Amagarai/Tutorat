@@ -6,40 +6,26 @@
 }
 
 .other-message{
-    background-color: rgb(0, 16, 245);
+    background-color: orange;
     span{
         color: white;
     }
 }
 
 .my-message{
-    background-color: rgb(28, 31, 31);
+    background-color: #0F8EB4;
     span{
         color: white;
     }
 }
 
 .time{
-    color: #9e9494;
+    color: #fff;
     float: right;
     font-size: small;
     margin-top: 3px;
 }
 
-// .sendMsg{
-//     width: 100%;
-//     border: 1px solid rgb(112, 130, 211);
-//     border-radius: 10px;
-//     background: rgb(196, 191, 191);
-//     resize: none;
-//     padding-left: 20px;
-//     padding-right: 10px;
-// }
-
-// .send{
-//     --padding-start: 0.5em;
-//     --padding-end: 0.5em
-// }
 
 ion-footer{
     ion-toolbar{
