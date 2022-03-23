@@ -40,7 +40,7 @@
 
         <!-- ****************************************************Les cartes des autres utilisateurs*************************************************************************** -->
 
-        <div class="eleve">
+        <div class="eleve" *ngIf="data[0].profile !=='TUTEUR'">
             <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }" >
                 <ion-slide>
                     <ion-card style="width: 160px; height: 150px;">
