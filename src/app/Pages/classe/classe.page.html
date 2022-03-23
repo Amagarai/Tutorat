@@ -22,9 +22,9 @@
 
   <div class="mesClasse" *ngIf="segment==='mesClasse'" style="margin-top: 145px;">
   
-    <ion-card class="ion-margin-bottom" *ngFor="let item of Liste">
+    <ion-card class="ion-margin-bottom" *ngFor="let item of Liste" routerLink="/detail-classe/{{item.id}}">
       <ion-card-header>
-        <ion-card-subtitle>{{item.nom}}</ion-card-subtitle>
+        <ion-card-subtitle class="ion-text-center">{{item.nom}}</ion-card-subtitle>
         <ion-card-title>{{item.matiere}}</ion-card-title>
       </ion-card-header>
     
@@ -33,7 +33,7 @@
         <p>Nombre d'eleve : ..</p>
         <p>Créer le : {{item.createDate | date : short}}</p>
         <div class="ion-text-center">
-        <ion-button size="small" routerLink="/detail-classe">Ajouter un eleve</ion-button>
+        <!-- <ion-button size="small" routerLink="/add-eleve">Ajouter un eleve</ion-button> -->
         </div>
       </ion-card-content>
     </ion-card>

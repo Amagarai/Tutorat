@@ -1,0 +1,21 @@
+.head {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    background-color: #0F8EB4;
+    span {
+        font-weight: 600;
+        color: #fff;
+        justify-content: center;
+    }
+}
+.card{
+
+    ion-card{
+        ion-card-header{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

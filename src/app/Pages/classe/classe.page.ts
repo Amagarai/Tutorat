@@ -34,7 +34,8 @@ export class ClassePage implements OnInit {
 
   mesClasse(){
     return this.service.MesClasses(this.data[0].id).subscribe(donne =>{
-      this.Liste = donne
+      this.Liste = donne;
+      console.log(this.Liste);
     })
   }
 

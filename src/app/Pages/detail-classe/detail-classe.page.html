@@ -1,3 +1,46 @@
 <ion-content >
-  <img src="../../../assets/images/page.png" alt="" style="display: flex; align-items: center; justify-content: center; margin-top: 60px;">
+  <div class="fixed" style="position: fixed; width: 100%; z-index: 1;">
+    <div class="head">
+      <ion-buttons slot="start" color="light">
+          <ion-back-button defaultHref="accueil" color="light" routerLink="/classe"></ion-back-button>&nbsp;
+      </ion-buttons>
+      <span> Classe</span>
+    </div>
+    <div class="ion-text-center" style="padding: 30px; padding-bottom: 0%; background-color: #fff; margin-top: -30px; border-top-left-radius: 40px; border-top-right-radius: 40px; font-weight: bold;">{{Liste?.nom}}</div>
+  </div>
+
+  <div style="margin-top: 120px;">
+    <p style="font-weight: bold;"> <span style="color: orange;">{{Liste?.heure}}H</span> par semaine</p>
+    <p><b>Nombre d'eleve :</b> ..</p>
+    <p><b>Créer le:</b> {{Liste?.createDate | date : short}}</p>
+    <ion-button size="small" routerLink="/add-eleve">Ajouter un eleve</ion-button>
+  </div>
+
+  <div class="card">
+    <p class="ion-text-center" style="color: orange; font-weight: bold;"> Liste des eleves de la classe</p>
+    <ion-card>
+      <ion-card-header style="color: black; font-weight: bold;">
+        <span>Nom de l'eleve</span> 
+        <ion-icon color="danger" name="close-circle-outline" size="large"></ion-icon>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Etablissemnet</p>
+        <p>classe</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header style="color: black; font-weight: bold;">
+        <span>Nom de l'eleve</span> 
+        <ion-icon color="danger" name="close-circle-outline" size="large"></ion-icon>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Etablissemnet</p>
+        <p>classe</p>
+      </ion-card-content>
+    </ion-card>
+    
+    
+  </div>
+  
+
 </ion-content>

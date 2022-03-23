@@ -67,7 +67,8 @@ const routes: Routes = [
   {
     path: 'list-rejeter',
     loadChildren: () => import('./Pages/list-rejeter/list-rejeter.module').then( m => m.ListRejeterPageModule)
-  },  {
+  },
+  {
     path: 'mot-de-pass-oublier',
     loadChildren: () => import('./Pages/mot-de-pass-oublier/mot-de-pass-oublier.module').then( m => m.MotDePassOublierPageModule)
   },
@@ -84,9 +85,17 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/update-pass/update-pass.module').then( m => m.UpdatePassPageModule)
   },
   {
-    path: 'detail-classe',
+    path: 'detail-classe/:id',
     loadChildren: () => import('./Pages/detail-classe/detail-classe.module').then( m => m.DetailClassePageModule)
+  },
+  {
+    path: 'add-eleve',
+    loadChildren: () => import('./Pages/add-eleve/add-eleve.module').then( m => m.AddElevePageModule)
+  },  {
+    path: 'list-tuteur',
+    loadChildren: () => import('./Pages/list-tuteur/list-tuteur.module').then( m => m.ListTuteurPageModule)
   }
+
 
 
 

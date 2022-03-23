@@ -1,5 +1,5 @@
 <ion-content>
-    <div class="header" *ngIf="data[0].profile==='TUTEUR'">
+    <div class="header">
         <div class="notification">
             <a class="note">
                 <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
@@ -14,9 +14,8 @@
             <label>{{data[0]?.prenom}} {{data[0]?.nom}}</label>
         </ion-item>
 
-
-
-        <div class="cards">
+        <!--***********************************%%µ*********************** Les cartes du tuteurs ************************************************************************************************  -->
+        <div class="cards" *ngIf="data[0].profile==='TUTEUR'">
             <ion-card routerLink="/list-eleve">
                 <ion-card-header>
                     
@@ -37,7 +36,49 @@
                 </ion-card-content>
             </ion-card>
         </div>
+        <!--*************************************fin  -->
+
+        <!-- ****************************************************Les cartes des autres utilisateurs*************************************************************************** -->
+
+        <div class="eleve">
+            <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }" >
+                <ion-slide>
+                    <ion-card style="width: 160px; height: 150px;">
+                        <ion-card-header class="ion-text-center">
+                            Matiere 
+                        </ion-card-header>
+                        <ion-card-content style="padding: 0%;">
+                            
+                            <ion-label style="margin-left: 1px;">
+                            Nom de la classe
+                            </ion-label>
+                            
+                            <p><ion-text color="tertiary">Nom du prof</ion-text></p>
+                            <ion-text class="price" color="primary"><b>Heure par semaine</b></ion-text>
+                            
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+
+                <ion-slide>
+                    <ion-card style="width: 160px; height: 150px;">
+                        <ion-card-header class="ion-text-center">
+                            Matiere 
+                        </ion-card-header>
+                        <ion-card-content style="padding: 0%;">
+                            <ion-label style="margin-left: 1px;">
+                            Nom de la classe
+                            </ion-label>
+                            <p><ion-text color="tertiary">Nom du prof</ion-text></p>
+                            <ion-text class="price" color="primary"><b>Heure par semaine</b></ion-text>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+        </div>
     </div>
+
+
     <div class="content ion-text-center" *ngIf="data[0].profile==='TUTEUR'">
         <button style="width: 80%;" class="fonction" routerLink="/list-initier">
             <ion-label>Demande initier</ion-label>
@@ -50,10 +91,16 @@
         </button>
     </div>
 
-    <!--------------------------------------------------Eleve design------------------------------------------------------------------ -->
+    <div class="content ion-text-center" *ngIf="data[0].profile !=='TUTEUR'">
+        <button style="width: 80%;" class="fonction" routerLink="/list-tuteur">
+            <ion-label>Les tuteurs de ma ville</ion-label>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+    </div>
 
+<!-- ******************************La partie qui s'affiche si un eleve n'a pas encore de classe -->
 
-    <div class="eleve" *ngIf="data[0].profile!=='TUTEUR'">
+    <div class="eleve" *ngIf="data[0].profile ==='test'">
         <div class="autre">
             <div class="notification">
                 <a class="note">
