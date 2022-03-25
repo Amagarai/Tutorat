@@ -59,7 +59,8 @@ export class AcceuilPage implements OnInit {
           handler: () => {
                 localStorage.removeItem('logInfo');
                 localStorage.clear();
-                this.route.navigate(['login']);
+                // this.service.Logout();
+                this.route.navigate(['/login']);
           }
         }
       ],

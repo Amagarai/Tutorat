@@ -1,4 +1,9 @@
+ion-toolbar {
+    --background: #0f8eb4;
+}
+
 ion-content {
+    // --background: #8bd4eb;
     ion-input {
         background: rgb(207, 236, 243);
         box-shadow: 0 6px 3px 0 rgba(0, 0, 0, .1);

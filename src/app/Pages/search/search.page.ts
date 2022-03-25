@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { async } from '@angular/core/testing';
 import { alertController } from '@ionic/core';
 import { ServicesService } from 'src/app/api/services.service';
 
@@ -15,10 +14,11 @@ export class SearchPage implements OnInit {
   demande: any;
   btn: number ;
   ifDemandeExist: any;
-  donne : any;
-  matiereDeLaPersonneChoisi : any;
-  idDeLaPersonneChoisi : any;
+  donne: any;
+  matiereDeLaPersonneChoisi: any;
+  idDeLaPersonneChoisi: any;
   searchValue: any;
+  mode=1;
 
   constructor(private service: ServicesService) { }
 
@@ -35,7 +35,7 @@ export class SearchPage implements OnInit {
       this.btn = 1;
       this.demande=JSON.stringify(data.value);
       console.log(this.searchValue.value);
-    })
+    });
   }
 
   Send(id: number, matiere: string){
@@ -46,20 +46,24 @@ export class SearchPage implements OnInit {
       return this.service.EnvoyerDemande(this.data[0].id,id,matiere,this.demande).subscribe(donne =>{
         this.donne = donne;
         this.ifDemandeExist = '';
+        this.mode=2;
         this.search(this.searchValue);
-        console.log(donne);  
+        console.log(donne);
       });
     }else{
-      return this.handleButtonClick();
+
+      this.handleButtonClick();
+      return this.mode=2;
+
     }
-    
+
   }
 
   DemandeExist(id: number, matiere: string){
     return this.service.DemandeExist(this.data[0].id,id,matiere).subscribe(demande =>{
       this.ifDemandeExist= demande;
       console.log(this.ifDemandeExist);
-      
+
     })
   }
 
@@ -74,9 +78,9 @@ export class SearchPage implements OnInit {
             this.service.EnvoyerDemande(this.data[0].id,this.idDeLaPersonneChoisi,this.matiereDeLaPersonneChoisi,this.demande).subscribe(donne =>{
               this.donne = donne,
               this.ifDemandeExist = '';
-              this.search(this.searchValue); 
-              console.log(donne);  
-            })  
+              this.search(this.searchValue);
+              console.log(donne);
+            })
           }
         },
 

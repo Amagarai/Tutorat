@@ -117,7 +117,9 @@ export class ServicesService {
   Logout(){
     localStorage.removeItem('logInfo');
     localStorage.clear();
+    window.location.reload();
     this.route.navigate(['login']);
+
   }
   Disponiblite(id: any, user : any){
     return this.http.put(this.host+'/tuteur/dispo/'+id, user);

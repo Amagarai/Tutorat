@@ -9,7 +9,7 @@
 
             <ion-item>
                 <ion-label>Profile</ion-label>
-                <ion-select value="profile" interface="action-sheet" cancelText="Annuler" name="profile" ngModel [(ngModel)]="profile" required>
+                <ion-select value="profile" interface="action-sheet" cancelText="Annuler" name="profile" ngModel [(ngModel)]="profile">
                     <ion-select-option value="TUTEUR">Tuteur</ion-select-option>
                     <ion-select-option value="ELEVE">Elève</ion-select-option>
                     <ion-select-option value="ECOLE">Ecole</ion-select-option>
@@ -17,41 +17,41 @@
                 </ion-select>
             </ion-item>
 
-            <ion-item *ngIf="profile ==='TUTEUR' || profile ==='ELEVE' || profile ==='PARENT' ">
+            <ion-item *ngIf="profile ==='TUTEUR' || profile ==='ELEVE' || profile ==='PARENT' " lines="none">
                 <ion-icon name="person-outline"></ion-icon>
-                <ion-input placeholder="Prenom" name="prenom" ngModel required></ion-input>
+                <ion-input placeholder="Prenom" name="prenom" ngModel></ion-input>
             </ion-item>
 
-            <ion-item *ngIf="profile">
+            <ion-item *ngIf="profile" lines="none">
                 <ion-icon name="person-outline"></ion-icon>
-                <ion-input placeholder="Nom" name="nom" ngModel required></ion-input>
+                <ion-input placeholder="Nom" name="nom" ngModel></ion-input>
             </ion-item>
 
             <div class="tuteur">
-                <ion-item *ngIf="profile==='ECOLE'">
+                <ion-item *ngIf="profile==='ECOLE'" lines="none">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <ion-input type="email" placeholder="email" ngModel name="email" required></ion-input>
+                    <ion-input type="email" placeholder="email" ngModel name="email"></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile==='ECOLE'">
+                <ion-item *ngIf="profile==='ECOLE'" lines="none">
                     <ion-icon name="globe-outline"></ion-icon>
-                    <ion-input placeholder="Site" name="site" ngModel required></ion-input>
+                    <ion-input placeholder="Site" name="site" ngModel></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile==='TUTEUR'">
+                <ion-item *ngIf="profile==='TUTEUR'" lines="none">
                     <ion-icon name="school-outline"></ion-icon>
-                    <ion-input type="text" placeholder="Etablissement" name="etablissement" ngModel required></ion-input>
+                    <ion-input type="text" placeholder="Etablissement" name="etablissement" ngModel></ion-input>
 
                 </ion-item>
 
-                <ion-item *ngIf="profile">
+                <ion-item *ngIf="profile" lines="none">
                     <ion-icon name="call-outline"></ion-icon>
-                    <ion-input placeholder="Numero de telephone" name="numero" ngModel required></ion-input>
+                    <ion-input placeholder="Numero de telephone" name="numero" ngModel></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile">
+                <ion-item *ngIf="profile" lines="none">
                     <ion-label>Region</ion-label>
-                    <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" ngModel required>
+                    <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" ngModel>
                         <ion-select-option value="Bamako">Bamako</ion-select-option>
                         <ion-select-option value="Kayes">Kayes</ion-select-option>
                         <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
@@ -64,14 +64,14 @@
                     </ion-select>
                 </ion-item>
 
-                <ion-item *ngIf="profile">
+                <ion-item *ngIf="profile" lines="none">
                     <ion-icon name="home-outline"></ion-icon>
-                    <ion-input placeholder="Quartier" name="quartier" ngModel required></ion-input>
+                    <ion-input placeholder="Quartier" name="quartier" ngModel></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile==='TUTEUR'">
+                <ion-item *ngIf="profile==='TUTEUR'" lines="none">
                     <ion-label>Matière ou spécialité</ion-label>
-                    <ion-select interface="action-sheet" cancelText="Annuler" name="specialite" ngModel required>
+                    <ion-select interface="action-sheet" cancelText="Annuler" name="specialite" ngModel>
                         <ion-select-option value="Mathématiques">Mathématiques</ion-select-option>
                         <ion-select-option value="Biologie">Biologie</ion-select-option>
                         <ion-select-option value="Physique">Physique</ion-select-option>
@@ -85,29 +85,29 @@
                     </ion-select>
                 </ion-item>
 
-                <ion-item *ngIf="profile==='TUTEUR'">
+                <ion-item *ngIf="profile==='TUTEUR'" lines="none">
                     <ion-label>Niveau</ion-label>
-                    <ion-select interface="action-sheet" cancelText="Annuler" name="niveau" ngModel required>
+                    <ion-select interface="action-sheet" cancelText="Annuler" name="niveau" ngModel>
                         <ion-select-option value="1er cycle">1er cycle</ion-select-option>
                         <ion-select-option value="2e cycle">2e cycle</ion-select-option>
                         <ion-select-option value="Lycée">Lycée</ion-select-option>
                     </ion-select>
                 </ion-item>
 
-                <ion-item *ngIf="profile==='TUTEUR'">
+                <ion-item *ngIf="profile==='TUTEUR'" lines="none">
                     <span>Ancienneté:</span>
-                    <ion-input type="number" placeholder="exemple: 2" name="anciennete" ngModel required></ion-input>
+                    <ion-input type="number" placeholder="exemple: 2" name="anciennete" ngModel></ion-input>
                 </ion-item>
 
-                <ion-item *ngIf="profile">
+                <ion-item *ngIf="profile" lines="none">
                     <ion-icon name="key-outline"></ion-icon>
-                    <ion-input [type]="showPassword? 'text': 'password'" placeholder="Mot de passe" name="password" ngModel required></ion-input>
+                    <ion-input [type]="showPassword? 'text': 'password'" placeholder="Mot de passe" name="password" ngModel></ion-input>
                     <ion-icon [name]="passwordToggleIcon" slot="end" (click)="toggleTextPassword()"></ion-icon>
                 </ion-item>
 
-                <ion-item *ngIf="profile">
+                <ion-item *ngIf="profile" lines="none">
                     <ion-icon name="key-outline"></ion-icon>
-                    <ion-input [type]="showPassword? 'text': 'password'" placeholder="Confirmer mot de passe" [(ngModel)]="confirmer" required></ion-input>
+                    <ion-input [type]="showPassword? 'text': 'password'" placeholder="Confirmer mot de passe" [(ngModel)]="confirmer"></ion-input>
                     <ion-icon [name]="passwordToggleIcon" slot="end" (click)="toggleTextPassword()"></ion-icon>
                 </ion-item>
                 <ion-input type="submit" value="S'inscrire" class="btnInscrit" *ngIf="profile"></ion-input>

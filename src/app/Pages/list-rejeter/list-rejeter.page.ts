@@ -10,7 +10,10 @@ export class ListRejeterPage implements OnInit {
 
   data : any;
   Liste : any;
-  constructor(public service : ServicesService) { }
+  mode=1;
+  constructor(public service : ServicesService) {
+
+   }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
@@ -23,5 +26,8 @@ export class ListRejeterPage implements OnInit {
       console.log(this.Liste);
 
     })
+  }
+  Accepter(){
+    this.mode=2;
   }
 }

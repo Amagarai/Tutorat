@@ -11,8 +11,8 @@ export class NotificationPage implements OnInit {
   list: any;
   mode : number = 1;
   segment :  string = "reçu";
-  constructor( private service: ServicesService) { 
-    
+  constructor( private service: ServicesService) {
+
   }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class NotificationPage implements OnInit {
     const b = JSON.stringify(demande);
     const a= JSON.parse(b)
     return this.service.InitierDemande(id, a).subscribe(donne =>{
-      console.log(donne) 
+      console.log(donne)
       this.GetData();
     })
   }

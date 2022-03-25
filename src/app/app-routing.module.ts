@@ -83,7 +83,12 @@ const routes: Routes = [
   {
     path: 'update-pass',
     loadChildren: () => import('./Pages/update-pass/update-pass.module').then( m => m.UpdatePassPageModule)
+  },
+  {
+    path: 'list-tuteur',
+    loadChildren: () => import('./Pages/list-tuteur/list-tuteur.module').then( m => m.ListTuteurPageModule)
   }
+
 
 
 

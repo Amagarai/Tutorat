@@ -50,7 +50,7 @@
 
     <div class="content" *ngIf="list">
         <ion-list style="background-color: #F5F5F3;">
-            <ion-item *ngFor="let item of list">
+            <ion-item *ngFor="let item of list" lines="none">
                 <ion-avatar slot="start">
                     <img src="../../../assets/images/person.png" />
                 </ion-avatar>
@@ -59,8 +59,8 @@
                     <div class="align">
                         <h3>{{item.quartier}}</h3>
                         <p>
-                            <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end">Demander</ion-button>
-                            <!-- <ion-button fill="clear" (click)="handleButtonClick()" slot="end" class="remove">Envoyer</ion-button> -->
+                            <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end" class="demande" *ngIf="mode===1">Demander</ion-button>
+                            <ion-button fill="clear" (click)="handleButtonClick()" slot="end" class="remove" *ngIf="mode===2">Envoyer</ion-button>
                         </p>
                     </div>
                 </ion-label>

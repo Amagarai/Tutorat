@@ -1,4 +1,39 @@
 <ion-content>
+    <div class="fixed" style="position: fixed; width: 100%; z-index: 1;">
+        <div class="head">
+            <ion-buttons slot="start" color="light">
+                <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
+            </ion-buttons>
+            <span> Demandes rejeter </span>
+        </div>
+        <div style="padding: 20px; background-color: #fff; margin-top: -30px; border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
+    </div>
+
+
+    <ion-list class="list">
+        <div *ngFor="let item of Liste">
+            <ion-item class="ion-text-center">
+                <ion-label>
+                    <h2>{{item.envoyeur.prenom}} {{item.envoyeur.nom}}</h2>
+                    <h3>{{item.matiere}}</h3>
+                    <p>
+                        <ion-button fill="clear" (click)="Accepter()" class="recontacter" *ngIf="mode===1">Recontacter</ion-button>
+                        <ion-button fill="clear" class="contacter" *ngIf="mode===2">contacter</ion-button>
+                    </p>
+                </ion-label>
+            </ion-item>
+        </div>
+    </ion-list>
+
+    <div class="vide" *ngIf="Liste === ''" style="color: white;">
+        <img src="../../../assets/images/vide.png" alt="">
+        <p class="ion-text-center">Pas de demande rejeter</p>
+    </div>
+
+</ion-content>
+
+
+<!-- <ion-content>
     <div class="head">
         <ion-buttons slot="start" color="light">
             <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
@@ -6,7 +41,7 @@
         <span> Demandes rejeter</span>
     </div>
 
-    <ion-list *ngIf="Liste">
+    <ion-list class="list">
         <div *ngFor="let item of Liste">
             <ion-item>
                 <ion-label>
@@ -20,10 +55,10 @@
         </div>
     </ion-list>
 
-    <div class="vide" *ngIf="Liste === ''">
+    <div class="vide" *ngIf="Liste === ''" style="color: white;">
         <img src="../../../assets/images/vide.png" alt="">
         <p class="ion-text-center">Pas de demande rejeter</p>
     </div>
 
 
-</ion-content>
+</ion-content> -->

@@ -1,5 +1,5 @@
 <ion-content>
-    <div class="header" *ngIf="data[0].profile==='TUTEUR'">
+    <div class="header">
         <div class="notification">
             <a class="note">
                 <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
@@ -11,55 +11,103 @@
             <ion-avatar routerLink="/profil">
                 <img src="../../../assets/images/web2.png" alt="" srcset="">
             </ion-avatar>&nbsp;
-            <label> {{data[0]?.nom}}</label>
+            <label>{{data[0]?.nom}}</label>
+            <ion-buttons class="disconnt" (click)="LogOut()">
+                <ion-icon name="power"></ion-icon>
+            </ion-buttons>
         </ion-item>
 
-
-
-        <div class="cards">
+        <!--***********************************%%µ*********************** Les cartes du tuteurs ************************************************************************************************  -->
+        <div class="cards" *ngIf="data[0].profile==='TUTEUR'">
             <ion-card routerLink="/list-eleve">
                 <ion-card-header>
-                    <div class="content-card">
-                        <img src="../../../assets/images/eleve.png">
-                    </div>
+
+                    <img src="../../../assets/images/eleve.png">
+
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
-                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px;">Mes demandes accepter</ion-card-title>
+                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px; font-weight: bold;">Mes demandes accepter</ion-card-title>
                 </ion-card-content>
             </ion-card>
 
-            <ion-card style="width: 150px;" routerLink="/classe">
+            <ion-card routerLink="/classe">
                 <ion-card-header>
-                    <div class="content-card">
-                        <img src="../../../assets/images/classe.jpg" style="height: 90px; margin-bottom: 3px;">
-                    </div>
+                    <img src="../../../assets/images/classe.jpg">
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
-                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px;">Mes classes</ion-card-title>
+                    <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px; font-weight: bold;">Mes classes</ion-card-title>
                 </ion-card-content>
             </ion-card>
         </div>
+        <!--*************************************fin  -->
+
+        <!-- ****************************************************Les cartes des autres utilisateurs*************************************************************************** -->
+
+        <div class="eleve" *ngIf="data[0].profile !=='TUTEUR'">
+            <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }">
+                <ion-slide>
+                    <ion-card style="width: 160px; height: 150px;">
+                        <ion-card-header class="ion-text-center">
+                            Français
+                        </ion-card-header>
+                        <ion-card-content style="padding: 0%;">
+
+                            <ion-label style="margin-left: 1px;">
+                                11èm
+                            </ion-label>
+
+                            <p>
+                                <ion-text color="tertiary">Joseph Bayo</ion-text>
+                            </p>
+                            <ion-text class="price" color="primary"><b>4H par semaine</b></ion-text>
+
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+
+                <ion-slide>
+                    <ion-card style="width: 160px; height: 150px;">
+                        <ion-card-header class="ion-text-center">
+                            Mathématique
+                        </ion-card-header>
+                        <ion-card-content style="padding: 0%;">
+                            <ion-label style="margin-left: 1px;">
+                                11ème
+                            </ion-label>
+                            <p>
+                                <ion-text color="tertiary">Aldjouma Dama</ion-text>
+                            </p>
+                            <ion-text class="price" color="primary"><b>3H par semaine</b></ion-text>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+        </div>
     </div>
+
+
     <div class="content ion-text-center" *ngIf="data[0].profile==='TUTEUR'">
         <button style="width: 80%;" class="fonction" routerLink="/list-initier">
-            <ion-label>Demande initier</ion-label>
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-        </button>
+          <ion-label>Demande initier</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
 
         <button style="width: 80%;" class="fonction" routerLink="/list-rejeter">
-            <ion-label>Demande rejeter</ion-label>
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-        </button>
-        <button style="width: 80%;" class="btn" (click)="LogOut()">
-          <ion-label style="color: white;">Déconnion</ion-label>
+          <ion-label>Demande rejeter</ion-label>
           <ion-icon name="chevron-forward-outline"></ion-icon>
       </button>
     </div>
 
-    <!--------------------------------------------------Eleve design------------------------------------------------------------------ -->
+    <div class="content ion-text-center" *ngIf="data[0].profile !=='TUTEUR'">
+        <button style="width: 80%;" class="fonction" routerLink="/list-tuteur">
+          <ion-label>Les tuteurs de ma ville</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+    </div>
 
+    <!-- ******************************La partie qui s'affiche si un eleve n'a pas encore de classe -->
 
-    <div class="eleve" *ngIf="data[0].profile!=='TUTEUR'">
+    <div class="eleve" *ngIf="data[0].profile ==='test'">
         <div class="autre">
             <div class="notification">
                 <a class="note">
@@ -71,8 +119,11 @@
             <ion-item class="avatar" lines="none">
                 <ion-avatar routerLink="/profil">
                     <img src="../../../assets/images/web2.png" alt="" srcset="">
-                </ion-avatar>&nbsp;
+                </ion-avatar>
                 <label> {{data[0]?.nom}}</label>
+                <ion-buttons class="disconnt" (click)="LogOut()">
+                    <ion-icon name="power"></ion-icon>
+                </ion-buttons>
             </ion-item>
         </div>
 
@@ -81,60 +132,7 @@
         <ion-grid class="ion-margin-top">
             <ion-item lines="none" color="light" class="test">
                 <ion-label class="title">Tuteur de mathématique</ion-label>
-                <ion-button size="small" shape="round" routerLink="/voir-plus/{{data[0]?.addresse}}">Voir plus</ion-button>
-            </ion-item>
-            <ion-row>
-                <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }">
-                    <ion-slide>
-                        <ion-card style="width: 160px; height: 150px;">
-                            <ion-card-header class="ion-no-padding">
-                                <img src="../../../assets/images/afrique.jpg" />
-                            </ion-card-header>
-                            <ion-card-content style="padding: 0%;">
-
-                                <ion-label style="margin-left: 1px;">
-                                    Nom
-                                </ion-label>
-
-                                <p>
-                                    <ion-text color="tertiary">
-                                        <ion-icon name="location"></ion-icon>Quartier</ion-text>
-                                </p>
-                                <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
-
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <ion-card style="width: 160px; height: 150px;">
-                            <ion-card-header class="ion-no-padding">
-                                <img src="../../../assets/images/book.jpg" />
-                            </ion-card-header>
-                            <ion-card-content style="padding: 0%;">
-
-                                <ion-label style="margin-left: 1px;">
-                                    Nom
-                                </ion-label>
-
-                                <p>
-                                    <ion-text color="tertiary">
-                                        <ion-icon name="location"></ion-icon>Quartier</ion-text>
-                                </p>
-                                <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
-
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-slide>
-                </ion-slides>
-
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid class="ion-margin-top">
-            <ion-item lines="none" color="light" class="test">
-                <ion-label class="title">Tuteur de Biologie</ion-label>
-                <ion-button size="small" shape="round">Voir plus</ion-button>
+                <ion-button size="small" shape="round" color="primary" routerLink="/voir-plus/{{data[0]?.addresse}}">Voir plus</ion-button>
             </ion-item>
             <ion-row>
                 <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }">
@@ -162,7 +160,60 @@
                     <ion-slide>
                         <ion-card style="width: 160px; height: 150px;">
                             <ion-card-header class="ion-no-padding">
-                                <img src="../../../assets/images/droits.jpg" />
+                                <img src="../../../assets/images/afrique.jpg" />
+                            </ion-card-header>
+                            <ion-card-content style="padding: 0%;">
+
+                                <ion-label style="margin-left: 1px;">
+                                    Nom
+                                </ion-label>
+
+                                <p>
+                                    <ion-text color="tertiary">
+                                        <ion-icon name="location"></ion-icon>Quartier</ion-text>
+                                </p>
+                                <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
+
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid class="ion-margin-top">
+            <ion-item lines="none" color="light" class="test">
+                <ion-label class="title">Tuteur de Biologie</ion-label>
+                <ion-button size="small" shape="round" color="primary">Voir plus</ion-button>
+            </ion-item>
+            <ion-row>
+                <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }">
+                    <ion-slide>
+                        <ion-card style="width: 160px; height: 150px;">
+                            <ion-card-header class="ion-no-padding">
+                                <img src="../../../assets/images/book.jpg" />
+                            </ion-card-header>
+                            <ion-card-content style="padding: 0%;">
+
+                                <ion-label style="margin-left: 1px;">
+                                    Nom
+                                </ion-label>
+
+                                <p>
+                                    <ion-text color="tertiary">
+                                        <ion-icon name="location"></ion-icon>Quartier</ion-text>
+                                </p>
+                                <ion-text class="price" color="primary"><b>Niveau</b></ion-text>
+
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-slide>
+
+                    <ion-slide>
+                        <ion-card style="width: 160px; height: 150px;">
+                            <ion-card-header class="ion-no-padding">
+                                <img src="../../../assets/images/classe1.jpg" />
                             </ion-card-header>
                             <ion-card-content style="padding: 0%;">
 
