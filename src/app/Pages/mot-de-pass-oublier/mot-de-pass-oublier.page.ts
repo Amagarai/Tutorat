@@ -17,9 +17,6 @@ export class MotDePassOublierPage implements OnInit {
   envoyer(){
     this.mode=2;
   }
-  valider(){
-   this.mode=3;
- }
  btnOK(){
    this.route.navigate(['login']);
  }

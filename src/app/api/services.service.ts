@@ -83,6 +83,9 @@ export class ServicesService {
     return this.http.get(this.host+'demande/list/accepter/'+id);
   }
 
+  mesDemandes(id : number){
+    return this.http.get(this.host+'demande/mesDemandes/accepter/'+id);
+  }
 
   
 

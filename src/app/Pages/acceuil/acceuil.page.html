@@ -12,6 +12,12 @@
                 <img src="../../../assets/images/logo.png" alt="" srcset="">
             </ion-avatar>
             <label>{{data[0]?.prenom}} {{data[0]?.nom}}</label>
+            <ion-button fill="clear" style="margin-left: 15px;" (click)="LogOut()">
+                <ion-icon color="danger" name="power" ></ion-icon>
+            </ion-button>
+                
+            
+            
         </ion-item>
 
         <!--***********************************%%µ*********************** Les cartes du tuteurs ************************************************************************************************  -->
@@ -42,10 +48,10 @@
 
         <div class="eleve" *ngIf="data[0].profile !=='TUTEUR'">
             <ion-slides [options]="{ slidesPerView: '1.6', zoom: false, grabCursor: true }" >
-                <ion-slide>
+                <ion-slide *ngFor="let item of mesDemandes">
                     <ion-card style="width: 160px; height: 150px;">
                         <ion-card-header class="ion-text-center">
-                            Matiere 
+                            {{item.matiere}} 
                         </ion-card-header>
                         <ion-card-content style="padding: 0%;">
                             
@@ -53,24 +59,9 @@
                             Nom de la classe
                             </ion-label>
                             
-                            <p><ion-text color="tertiary">Nom du prof</ion-text></p>
-                            <ion-text class="price" color="primary"><b>Heure par semaine</b></ion-text>
+                            <p><ion-text color="tertiary"></ion-text></p>
+                            <ion-text class="price" color="primary">Prof : <b>{{item.receveur.prenom}} {{item.receveur.nom}}</b></ion-text>
                             
-                        </ion-card-content>
-                    </ion-card>
-                </ion-slide>
-
-                <ion-slide>
-                    <ion-card style="width: 160px; height: 150px;">
-                        <ion-card-header class="ion-text-center">
-                            Matiere 
-                        </ion-card-header>
-                        <ion-card-content style="padding: 0%;">
-                            <ion-label style="margin-left: 1px;">
-                            Nom de la classe
-                            </ion-label>
-                            <p><ion-text color="tertiary">Nom du prof</ion-text></p>
-                            <ion-text class="price" color="primary"><b>Heure par semaine</b></ion-text>
                         </ion-card-content>
                     </ion-card>
                 </ion-slide>

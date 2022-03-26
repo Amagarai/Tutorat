@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipeModule } from "ngx-filter-pipe";
+import { NgOtpInputModule } from  'ng-otp-input';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -28,7 +32,10 @@ import { FilterPipeModule } from "ngx-filter-pipe";
     ReactiveFormsModule,
     NgxDatatableModule,
     Ng2SearchPipeModule,
-    FilterPipeModule
+    FilterPipeModule,
+    NgOtpInputModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
     
   ],
   schemas:[ CUSTOM_ELEMENTS_SCHEMA ],

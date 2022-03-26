@@ -3,7 +3,7 @@
         <img src="assets/images/web2.png" alt="" srcset="">
         <p>Inscription</p>
     </div>
-    <form id=formId (ngSubmit)="regisForm(ajouter)" #ajouter="ngForm">
+    <form id=formId (ngSubmit)="regisForm(ajouter)" #ajouter="ngForm" *ngIf="!confirmationResult">
 
         <div class="formulaire">
 
@@ -46,7 +46,7 @@
 
                 <ion-item *ngIf="profile">
                     <ion-icon name="call-outline"></ion-icon>
-                    <ion-input placeholder="Numero de telephone" name="numero" ngModel required></ion-input>
+                    <ion-input placeholder="Numero de telephone" name="numero" ngModel [(ngModel)]="numero" required></ion-input>
                 </ion-item>
 
                 <ion-item *ngIf="profile">
@@ -114,9 +114,20 @@
 
                 <ion-text color="gray" size="small" *ngIf="!profile">Veuilez commencez par choisir un profile</ion-text>
             </div>
+            <div id="sign-in-button"></div>
         </div>
     </form><br>
-    <div style=" margin-top: 30px;">
+
+    <div *ngIf="confirmationResult"> 
+        <form #code="ngForm" (ngSubmit)="checkConfirmationCode(code)">
+            <p class="ion-text-center" style="margin-top: 50px;">Veuilez valider votre numero de telephone</p>
+            <div class="ion-text-center">
+                <ng-otp-input name="code" ngModel  [config]="{length:6}"></ng-otp-input>
+                <ion-button type="submit">Confirmer</ion-button>
+            </div>
+        </form> 
+    </div>
+    <div style=" margin-top: 30px;" >
         <p style="font-size: small;">Vous avez un compte? <a routerLink="/login">connectez-vous</a></p>
     </div>
 </ion-content>

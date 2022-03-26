@@ -94,6 +94,10 @@ const routes: Routes = [
   },  {
     path: 'list-tuteur',
     loadChildren: () => import('./Pages/list-tuteur/list-tuteur.module').then( m => m.ListTuteurPageModule)
+  },
+  {
+    path: 'verrify-otp',
+    loadChildren: () => import('./Pages/verrify-otp/verrify-otp.module').then( m => m.VerrifyOtpPageModule)
   }
 
 
