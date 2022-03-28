@@ -2,9 +2,10 @@
     <div class="head">
         <ion-buttons slot="start" color="light">
             <ion-back-button defaultHref="accueil" color="light" routerLink="/tabs"></ion-back-button>&nbsp;
-        </ion-buttons>
+        </ion-buttons>&nbsp;
         <span> Notification</span>
     </div>
+    <div style="padding: 20px; background-color: #fff; margin-top: -30px; border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
     <ion-segment [value]="segment" (ionChange)="Evenement($event)" *ngIf="data[0].profile==='TUTEUR'">
         <ion-segment-button value="reçu">
             <ion-label style="font-size: 10px;">Demande reçu</ion-label>
