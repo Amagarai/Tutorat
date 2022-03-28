@@ -1,17 +1,15 @@
 
 
 <ion-content>
-  <ion-buttons slot="start" >
-    <ion-back-button defaultHref="accueil" color="dark" routerLink="/edit-profile"></ion-back-button>&nbsp;
-  </ion-buttons>
 
   <p class="ion-text-center"><strong>Modification de votre mot de passe</strong></p>
   <form #data="ngForm" (ngSubmit)="updatePass(data)">
     <ion-input type="password" placeholder="Ancien mot de passe" name="pass" ngModel></ion-input>
-    <ion-input type="password" placeholder="Nouveau mot de passe" name="newpass" ngModel></ion-input>
+    <ion-input type="password" placeholder="Nouveau mot de passe" name="password" ngModel></ion-input>
     <ion-input type="password" placeholder="Confirmer nouveau mot de passe" name="passconf" ngModel></ion-input>
     <div class="ion-text-center">
-      <ion-button type="submit">Valider</ion-button>
+      <ion-button fill="clear" style="color : orange; border-radius: 12px; border : solid" routerLink="/edit-profile">Annler</ion-button>
+      <ion-button type="submit" fill="clear" style="color : #0F8EB4; border-radius: 12px; border : solid">Valider</ion-button>
     </div>
     
   </form>

@@ -1,12 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <a routerLink="/profil" style="text-decoration: none; font-weight: 600; margin-left: 10px;">Annuler</a>
-    <a routerLink="/profil" style="text-decoration: none; font-weight: 600; display: block; float: right; margin-right: 10px;">Terminer</a>
-  </ion-toolbar>
-</ion-header>
   
   <ion-content>
-    <form action="">
+    <form>
+      <div class="header">
+        <a routerLink="/profil" style="text-decoration: none; font-weight: 600; margin-left: 10px;">Annuler</a>
+       <ion-button type="submit"s fill="clear" size="small" style="font-weight: bold; display: block; float: right; margin-top: -3px;">Terminer</ion-button>
+      </div>
       <div class="profile ion-text-center">
         <img src="../../../assets/images/afrique.jpg" alt="">
       </div>
@@ -20,7 +18,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text"  name="nom" ngModel> {{data[0].nom}} </ion-input>
+              <ion-input type="text"  name="nom" ngModel> {{data[0]?.nom}} </ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -32,7 +30,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="prenom" ngModel>{{data[0].prenom}}</ion-input>
+              <ion-input type="text" name="prenom" ngModel>{{data[0]?.prenom}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -44,7 +42,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input  name="profile" ngModel>{{data[0].profile}}</ion-input>
+              <ion-input  name="profile" ngModel>{{data[0]?.profile}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -57,7 +55,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="numero" ngModel>{{data[0].numero}}</ion-input>
+              <ion-input type="text" name="numero" ngModel>{{data[0]?.numero}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -69,7 +67,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="site" ngModel>{{data[0].site}}</ion-input>
+              <ion-input type="text" name="site" ngModel>{{data[0]?.site}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -81,7 +79,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="etablissement" ngModel>{{data[0].etablissement}}</ion-input>
+              <ion-input type="text" name="etablissement" ngModel>{{data[0]?.etablissement}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -93,7 +91,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="ville" ngModel>{{data[0].adresse}}</ion-input>
+              <ion-input type="text" name="ville" ngModel>{{data[0]?.adresse}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -105,7 +103,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="quartier" ngModel> {{data[0].quartier}}</ion-input>
+              <ion-input type="text" name="quartier" ngModel> {{data[0]?.quartier}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -117,7 +115,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="text" name="specialite" ngModel>{{data[0].specialite}}</ion-input>
+              <ion-input type="text" name="specialite" ngModel>{{data[0]?.specialite}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -129,7 +127,7 @@
           </ion-col>
           <ion-col size="5">
             <ion-item>
-              <ion-input type="number" name="nom" ngModel>{{data[0].anciennete}}</ion-input>
+              <ion-input type="number" name="nom" ngModel>{{data[0]?.anciennete}}</ion-input>
             </ion-item>
           </ion-col>
         </ion-row>

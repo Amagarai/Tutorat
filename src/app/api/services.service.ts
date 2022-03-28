@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class ServicesService {
   // eslint-disable-next-line @typescript-eslint/ban-types
   host= environment.host;
 
-  constructor(public http: HttpClient, private route: Router) { }
+  constructor(public http: HttpClient, private route: Router, private toast : ToastController, private alertController : AlertController) { }
 
   listeEleve(){
     return this.http.get(this.host +'liste/eleve');
@@ -122,7 +123,7 @@ export class ServicesService {
     this.route.navigate(['login']);
   }
   Disponiblite(id: any, user : any){
-    return this.http.put(this.host+'/tuteur/dispo/'+id, user);
+    return this.http.put(this.host+'tuteur/dispo/'+id, user);
   }
 
 
@@ -152,8 +153,61 @@ export class ServicesService {
 
   //------------------------------------------------Update users----------------------------------------------------------
 
+  updateEleve(id : number, eleve : any){
+    return this.http.put(this.host+'modify/eleve/'+id, eleve);
+  }
+  updateEcole(id : number, ecole: any){
+    return this.http.put(this.host+'modify/ecole/'+id, ecole);
+  }
+
+  updateParent(id : number, parent: any){
+    return this.http.put(this.host+'modify/parent/'+id, parent);
+  }
+
+  updateTuteur(id : number, tuteur: any){
+    return this.http.put(this.host+'modify/tuteur/'+id, tuteur);
+  }
+
+      //-----------**** sous section de modification des mot de passse -----**************----
+
   updatePass(id : number, users : any){
-    return this.http.put(this.host+'user/modifypass/'+id, users);
+    return this.http.post(this.host+'users/modifypass/tuteur/'+id, users);
+  }
+
+  updatePassEleve(id : number, users : any){
+    return this.http.post(this.host+'users/modifypass/eleve/'+id, users);
+  }
+
+  updatePassEcole(id : number, users : any){
+    return this.http.post(this.host+'users/modifypass/ecole/'+id, users);
+  }
+
+  updatePassParent(id : number, users : any){
+    return this.http.post(this.host+'users/modifypass/parent/'+id, users);
   }
   
+
+
+  //-----le toast et l'alerte-----
+  async presentToast(mess:string) {
+    const toast = await this.toast.create({
+      message: mess,
+      duration: 2000,
+      position: 'top'
+    });
+    toast.present();
+  }
+
+  async presentAlert(message : string) {
+    const alert = await this.alertController.create({
+      header: 'Erreur',
+      // subHeader: 'Subtitle',
+      mode: 'ios',
+      cssClass: 'my-custom-class',
+      message: '<b>'+message+'</b>',
+      buttons: ['OK']
+    });
+  
+    await alert.present();
+  }
 }
