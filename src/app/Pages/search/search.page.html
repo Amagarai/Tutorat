@@ -50,8 +50,8 @@
   </div>
 
   <div class="content" *ngIf="list">
-    
-      <ion-item *ngFor="let item of list">
+    <div *ngFor="let item of list">
+      <ion-item *ngIf="item.disponibilite=== true">
         <ion-avatar slot="start">
           <img src="../../../assets/images/person.png" />
         </ion-avatar>
@@ -60,16 +60,15 @@
           <div class="align"> 
             <h3>{{item.quartier}}</h3>
             <p>
-              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end">Demander</ion-button>
+              <ion-button fill="clear" (click)="Send(item.id, item.specialite)" slot="end" *ngIf="item.id !== ID">Demander</ion-button>
               <!-- <ion-button fill="clear" (click)="handleButtonClick()" slot="end" class="remove">Envoyer</ion-button> -->
             </p>
           </div>
         </ion-label>
       </ion-item>
-
-      
-    
-
-    
+    </div>     
   </div>
+  <!-- <div class="vide" *ngIf="!list">
+    <p>Désoler il n'y a pas de Tuteur repondant a votre recherche</p>
+  </div> -->
 </ion-content>

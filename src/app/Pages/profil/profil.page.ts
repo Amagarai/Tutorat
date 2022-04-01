@@ -10,11 +10,13 @@ export class ProfilPage implements OnInit {
 
   data: any;
   json_convert: any;
+  Dispo  : boolean;
   constructor(private sercice: ServicesService) { }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
     console.log(" test "+this.data[0].disponibilite);
+    this.Dispo = this.data[0].disponibilite;
     this.json_convert = JSON.stringify(this.data[0]);
     console.log(JSON.parse(this.json_convert));
     

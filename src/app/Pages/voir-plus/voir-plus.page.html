@@ -1,27 +1,33 @@
 
 <ion-content>
-  <div class="head">
-    <ion-buttons slot="start" >
-        <ion-back-button defaultHref="accueil" style="color: #ffffff; margin-top: 5px;" routerLink="/tabs"></ion-back-button>
-    </ion-buttons>
+  <div class="fixed" style="position: fixed; width: 100%; z-index: 1;">
+    <div class="head">
+      <ion-buttons slot="start" color="light">
+          <ion-back-button defaultHref="accueil" color="light" routerLink="/list-tuteur"></ion-back-button>&nbsp;
+      </ion-buttons>
+      <span> Demandes initier</span>
+    </div>
+    <div style="padding: 20px; padding-bottom: 0px; padding-top: 10px; background-color: #fff; margin-top: -30px; border-top-left-radius: 40px; border-top-right-radius: 40px;">
+      <ion-item>       
+        <ion-label>Ville</ion-label>
+        <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" value="Bamako" ngModel required>
+          <ion-select-option value="Bamako">Bamako</ion-select-option>
+          <ion-select-option value="Kayes">Kayes</ion-select-option>
+          <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+          <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+          <ion-select-option value="Segou">Segou</ion-select-option>
+          <ion-select-option value="Mopti">Mopti</ion-select-option>
+          <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+          <ion-select-option value="Goa">Goa</ion-select-option>
+          <ion-select-option value="Kidal">Kidal</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
   </div>
 
-  <ion-item>       
-    <ion-label>Ville</ion-label>
-    <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" value="Bamako" ngModel required>
-      <ion-select-option value="Bamako">Bamako</ion-select-option>
-      <ion-select-option value="Kayes">Kayes</ion-select-option>
-      <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
-      <ion-select-option value="Sikasso">Sikasso</ion-select-option>
-      <ion-select-option value="Segou">Segou</ion-select-option>
-      <ion-select-option value="Mopti">Mopti</ion-select-option>
-      <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
-      <ion-select-option value="Goa">Goa</ion-select-option>
-      <ion-select-option value="Kidal">Kidal</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <div class="card" *ngFor="let item of Liste">
-    <ion-card>
+  
+  <div class="card">
+    <ion-card *ngFor="let item of Liste">
       <ion-card-header class="ion-no-padding">
         <img src="../../../assets/images/banner.png"/>
       </ion-card-header>

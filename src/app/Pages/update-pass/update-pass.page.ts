@@ -66,15 +66,15 @@ export class UpdatePassPage implements OnInit {
 
         }else{
           console.log("le nouveau est differents de confirmer");
-          this.service.presentAlert("Le nouveau mot de passe est different de sa confirmation");
+          this.service.presentAlert("Erreur","Le nouveau mot de passe est different de sa confirmation");
         }
       }else{
         console.log("erreur sur l'ancien mot de passe"); 
-        this.service.presentAlert("l'ancien mot de passe est invalide");
+        this.service.presentAlert("Erreur","l'ancien mot de passe est invalide");
       }
     }else{
       console.log("remplissez tout les champs");
-      this.service.presentAlert("Remplissez tout les champs");
+      this.service.presentAlert("Erreur","Remplissez tout les champs");
     }
     
   }

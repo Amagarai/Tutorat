@@ -15,6 +15,8 @@ export class AcceuilPage implements OnInit {
   badge: number;
   event= Event;
   mesDemandes : any;
+  affiche : number;
+  tableau : [];
 
   slideOpts = {
     slidesPerView: 2.2,
@@ -74,6 +76,10 @@ export class AcceuilPage implements OnInit {
   ListeDemande(){
     return this.service.mesDemandes(this.data[0].id).subscribe(data =>{
       this.mesDemandes = data;
+      this.tableau =  this.mesDemandes;
+      if(this.tableau.length === 0){
+        this.affiche = 1
+      }
       console.log(this.mesDemandes);
     })
   }

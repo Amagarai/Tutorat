@@ -11,14 +11,14 @@
     
 
   <ion-list class="list">
-    <div *ngFor="let item of Liste">
+    <div *ngFor="let item of Liste" style="margin-top: 8px;">
       <ion-item class="ion-text-center" *ngIf="item.etat !=='DECLINER' && item.etat !=='ACCEPTER'">
         <ion-label>
           <h2 style="color: #0F8EB4; font-weight: 600;">{{item.envoyeur.prenom}}  {{item.envoyeur.nom}}</h2>
           <h3>{{item.matiere}}</h3>
           <p>
-            <ion-button color="danger" (click)="Decliner(item.id, item)">Decliner</ion-button>
-            <ion-button fill="clear" style="background-color: orange; border-radius: 5px; color: white;" (click)="Accepter(item.id, item)">Accepter</ion-button>
+            <ion-button fill="clear" style="border: solid orange; border-radius: 8px; color: orange;" (click)="Decliner(item.id, item)">Decliner</ion-button>
+            <ion-button fill="clear" style="border: solid #0F8EB4; border-radius: 8px; color: #0F8EB4;" (click)="Accepter(item.id, item)">Accepter</ion-button>
           </p>
         </ion-label>
       </ion-item>

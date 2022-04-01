@@ -8,7 +8,7 @@
       </ion-buttons>
       <span> Notification</span>
     </div>
-  <div style="padding: 20px; background-color: #fff;  border-top-left-radius: 40px; border-top-right-radius: 40px; margin-top: -30px;">
+  <div style="padding: 20px; padding-bottom: 3px; background-color: #fff;  border-top-left-radius: 40px; border-top-right-radius: 40px; margin-top: -30px;">
     <ion-segment [value]="segment" (ionChange)="Evenement($event)"  *ngIf="data[0].profile==='TUTEUR'">
       <ion-segment-button value="reçu">
         <ion-label style="font-size: 10px;">Demande reçu</ion-label>
@@ -20,7 +20,7 @@
   </div>
   </div>
   
-  <div style="margin-top: 100px;">
+  <div style="margin-top: 100px; width: calc(100% + 15px);">
     <ion-list *ngIf="segment==='reçu' && data[0].profile==='TUTEUR'">
       <ion-list-header>
         <ion-label>
@@ -58,7 +58,7 @@
      <!-- --------******************************--------------Partie des notification recus -----------------***************************************-->
      
      <div *ngIf="segment==='envoyer' || data[0].profile!=='TUTEUR'">
-       <ion-list style="margin-top: 140px;">
+       <ion-list style="margin-top: 130px; width: calc(100% + 15px);">
          <ion-item *ngFor="let item of Notification">
            <ion-thumbnail slot="start" class="photo">
            <img src="../../../assets/images/afrique.jpg" alt="">

@@ -81,35 +81,21 @@
             <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
     </div>
-
-    <div class="content ion-text-center" *ngIf="data[0].profile !=='TUTEUR'">
-        <button style="width: 80%;" class="fonction" routerLink="/list-tuteur">
-            <ion-label>Les tuteurs de ma ville</ion-label>
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-        </button>
+    <div *ngIf="!affiche">
+        <div class="content ion-text-center" *ngIf="data[0].profile !=='TUTEUR'">
+            <button style="width: 80%;" class="fonction" routerLink="/list-tuteur">
+                <ion-icon name="albums-outline"></ion-icon>
+                <ion-label>Les tuteurs</ion-label>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+        </div>
     </div>
+    
 
 <!-- ******************************La partie qui s'affiche si un eleve n'a pas encore de classe -->
 
-    <div class="eleve" *ngIf="data[0].profile ==='test'">
-        <div class="autre">
-            <div class="notification">
-                <a class="note">
-                    <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
-                    <ion-badge color="danger" slot="end" class="badge" *ngIf="badge">{{badge}}</ion-badge>
-                </a>
-            </div>
-
-            <ion-item class="avatar" lines="none">
-                <ion-avatar routerLink="/profil">
-                    <img src="../../../assets/images/logo.png" alt="" srcset="">
-                </ion-avatar>
-                <label> {{data[0]?.nom}}</label>
-            </ion-item>
-        </div>
+    <div class="eleve" *ngIf="affiche=== 1 && data[0].profile !=='TUTEUR'">
         
-
-
         <ion-grid class="ion-margin-top">
             <ion-item lines="none" color="light" class="test">
               <ion-label class="title">Tuteur de mathématique</ion-label>

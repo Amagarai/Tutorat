@@ -198,9 +198,9 @@ export class ServicesService {
     toast.present();
   }
 
-  async presentAlert(message : string) {
+  async presentAlert(header : string, message : string) {
     const alert = await this.alertController.create({
-      header: 'Erreur',
+      header: header,
       // subHeader: 'Subtitle',
       mode: 'ios',
       cssClass: 'my-custom-class',

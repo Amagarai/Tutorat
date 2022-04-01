@@ -86,18 +86,21 @@ export class RegisterPage implements OnInit {
         return this.service.addEcole(this.users).subscribe(data =>{
           this.route.navigate(['login'])
           console.log(data)
+          this.service.presentToast("votre compte a été créé avec succes, vous pouvez vous connectez")
         })
       }
       if(this.users.profile=='TUTEUR'){
         return this.service.addTuteur(this.users).subscribe(data =>{
           this.route.navigate(['login'])
           console.log(data);
+          this.service.presentToast("votre compte a été créé avec succes, vous pouvez vous connectez")
         })
       }
   
       if(this.users.profile=='ELEVE'){
         return this.service.addEleve(this.users).subscribe(data =>{
           this.route.navigate(['login'])
+          this.service.presentToast("votre compte a été créé avec succes, vous pouvez vous connectez")
           console.log(data);
           
         })
@@ -106,6 +109,7 @@ export class RegisterPage implements OnInit {
       if(this.users.profile=='PARENT'){
         return this.service.addParent(this.users).subscribe(data =>{
           this.route.navigate(['login'])
+          this.service.presentToast("votre compte a été créé avec succes, vous pouvez vous connectez")
           console.log(data);
           
         })  

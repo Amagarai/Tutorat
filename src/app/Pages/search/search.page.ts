@@ -19,23 +19,31 @@ export class SearchPage implements OnInit {
   matiereDeLaPersonneChoisi : any;
   idDeLaPersonneChoisi : any;
   searchValue: any;
+  mode : number  = 0;
+  ID : number;
 
   constructor(private service: ServicesService) { }
 
   ngOnInit() {
     this.data= JSON.parse(localStorage["logInfo"]);
+    this.ID = this.data[0].id
     console.log(this.data[0]);
   }
 
   search(data: any){
     console.log('value'+ JSON.stringify(data.value) );
-    return this.service.searchTuteur(data.value.addresse, data.value.specialite, data.value.niveau).subscribe(resulat =>{
-      this.list= resulat;
-      this.searchValue = data;
-      this.btn = 1;
-      this.demande=JSON.stringify(data.value);
-      console.log(this.searchValue.value);
-    })
+    if (data.value.niveau === '' || data.value.specialite === '' || data.value.addresse === ''  ) {
+      return this.service.presentAlert("", "Veuillez renseignez toute les donnés");
+    } else {
+      return this.service.searchTuteur(data.value.addresse, data.value.specialite, data.value.niveau).subscribe(resulat =>{
+        this.list= resulat;
+        this.searchValue = data;
+        this.btn = 1;
+        this.demande=JSON.stringify(data.value);
+        console.log(this.searchValue.value);
+      })
+    }
+    
   }
 
   Send(id: number, matiere: string){

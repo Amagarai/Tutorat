@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
   affichePassword: Boolean = true;
   login: string;
   password: string;
+  dataInfo : any;
 
   constructor(public service: ServicesService, public route: Router, public alertController: AlertController) { }
 
@@ -27,31 +28,28 @@ public getType() {
 }
 
   loginPass(data){
-    this.service.loginPassword(data.value.numero, data.value.password).subscribe(donne =>{
-      
-     
-      if(donne ==''){
-        return this.presentAlert();
-      }else{
-        localStorage.setItem('logInfo',JSON.stringify(donne));
-        this.route.navigate(['tabs']);
-        data.reset();
-      }
-      
-    });
-  }
+    if (data.value==='') {
+      this.service.presentAlert("", "Veuillez remplir tout les champs.")
+    } else {
+      this.service.loginPassword(data.value.numero, data.value.password).subscribe(donne =>{
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Erreur',
-      // subHeader: 'Subtitle',
-      mode: 'ios',
-      cssClass: 'my-custom-class',
-      message: '<b>Votre login ou mot de pass incorrect !</b>',
-      buttons: ['OK']
-    });
-  
-    await alert.present();
+        this.dataInfo = donne;
+        if(donne ==''){
+          return this.service.presentAlert("Erreur","Votre login ou mot de pass incorrect !");
+        }else{
+          if (this.dataInfo[0].etat==='DESACTIVER') {
+            return this.service.presentAlert("Desolé","Votre etat est desactiver <br> Veuillez nous contacter par email")
+          } else {
+            localStorage.setItem('logInfo',JSON.stringify(donne));
+            this.route.navigate(['tabs']);
+            data.reset();
+          }
+          
+        }
+        
+      });
+    }
+    
   }
 
 }
