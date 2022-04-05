@@ -31,6 +31,7 @@
       <ion-card-content>
         <p>{{item.heure}}H par semaine</p>
         <p>Nombre d'eleve : ..</p>
+        <p style="color: orange;"><ion-icon name="location"></ion-icon> {{item.lieu}}</p>
         <p>Créer le : {{item.createDate | date : short}}</p>
         <div class="ion-text-center">
         <!-- <ion-button size="small" routerLink="/add-eleve">Ajouter un eleve</ion-button> -->
@@ -46,6 +47,7 @@
   
     <form class="ion-text-center" #data="ngForm" (ngSubmit)="addClasse(data)">
       <ion-input type="text" placeholder="Nom de la clase" name="nom" ngModel></ion-input>
+      <ion-input type="text" placeholder="Emplacement" name="lieu" ngModel></ion-input>
       <ion-input type="number" placeholder="Nombre d'heure par semaine" name="heure" ngModel></ion-input>
       <ion-item class="matiere">
         <ion-label>Matière</ion-label>

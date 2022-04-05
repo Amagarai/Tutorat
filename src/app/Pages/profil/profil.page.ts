@@ -9,7 +9,7 @@ import { ServicesService } from 'src/app/api/services.service';
 export class ProfilPage implements OnInit {
 
   data: any;
-  json_convert: any;
+  Data: any;
   Dispo  : boolean;
   constructor(private sercice: ServicesService) { }
 
@@ -17,8 +17,6 @@ export class ProfilPage implements OnInit {
     this.data= JSON.parse(localStorage["logInfo"]);
     console.log(" test "+this.data[0].disponibilite);
     this.Dispo = this.data[0].disponibilite;
-    this.json_convert = JSON.stringify(this.data[0]);
-    console.log(JSON.parse(this.json_convert));
     
   }
 
@@ -28,7 +26,11 @@ export class ProfilPage implements OnInit {
   }
 
   Disponibilite(){
-     this.sercice.Disponiblite(this.data[0].id, this.json_convert.value).subscribe();
+     this.sercice.Disponiblite(this.data[0].id, this.data[0]).subscribe(donne => {
+       console.log(donne);
+       this.Data = donne
+       this.Dispo = this.Data.disponibilite
+     });
   }
   
 

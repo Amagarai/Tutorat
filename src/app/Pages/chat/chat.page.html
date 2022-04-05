@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="data[0].id !== Tuteur">
+  <div *ngIf="Tuteur">
     <ion-item detail *ngFor="let item of Liste" routerLink="/detail-chat/{{item.id}}">
       <ion-avatar slot="start" >
         <img src="../../../assets/images/person.png">
@@ -20,7 +20,7 @@
     </ion-item>
   </div>
 
-  <div *ngIf="data[0].id === Tuteur">
+  <div *ngIf="!Tuteur">
     <ion-item detail *ngFor="let item of Liste2" routerLink="/detail-chat/{{item.id}}">
       <ion-avatar slot="start" >
         <img src="../../../assets/images/person.png">

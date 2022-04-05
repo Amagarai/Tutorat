@@ -23,6 +23,7 @@ export class RegisterPage implements OnInit {
   recaptchaVerifier: any;
   private auth = getAuth();
   users : any
+  region : any;
 
 
   constructor(
@@ -33,6 +34,15 @@ export class RegisterPage implements OnInit {
   { }
 
   ngOnInit() {
+    this.Region();
+  }
+
+  Region(){
+    return this.service.ListeRegion().subscribe(data =>{
+      this.region = data
+      console.log(this.region);
+      
+    })
   }
 
   regisForm(ajouter: any){

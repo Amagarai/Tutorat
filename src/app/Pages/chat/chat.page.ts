@@ -32,10 +32,11 @@ export class ChatPage implements OnInit {
 
   GetInitList2(){
     return this.service.ListInitier2(this.data[0].id).subscribe(donne =>{
-      this.Liste2 = donne;
-      this.Tuteur = this.Liste2[0].envoyeur.id;
-      console.log(this.Liste2);
-       
+      if (donne) {
+        this.Liste2 = donne;
+        this.Tuteur = this.Liste2[0].envoyeur.id;
+        console.log(this.Liste2);
+      }  
     })
   }
 }

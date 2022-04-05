@@ -123,7 +123,7 @@ export class ServicesService {
     this.route.navigate(['login']);
   }
   Disponiblite(id: any, user : any){
-    return this.http.put(this.host+'tuteur/dispo/'+id, user);
+    return this.http.post(this.host+'tuteur/dispo/'+id, user);
   }
 
 
@@ -175,7 +175,7 @@ export class ServicesService {
   }
 
   updatePassEleve(id : number, users : any){
-    return this.http.post(this.host+'users/modifypass/eleve/'+id, users);
+    return this.http.post(this.host+'users/modifypas/eleve/'+id, users);
   }
 
   updatePassEcole(id : number, users : any){
@@ -209,5 +209,10 @@ export class ServicesService {
     });
   
     await alert.present();
+  }
+
+  //*******************************************----- */ Liste des regions -----******************************************************
+  ListeRegion(){
+    return this.http.get(this.host+'region/liste');
   }
 }

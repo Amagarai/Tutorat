@@ -2,7 +2,7 @@
     <div class="header">
         <div class="notification">
             <a class="note">
-                <ion-icon color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
+                <ion-icon style="height: 24px;" color="primary" name="notifications" size="large" routerLink='/notification' (click)="ReiniNotif(data[0]?.id)"></ion-icon>
                 <ion-badge color="danger" slot="end" class="badge" *ngIf="badge">{{badge}}</ion-badge>
             </a>
         </div>
@@ -24,9 +24,7 @@
         <div class="cards" *ngIf="data[0].profile==='TUTEUR'">
             <ion-card routerLink="/list-eleve">
                 <ion-card-header>
-                    
-                        <img src="../../../assets/images/eleve.png">
-                    
+                    <img src="../../../assets/images/eleve.png"> 
                 </ion-card-header>
                 <ion-card-content class="ion-text-left">
                     <ion-card-title class="ion-margin-bottom ion-text-center" style="font-size: 10px; margin-bottom: 2px; font-weight: bold;">Mes demandes accepter</ion-card-title>                    
@@ -53,7 +51,7 @@
                         <ion-card-header class="ion-text-center">
                             {{item.matiere}} 
                         </ion-card-header>
-                        <ion-card-content style="padding: 0%;">
+                        <ion-card-content style="padding: 0%;" id="card">
                             
                             <ion-label style="margin-left: 1px;">
                             Nom de la classe
@@ -67,7 +65,13 @@
                 </ion-slide>
             </ion-slides>
         </div>
+        <ion-modal trigger="card" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+                test
+            </ng-template>     
+        </ion-modal>
     </div>
+
 
 
     <div class="content ion-text-center" *ngIf="data[0].profile==='TUTEUR'">
