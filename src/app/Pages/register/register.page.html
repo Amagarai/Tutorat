@@ -88,6 +88,15 @@
                     </ion-select>
                 </ion-item>
 
+                <ion-item *ngIf="profile==='ELEVE'">
+                    <ion-label>Niveau</ion-label>
+                    <ion-select interface="action-sheet" cancelText="Annuler" name="classe" ngModel required>
+                        <ion-select-option value="1er cycle">1er cycle</ion-select-option>
+                        <ion-select-option value="2e cycle">2e cycle</ion-select-option>
+                        <ion-select-option value="Lycée">Lycée</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
                 <ion-item *ngIf="profile==='TUTEUR'">
                     <span>Ancienneté:</span>
                     <ion-input type="number" placeholder="exemple: 2" name="anciennete" ngModel required></ion-input>

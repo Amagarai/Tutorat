@@ -24,6 +24,7 @@ export class RegisterPage implements OnInit {
   private auth = getAuth();
   users : any
   region : any;
+  Exist : any;
 
 
   constructor(
@@ -52,7 +53,13 @@ export class RegisterPage implements OnInit {
     const  b= JSON.parse(this.body);
     this.users = b;
     console.log(b.profile);
-    this.getOtp(b.numero);
+    this.numeroExist(this.users.numero);
+    if (this.Exist) {
+      this.service.presentAlert('',"Ce numero exist déjà")
+    } else {
+      this.getOtp(b.numero);
+    }
+    
   }
  
   togglePasswordMode() {
@@ -127,6 +134,11 @@ export class RegisterPage implements OnInit {
     });
   }
  
+  numeroExist(numero : string){
+    return this.service.NumeroExist(numero).subscribe(data =>{
+      this.Exist = data;
+    })
+  }
 
  
 }

@@ -109,6 +109,13 @@ export class ServicesService {
   }
 
 
+  //----------------------Verifier si le numero exist---------------------------
+
+  NumeroExist(numero : string){
+    return this.http.get(this.host+'exist/'+numero);
+  }
+
+
   //---------------------------------Le nombre totale de notification-------------------------
 
   ReinitilaiserNbreDemande(id: number, user: any){
